@@ -1,0 +1,217 @@
+#!/usr/bin/env sh
+# 
+# prepara.ricetta 1.4
+#
+# 2014-2015 mutek <mutek _A_T_ riseup _D_O_T_ net>
+# WTF
+#
+# cuoce una ricetta letta dal file NOME.ingredienti
+#
+#
+
+for i in "apt-get" "curl" "echo" "sha256sum" "tar" "make" "gzip"
+do
+
+   [ -z $(which $i) ] && echo "il tool: "$i" non è raggiungibile...esco..." && exit 1
+
+done
+
+echo "i tools di base esistono...proseguo"
+
+apt-get update
+
+for ricetta in $(ls *.ingredienti)
+do
+
+	gli_ingredienti=$ricetta
+
+	echo "la ricetta usera i seguenti ingredienti trovati in "$gli_ingredienti
+
+	cat $gli_ingredienti | grep -v \# | grep -v \"\"
+
+	echo ""
+
+	. ./$gli_ingredienti
+	wait
+
+	[ -f ./condiviso ] && . ./condiviso
+	wait
+
+	export LC_ALL=C
+
+	[ -z $RELEASE ] && RELEASE=0.1dev
+	[ -z $PROGRAM_NAME ] && PROGRAM_NAME="UntitledProgramName"
+	[ -z $ARCHIVE_TYPE ] && ARCHIVE_TYPE="tar.gz"
+	[ -z $APP_NAME ] && APP_NAME=UntitledAppName
+	[ -z $DISTRO ] && DISTRO=UntitledDistro
+	[ -z $KERNEL ] && KERNEL=UntitledKernelName
+	[ -z $ARCH ] && ARCH=UntitledArch
+	[ -z $PREFIX_ROOT ] && PREFIX_ROOT=UntitledPrefixRoot/$APP_NAME
+	[ -z $SOURCE_URL ] && SOURCE_URL="http://UntitledSoureceUrl"
+	[ -z $STRIP_ALL ] && STRIP_ALL=true
+	[ -z $CONFIGURE_OPTIONS ] && CONFIGURE_OPTIONS=""
+	[ -z $APTGET_UPDATE ] && APTGET_UPDATE=false
+	[ -z $APTGET_BUILDDEP ] && APTGET_BUILDDEP=true
+	[ -z $YUM_BUILDDEP ] && YUM_BUILDDEP=false
+	[ -z $EMERGE_O ] && $EMERGE_O=false
+	[ -z $APTGET_BUILDDEP_PACKAGENAME ] && APTGET_BUILDDEP_PACKAGENAME=""
+	# ----------------------------------------------------------------
+
+	echo "APTGET_BUILDDEP = "$APTGET_BUILDDEP
+
+	[ "$APTGET_BUILDDEP" = "true" ] && apt-get build-dep $APTGET_BUILDDEP_PACKAGENAME && apt-get clean
+        [ "$YUM_BUILDDEP" = "true" ] && yum builddep $PROGRAM_NAME
+	[ "$EMERGE_O" = "true" ] && emerge -o $PROGRAM_NAME
+
+	export PREFIX=$PREFIX_ROOT/$APP_NAME/$RELEASE/$DISTRO/$KERNEL/$ARCH
+
+	echo "PREFIX = "$PREFIX
+
+	ARCHIVE=$PROGRAM_NAME-$RELEASE.$ARCHIVE_TYPE
+
+	echo "ARCHIVE = "$ARCHIVE
+
+	unlink $APP_NAME.sha512sum
+	unlink $APP_NAME.sha512sum.sha512sum
+	unlink $APP_NAME.log
+
+	echo "rm "$PREFIX_ROOT"/"$APP_NAME
+	rm --preserve-root -r $PREFIX_ROOT/$APP_NAME
+	mkdir -p $PREFIX
+
+	echo "Scarico: "$ARCHIVE" da "$SOURCE_URL
+	[ ! -f $ARCHIVE ] && curl -L $SOURCE_URL > $ARCHIVE
+        echo "" >> $APP_NAME.log
+        echo "env" >> $APP_NAME.log
+        echo "" >> $APP_NAME.log
+	env >> $APP_NAME.log
+
+        echo "" >> $APP_NAME.log
+        echo "alias " >> $APP_NAME.log
+        echo "" >> $APP_NAME.log
+	alias >> $APP_NAME.log
+
+	ls --color
+
+	echo "provo ad estrarre"
+	echo "" >> $APP_NAME.log
+	echo "tar -xvf "$ARCHIVE >> $APP_NAME.log
+	echo "" >> $APP_NAME.log
+
+	tar -xvf $ARCHIVE 1>> $APP_NAME.log 2>> $APP_NAME.log || exit
+
+        sha512sum $ARCHIVE > $ARCHIVE.sha512sum
+
+	# post tar - pre configure	
+
+        echo "" >> ../$APP_NAME.log
+        echo "$PROGRAM_NAME.pre-configure" >> ../$APP_NAME.log
+        echo "" >> ../$APP_NAME.log
+
+       [ -f ./$PROGRAM_NAME.pre-configure ] && . ./$PROGRAM_NAME.pre-configure
+
+
+	echo "configure --prefix="$PREFIX" "$CONFIGURE_OPTIONS
+
+	echo "" >> $APP_NAME.log
+	echo "configure --prefix="$PREFIX" "$CONFIGURE_OPTIONS >> $APP_NAME.log
+	echo "" >> $APP_NAME.log
+
+	cd $PROGRAM_NAME-$RELEASE
+	./configure --prefix=$PREFIX $CONFIGURE_OPTIONS >> ../$APP_NAME.log
+
+	# un pizzico di fantasia prima di cuocere la pietanza
+
+        echo "" >> ../$APP_NAME.log
+        echo "$PROGRAM_NAME.pre-cook" >> ../$APP_NAME.log
+        echo "" >> ../$APP_NAME.log	
+
+	[ -f ../$PROGRAM_NAME.pre-cook ] && . ../$PROGRAM_NAME.pre-cook && cat ../$PROGRAM_NAME.pre-cook >> ../$APP_NAME.log
+
+	echo "" >> ../$APP_NAME.log
+	echo "make" >> ../$APP_NAME.log
+	echo "" >> ../$APP_NAME.log
+
+	make >> ../$APP_NAME.log || exit 1
+	wait
+
+#########################################
+# POST MAKE
+#########################################
+        echo "" >> ../$APP_NAME.log
+        echo "$PROGRAM_NAME.post-make" >> ../$APP_NAME.log
+        echo "" >> ../$APP_NAME.log
+
+        [ -f ../$PROGRAM_NAME.post-make ] && . ../$PROGRAM_NAME.post-make && cat ../$PROGRAM_NAME.post-make >> ../$APP_NAME.log
+
+
+        echo "" >> ../$APP_NAME.log
+        echo "make install" >> ../$APP_NAME.log
+        echo "" >> ../$APP_NAME.log
+        make >> ../$APP_NAME.log
+
+	make install >> ../$APP_NAME.log
+	wait
+
+        [ -f ../$PROGRAM_NAME.post-cook ] && . ../$PROGRAM_NAME.post-cook
+
+	cd ..
+
+	HEADER_PREFIX_ROOT=$(echo $PREFIX_ROOT | tr -s ' ' | sed 's/ /_/g' | cut -d"/" -f 2)
+	echo "HEADER_PREFIX_ROOT = "$HEADER_PREFIX_ROOT
+
+	FOOTER_PREFIX_ROOT=$(echo $PREFIX_ROOT | tr -s ' ' | sed 's/ /_/g' | cut -d"/" --complement -f 2)
+	echo "FOOTER_PREFIX_ROOT = "$FOOTER_PREFIX_ROOT
+
+	LOCAL_ROOT=$HEADER_PREFIX_ROOT$FOOTER_PREFIX_ROOT
+	echo "LOCAL_ROOT = "$LOCAL_ROOT
+
+	rm -r --preserve-root $HEADER_PREFIX_ROOT/$APP_NAME || true
+	mkdir -p $LOCAL_ROOT
+	mv $PREFIX_ROOT/$APP_NAME $LOCAL_ROOT/
+	cd $PROGRAM_NAME-$RELEASE
+	make uninstall
+	wait
+	make clean
+	wait
+
+	cd ..
+
+	rm -r --preserve-root $PROGRAM_NAME-$RELEASE || true
+	wait
+
+	[ "$STRIP_ALL" = "true" ] && for i in $(find $LOCAL_ROOT/$APP_NAME); do strip --strip-all $i; done 
+
+	for i in $(find $LOCAL_ROOT/$APP_NAME)
+	do
+
+		sha512sum $i >> $APP_NAME.sha512sum
+
+	done
+
+	sha512sum $APP_NAME.sha512sum > $APP_NAME.sha512sum.sha512sum
+
+	echo "" >> $APP_NAME.log
+	echo "hash in $APP_NAME.sha512sum" >> $APP_NAME.log
+	echo "" >> $APP_NAME.log
+	cat $APP_NAME.sha512sum >> $APP_NAME.log
+
+        echo "" >> $APP_NAME.log
+        echo "hash in $APP_NAME.sha512sum.sha512sum" >> $APP_NAME.log
+        echo "" >> $APP_NAME.log
+        cat $APP_NAME.sha512sum.sha512sum >> $APP_NAME.log
+
+        echo "" >> $APP_NAME.log
+        echo "hash in $ARCHIVE.sha512sum" >> $APP_NAME.log
+        echo "" >> $APP_NAME.log
+        cat $ARCHIVE.sha512sum >> $APP_NAME.log
+
+	ls --color
+
+	du -sh $LOCAL_ROOT
+
+	echo "" >> $APP_NAME.log
+	ls -la >> $APP_NAME.log
+	echo "" >> $APP_NAME.log
+
+done
