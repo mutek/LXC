@@ -39,36 +39,11 @@ export PATH=$PATH:/usr/sbin:/usr/bin:/sbin:/bin
 #MIRROR=${MIRROR:-http://http.debian.net/debian}
 MIRROR=${MIRROR:-http://mi.mirror.garr.it/mirrors/debian/}
 SECURITY_MIRROR=${SECURITY_MIRROR:-http://security.debian.org/}
-LOCALSTATEDIR="/opt/Lxc/1.1.2/Debian7/Linux/ia32/var"
-LXC_TEMPLATE_CONFIG="/opt/Lxc/1.1.2/Debian7/Linux/ia32/share/lxc/config"
+LOCALSTATEDIR="/opt/Lxc/1.1.2/Debian7/Linux/amd64/var"
+LXC_TEMPLATE_CONFIG="/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config"
 
 
-addendum=htop \
- nmap \
- nano \
- sshguard \
- fail2ban \
- firmware-linux \
- firmware-linux-free \
- firmware-linux-nonfree \
- bridge-utils \
- ebtables \
- quagga \
- iptables \
- iproute \
- iproute2 \
- busybox \
- udhcpc \
- udhcpd \
- vlan \
- iperf \
- traceroute \
- tcptraceroute \
- tcpdump \
- radvd \
- rfkill \
- macchanger \
- localepurge
+export addendum="htop nmap nano sshguard fail2ban firmware-linux firmware-linux-free firmware-linux-nonfree bridge-utils ebtables quagga iptables iproute iproute2 busybox udhcpc udhcpd vlan iperf traceroute tcptraceroute tcpdump radvd rfkill macchanger localepurge"
 
 
 configure_debian()
@@ -226,9 +201,16 @@ install_packages()
     local packages="$*"
 
     chroot ${rootfs} apt-get update
+    chroot ${rootfs} apt-get upgrade --force-yes -y
     if [ -n "${packages}" ]; then
         chroot ${rootfs} apt-get install --force-yes -y --no-install-recommends ${packages}
     fi
+
+echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+# mtk: installa pacchetti aggiuntivi prelevati da addendum
+[ -n "${addendum}" ] && echo "Installo Addendum: ${addendum}" && chroot  ${rootfs} apt-get install --force-yes -y ${addendum}
+
+
 }
 
 configure_debian_systemd()
@@ -299,7 +281,7 @@ vlan
     fi
 
     # download a mini debian into a cache
-    echo "Downloading debian minimal ..."
+    echo "Debootstrapping Debian $release $arch..."
 # mtk addon
      debootstrap --verbose --arch=$arch \
         --include=$packages \
