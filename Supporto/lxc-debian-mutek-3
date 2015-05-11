@@ -208,7 +208,8 @@ install_packages()
 
 echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
 # mtk: installa pacchetti aggiuntivi prelevati da addendum
-[ -n "${addendum}" ] && echo "Installo Addendum: ${addendum}" && chroot  ${rootfs} apt-get install --force-yes -y ${addendum}
+[ -n "${addendum}" ] && echo "Installo Addendum: ${addendum}" && chroot  ${rootfs} apt-get install --force-yes -y -t $release-backports ${addendum}
+chroot ${rootfs} apt-get clean
 
 
 }
