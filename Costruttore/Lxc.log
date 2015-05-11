@@ -1,0 +1,1575 @@
+
+env
+
+SUDO_GID=1001
+MAIL=/var/mail/root
+USER=root
+LANGUAGE=en_US:en
+LD_LIBRARY_PATH=/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib:
+SHLVL=1
+OLDPWD=/home/mutek/LXC
+HOME=/root
+SUDO_UID=1001
+LOGNAME=root
+_=./prepara.ricetta
+TERM=xterm
+USERNAME=root
+PATH=/opt/Lxc/1.1.2/Debian7/Linux/amd64/bin:/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin:/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec/lxc:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+LANG=en_US.UTF-8
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:
+SUDO_COMMAND=/bin/su
+PREFIX=/opt/Lxc/1.1.2/Debian7/Linux/amd64
+SHELL=/bin/bash
+SUDO_USER=mutek
+PWD=/home/mutek/LXC/Costruttore
+LC_ALL=C
+
+alias 
+
+
+tar -xvf lxc-1.1.2.tar.gz
+
+lxc-1.1.2/
+lxc-1.1.2/config/
+lxc-1.1.2/config/acinclude.m4
+lxc-1.1.2/config/tls.m4
+lxc-1.1.2/config/compile
+lxc-1.1.2/config/config.guess
+lxc-1.1.2/config/config.sub
+lxc-1.1.2/config/install-sh
+lxc-1.1.2/config/missing
+lxc-1.1.2/config/Makefile.in
+lxc-1.1.2/config/Makefile.am
+lxc-1.1.2/config/apparmor/
+lxc-1.1.2/config/apparmor/abstractions/
+lxc-1.1.2/config/apparmor/abstractions/container-base
+lxc-1.1.2/config/apparmor/abstractions/container-base.in
+lxc-1.1.2/config/apparmor/abstractions/start-container
+lxc-1.1.2/config/apparmor/profiles/
+lxc-1.1.2/config/apparmor/profiles/lxc-default
+lxc-1.1.2/config/apparmor/profiles/lxc-default-with-mounting
+lxc-1.1.2/config/apparmor/profiles/lxc-default-with-nesting
+lxc-1.1.2/config/apparmor/Makefile.in
+lxc-1.1.2/config/apparmor/Makefile.am
+lxc-1.1.2/config/apparmor/README
+lxc-1.1.2/config/apparmor/container-rules
+lxc-1.1.2/config/apparmor/container-rules.base
+lxc-1.1.2/config/apparmor/lxc-containers
+lxc-1.1.2/config/apparmor/lxc-generate-aa-rules.py
+lxc-1.1.2/config/apparmor/usr.bin.lxc-start
+lxc-1.1.2/config/bash/
+lxc-1.1.2/config/bash/Makefile.in
+lxc-1.1.2/config/bash/Makefile.am
+lxc-1.1.2/config/bash/lxc.in
+lxc-1.1.2/config/bash/lxc
+lxc-1.1.2/config/etc/
+lxc-1.1.2/config/etc/Makefile.in
+lxc-1.1.2/config/etc/Makefile.am
+lxc-1.1.2/config/etc/default.conf.lxcbr
+lxc-1.1.2/config/etc/default.conf.libvirt
+lxc-1.1.2/config/etc/default.conf.unknown
+lxc-1.1.2/config/init/
+lxc-1.1.2/config/init/Makefile.in
+lxc-1.1.2/config/init/Makefile.am
+lxc-1.1.2/config/init/common/
+lxc-1.1.2/config/init/common/Makefile.in
+lxc-1.1.2/config/init/common/Makefile.am
+lxc-1.1.2/config/init/common/lxc-containers.in
+lxc-1.1.2/config/init/common/lxc-net.in
+lxc-1.1.2/config/init/systemd/
+lxc-1.1.2/config/init/systemd/Makefile.in
+lxc-1.1.2/config/init/systemd/Makefile.am
+lxc-1.1.2/config/init/systemd/lxc.service.in
+lxc-1.1.2/config/init/systemd/lxc-net.service.in
+lxc-1.1.2/config/init/systemd/lxc-devsetup
+lxc-1.1.2/config/init/systemd/lxc-apparmor-load
+lxc-1.1.2/config/init/sysvinit/
+lxc-1.1.2/config/init/sysvinit/Makefile.in
+lxc-1.1.2/config/init/sysvinit/Makefile.am
+lxc-1.1.2/config/init/sysvinit/lxc-containers.in
+lxc-1.1.2/config/init/sysvinit/lxc-net.in
+lxc-1.1.2/config/init/upstart/
+lxc-1.1.2/config/init/upstart/Makefile.in
+lxc-1.1.2/config/init/upstart/Makefile.am
+lxc-1.1.2/config/init/upstart/lxc-net.conf.in
+lxc-1.1.2/config/init/upstart/lxc.conf
+lxc-1.1.2/config/init/upstart/lxc-instance.conf
+lxc-1.1.2/config/selinux/
+lxc-1.1.2/config/selinux/Makefile.in
+lxc-1.1.2/config/selinux/Makefile.am
+lxc-1.1.2/config/selinux/lxc.if
+lxc-1.1.2/config/selinux/lxc.te
+lxc-1.1.2/config/templates/
+lxc-1.1.2/config/templates/Makefile.in
+lxc-1.1.2/config/templates/Makefile.am
+lxc-1.1.2/config/templates/archlinux.common.conf.in
+lxc-1.1.2/config/templates/archlinux.userns.conf.in
+lxc-1.1.2/config/templates/centos.common.conf.in
+lxc-1.1.2/config/templates/centos.userns.conf.in
+lxc-1.1.2/config/templates/common.conf.in
+lxc-1.1.2/config/templates/debian.common.conf.in
+lxc-1.1.2/config/templates/debian.userns.conf.in
+lxc-1.1.2/config/templates/fedora.common.conf.in
+lxc-1.1.2/config/templates/fedora.userns.conf.in
+lxc-1.1.2/config/templates/gentoo.common.conf.in
+lxc-1.1.2/config/templates/gentoo.moresecure.conf.in
+lxc-1.1.2/config/templates/gentoo.userns.conf.in
+lxc-1.1.2/config/templates/opensuse.common.conf.in
+lxc-1.1.2/config/templates/opensuse.userns.conf.in
+lxc-1.1.2/config/templates/oracle.common.conf.in
+lxc-1.1.2/config/templates/oracle.userns.conf.in
+lxc-1.1.2/config/templates/plamo.common.conf.in
+lxc-1.1.2/config/templates/plamo.userns.conf.in
+lxc-1.1.2/config/templates/ubuntu-cloud.common.conf.in
+lxc-1.1.2/config/templates/ubuntu-cloud.lucid.conf.in
+lxc-1.1.2/config/templates/ubuntu-cloud.userns.conf.in
+lxc-1.1.2/config/templates/ubuntu.common.conf.in
+lxc-1.1.2/config/templates/ubuntu.lucid.conf.in
+lxc-1.1.2/config/templates/ubuntu.userns.conf.in
+lxc-1.1.2/config/templates/openwrt.common.conf.in
+lxc-1.1.2/config/templates/userns.conf.in
+lxc-1.1.2/config/templates/common.seccomp
+lxc-1.1.2/config/templates/common.conf.d/
+lxc-1.1.2/config/templates/common.conf.d/Makefile.in
+lxc-1.1.2/config/templates/common.conf.d/Makefile.am
+lxc-1.1.2/config/templates/common.conf.d/README
+lxc-1.1.2/config/yum/
+lxc-1.1.2/config/yum/Makefile.in
+lxc-1.1.2/config/yum/Makefile.am
+lxc-1.1.2/config/yum/lxc-patch.py
+lxc-1.1.2/config/sysconfig/
+lxc-1.1.2/config/sysconfig/Makefile.in
+lxc-1.1.2/config/sysconfig/Makefile.am
+lxc-1.1.2/config/sysconfig/lxc.in
+lxc-1.1.2/config/sysconfig/lxc
+lxc-1.1.2/config/depcomp
+lxc-1.1.2/doc/
+lxc-1.1.2/doc/ja/
+lxc-1.1.2/doc/ja/legacy/
+lxc-1.1.2/doc/ja/legacy/lxc-ls.sgml.in
+lxc-1.1.2/doc/ja/Makefile.in
+lxc-1.1.2/doc/ja/Makefile.am
+lxc-1.1.2/doc/ja/lxc-attach.sgml.in
+lxc-1.1.2/doc/ja/lxc-autostart.sgml.in
+lxc-1.1.2/doc/ja/lxc-cgroup.sgml.in
+lxc-1.1.2/doc/ja/lxc-checkconfig.sgml.in
+lxc-1.1.2/doc/ja/lxc-checkpoint.sgml.in
+lxc-1.1.2/doc/ja/lxc-clone.sgml.in
+lxc-1.1.2/doc/ja/lxc-config.sgml.in
+lxc-1.1.2/doc/ja/lxc-console.sgml.in
+lxc-1.1.2/doc/ja/lxc-create.sgml.in
+lxc-1.1.2/doc/ja/lxc-destroy.sgml.in
+lxc-1.1.2/doc/ja/lxc-device.sgml.in
+lxc-1.1.2/doc/ja/lxc-execute.sgml.in
+lxc-1.1.2/doc/ja/lxc-freeze.sgml.in
+lxc-1.1.2/doc/ja/lxc-info.sgml.in
+lxc-1.1.2/doc/ja/lxc-ls.sgml.in
+lxc-1.1.2/doc/ja/lxc-monitor.sgml.in
+lxc-1.1.2/doc/ja/lxc-snapshot.sgml.in
+lxc-1.1.2/doc/ja/lxc-start-ephemeral.sgml.in
+lxc-1.1.2/doc/ja/lxc-start.sgml.in
+lxc-1.1.2/doc/ja/lxc-stop.sgml.in
+lxc-1.1.2/doc/ja/lxc-top.sgml.in
+lxc-1.1.2/doc/ja/lxc-unfreeze.sgml.in
+lxc-1.1.2/doc/ja/lxc-unshare.sgml.in
+lxc-1.1.2/doc/ja/lxc-user-nic.sgml.in
+lxc-1.1.2/doc/ja/lxc-usernsexec.sgml.in
+lxc-1.1.2/doc/ja/lxc-wait.sgml.in
+lxc-1.1.2/doc/ja/lxc.conf.sgml.in
+lxc-1.1.2/doc/ja/lxc.container.conf.sgml.in
+lxc-1.1.2/doc/ja/lxc.system.conf.sgml.in
+lxc-1.1.2/doc/ja/lxc-usernet.sgml.in
+lxc-1.1.2/doc/ja/lxc.sgml.in
+lxc-1.1.2/doc/ja/common_options.sgml.in
+lxc-1.1.2/doc/ja/see_also.sgml.in
+lxc-1.1.2/doc/ja/FAQ.txt
+lxc-1.1.2/doc/legacy/
+lxc-1.1.2/doc/legacy/lxc-ls.sgml.in
+lxc-1.1.2/doc/Makefile.in
+lxc-1.1.2/doc/Makefile.am
+lxc-1.1.2/doc/lxc-attach.sgml.in
+lxc-1.1.2/doc/lxc-autostart.sgml.in
+lxc-1.1.2/doc/lxc-cgroup.sgml.in
+lxc-1.1.2/doc/lxc-checkconfig.sgml.in
+lxc-1.1.2/doc/lxc-checkpoint.sgml.in
+lxc-1.1.2/doc/lxc-clone.sgml.in
+lxc-1.1.2/doc/lxc-config.sgml.in
+lxc-1.1.2/doc/lxc-console.sgml.in
+lxc-1.1.2/doc/lxc-create.sgml.in
+lxc-1.1.2/doc/lxc-destroy.sgml.in
+lxc-1.1.2/doc/lxc-device.sgml.in
+lxc-1.1.2/doc/lxc-execute.sgml.in
+lxc-1.1.2/doc/lxc-freeze.sgml.in
+lxc-1.1.2/doc/lxc-info.sgml.in
+lxc-1.1.2/doc/lxc-ls.sgml.in
+lxc-1.1.2/doc/lxc-monitor.sgml.in
+lxc-1.1.2/doc/lxc-snapshot.sgml.in
+lxc-1.1.2/doc/lxc-start-ephemeral.sgml.in
+lxc-1.1.2/doc/lxc-start.sgml.in
+lxc-1.1.2/doc/lxc-stop.sgml.in
+lxc-1.1.2/doc/lxc-top.sgml.in
+lxc-1.1.2/doc/lxc-unfreeze.sgml.in
+lxc-1.1.2/doc/lxc-unshare.sgml.in
+lxc-1.1.2/doc/lxc-user-nic.sgml.in
+lxc-1.1.2/doc/lxc-usernsexec.sgml.in
+lxc-1.1.2/doc/lxc-wait.sgml.in
+lxc-1.1.2/doc/lxc.conf.sgml.in
+lxc-1.1.2/doc/lxc.container.conf.sgml.in
+lxc-1.1.2/doc/lxc.system.conf.sgml.in
+lxc-1.1.2/doc/lxc-usernet.sgml.in
+lxc-1.1.2/doc/lxc.sgml.in
+lxc-1.1.2/doc/common_options.sgml.in
+lxc-1.1.2/doc/see_also.sgml.in
+lxc-1.1.2/doc/lxc.container.conf
+lxc-1.1.2/doc/lxc.system.conf
+lxc-1.1.2/doc/FAQ.txt
+lxc-1.1.2/doc/examples/
+lxc-1.1.2/doc/examples/Makefile.in
+lxc-1.1.2/doc/examples/Makefile.am
+lxc-1.1.2/doc/examples/lxc-macvlan.conf.in
+lxc-1.1.2/doc/examples/lxc-vlan.conf.in
+lxc-1.1.2/doc/examples/lxc-no-netns.conf.in
+lxc-1.1.2/doc/examples/lxc-empty-netns.conf.in
+lxc-1.1.2/doc/examples/lxc-phys.conf.in
+lxc-1.1.2/doc/examples/lxc-veth.conf.in
+lxc-1.1.2/doc/examples/lxc-complex.conf.in
+lxc-1.1.2/doc/examples/seccomp-v1.conf
+lxc-1.1.2/doc/examples/seccomp-v2-blacklist.conf
+lxc-1.1.2/doc/examples/seccomp-v2.conf
+lxc-1.1.2/doc/rootfs/
+lxc-1.1.2/doc/rootfs/Makefile.in
+lxc-1.1.2/doc/rootfs/Makefile.am
+lxc-1.1.2/doc/rootfs/README
+lxc-1.1.2/doc/api/
+lxc-1.1.2/doc/api/Makefile.in
+lxc-1.1.2/doc/api/Makefile.am
+lxc-1.1.2/doc/api/Doxyfile
+lxc-1.1.2/src/
+lxc-1.1.2/src/lxc/
+lxc-1.1.2/src/lxc/legacy/
+lxc-1.1.2/src/lxc/legacy/lxc-ls.in
+lxc-1.1.2/src/lxc/lsm/
+lxc-1.1.2/src/lxc/lsm/nop.c
+lxc-1.1.2/src/lxc/lsm/lsm.h
+lxc-1.1.2/src/lxc/lsm/lsm.c
+lxc-1.1.2/src/lxc/lsm/apparmor.c
+lxc-1.1.2/src/lxc/lsm/selinux.c
+lxc-1.1.2/src/lxc/Makefile.in
+lxc-1.1.2/src/lxc/Makefile.am
+lxc-1.1.2/src/lxc/lxc-checkconfig.in
+lxc-1.1.2/src/lxc/lxc-ls.in
+lxc-1.1.2/src/lxc/lxc-start-ephemeral.in
+lxc-1.1.2/src/lxc/lxc.functions.in
+lxc-1.1.2/src/lxc/version.h.in
+lxc-1.1.2/src/lxc/arguments.h
+lxc-1.1.2/src/lxc/attach.h
+lxc-1.1.2/src/lxc/bdev.h
+lxc-1.1.2/src/lxc/caps.h
+lxc-1.1.2/src/lxc/cgroup.h
+lxc-1.1.2/src/lxc/conf.h
+lxc-1.1.2/src/lxc/console.h
+lxc-1.1.2/src/lxc/error.h
+lxc-1.1.2/src/lxc/list.h
+lxc-1.1.2/src/lxc/log.h
+lxc-1.1.2/src/lxc/lxc.h
+lxc-1.1.2/src/lxc/lxc-btrfs.h
+lxc-1.1.2/src/lxc/lxclock.h
+lxc-1.1.2/src/lxc/monitor.h
+lxc-1.1.2/src/lxc/namespace.h
+lxc-1.1.2/src/lxc/start.h
+lxc-1.1.2/src/lxc/state.h
+lxc-1.1.2/src/lxc/utils.h
+lxc-1.1.2/src/lxc/attach_options.h
+lxc-1.1.2/src/lxc/lxccontainer.h
+lxc-1.1.2/src/lxc/version.h
+lxc-1.1.2/src/lxc/lxc_init.c
+lxc-1.1.2/src/lxc/error.c
+lxc-1.1.2/src/lxc/log.c
+lxc-1.1.2/src/lxc/utils.c
+lxc-1.1.2/src/lxc/caps.c
+lxc-1.1.2/src/lxc/arguments.c
+lxc-1.1.2/src/lxc/bdev.c
+lxc-1.1.2/src/lxc/commands.c
+lxc-1.1.2/src/lxc/commands.h
+lxc-1.1.2/src/lxc/start.c
+lxc-1.1.2/src/lxc/execute.c
+lxc-1.1.2/src/lxc/monitor.c
+lxc-1.1.2/src/lxc/console.c
+lxc-1.1.2/src/lxc/freezer.c
+lxc-1.1.2/src/lxc/parse.c
+lxc-1.1.2/src/lxc/parse.h
+lxc-1.1.2/src/lxc/cgfs.c
+lxc-1.1.2/src/lxc/cgroup.c
+lxc-1.1.2/src/lxc/sync.c
+lxc-1.1.2/src/lxc/sync.h
+lxc-1.1.2/src/lxc/namespace.c
+lxc-1.1.2/src/lxc/conf.c
+lxc-1.1.2/src/lxc/confile.c
+lxc-1.1.2/src/lxc/confile.h
+lxc-1.1.2/src/lxc/state.c
+lxc-1.1.2/src/lxc/attach.c
+lxc-1.1.2/src/lxc/network.c
+lxc-1.1.2/src/lxc/network.h
+lxc-1.1.2/src/lxc/nl.c
+lxc-1.1.2/src/lxc/nl.h
+lxc-1.1.2/src/lxc/rtnl.c
+lxc-1.1.2/src/lxc/rtnl.h
+lxc-1.1.2/src/lxc/genl.c
+lxc-1.1.2/src/lxc/genl.h
+lxc-1.1.2/src/lxc/lxcseccomp.h
+lxc-1.1.2/src/lxc/mainloop.c
+lxc-1.1.2/src/lxc/mainloop.h
+lxc-1.1.2/src/lxc/af_unix.c
+lxc-1.1.2/src/lxc/af_unix.h
+lxc-1.1.2/src/lxc/lxcutmp.c
+lxc-1.1.2/src/lxc/lxcutmp.h
+lxc-1.1.2/src/lxc/lxclock.c
+lxc-1.1.2/src/lxc/lxccontainer.c
+lxc-1.1.2/src/lxc/cgmanager.c
+lxc-1.1.2/src/lxc/seccomp.c
+lxc-1.1.2/src/lxc/lxc_attach.c
+lxc-1.1.2/src/lxc/lxc_autostart.c
+lxc-1.1.2/src/lxc/lxc_cgroup.c
+lxc-1.1.2/src/lxc/lxc_checkpoint.c
+lxc-1.1.2/src/lxc/lxc_clone.c
+lxc-1.1.2/src/lxc/lxc_config.c
+lxc-1.1.2/src/lxc/lxc_console.c
+lxc-1.1.2/src/lxc/lxc_create.c
+lxc-1.1.2/src/lxc/lxc_destroy.c
+lxc-1.1.2/src/lxc/lxc_device.c
+lxc-1.1.2/src/lxc/lxc_execute.c
+lxc-1.1.2/src/lxc/lxc_freeze.c
+lxc-1.1.2/src/lxc/lxc_info.c
+lxc-1.1.2/src/lxc/lxc_monitor.c
+lxc-1.1.2/src/lxc/lxc_monitord.c
+lxc-1.1.2/src/lxc/lxc_snapshot.c
+lxc-1.1.2/src/lxc/lxc_start.c
+lxc-1.1.2/src/lxc/lxc_stop.c
+lxc-1.1.2/src/lxc/lxc_top.c
+lxc-1.1.2/src/lxc/lxc_unfreeze.c
+lxc-1.1.2/src/lxc/lxc_unshare.c
+lxc-1.1.2/src/lxc/lxc_user_nic.c
+lxc-1.1.2/src/lxc/lxc_usernsexec.c
+lxc-1.1.2/src/lxc/lxc_wait.c
+lxc-1.1.2/src/lxc/lxc-ls
+lxc-1.1.2/src/lxc/lxc-restore-net
+lxc-1.1.2/src/lxc/lxc-top.lua
+lxc-1.1.2/src/Makefile.in
+lxc-1.1.2/src/Makefile.am
+lxc-1.1.2/src/config.h.in
+lxc-1.1.2/src/include/
+lxc-1.1.2/src/include/ifaddrs.h
+lxc-1.1.2/src/include/openpty.h
+lxc-1.1.2/src/include/lxcmntent.h
+lxc-1.1.2/src/include/getline.h
+lxc-1.1.2/src/include/getline.c
+lxc-1.1.2/src/include/ifaddrs.c
+lxc-1.1.2/src/include/openpty.c
+lxc-1.1.2/src/include/lxcmntent.c
+lxc-1.1.2/src/tests/
+lxc-1.1.2/src/tests/Makefile.in
+lxc-1.1.2/src/tests/Makefile.am
+lxc-1.1.2/src/tests/lxc-test-usernic.in
+lxc-1.1.2/src/tests/aa.c
+lxc-1.1.2/src/tests/attach.c
+lxc-1.1.2/src/tests/cgpath.c
+lxc-1.1.2/src/tests/clonetest.c
+lxc-1.1.2/src/tests/concurrent.c
+lxc-1.1.2/src/tests/console.c
+lxc-1.1.2/src/tests/containertests.c
+lxc-1.1.2/src/tests/createtest.c
+lxc-1.1.2/src/tests/destroytest.c
+lxc-1.1.2/src/tests/device_add_remove.c
+lxc-1.1.2/src/tests/get_item.c
+lxc-1.1.2/src/tests/getkeys.c
+lxc-1.1.2/src/tests/list.c
+lxc-1.1.2/src/tests/locktests.c
+lxc-1.1.2/src/tests/lxcpath.c
+lxc-1.1.2/src/tests/may_control.c
+lxc-1.1.2/src/tests/reboot.c
+lxc-1.1.2/src/tests/saveconfig.c
+lxc-1.1.2/src/tests/shutdowntest.c
+lxc-1.1.2/src/tests/snapshot.c
+lxc-1.1.2/src/tests/startone.c
+lxc-1.1.2/src/tests/lxc-test-autostart
+lxc-1.1.2/src/tests/lxc-test-apparmor-mount
+lxc-1.1.2/src/tests/lxc-test-checkpoint-restore
+lxc-1.1.2/src/tests/lxc-test-cloneconfig
+lxc-1.1.2/src/tests/lxc-test-createconfig
+lxc-1.1.2/src/tests/lxc-test-ubuntu
+lxc-1.1.2/src/tests/lxc-test-unpriv
+lxc-1.1.2/src/python-lxc/
+lxc-1.1.2/src/python-lxc/examples/
+lxc-1.1.2/src/python-lxc/examples/api_test.py
+lxc-1.1.2/src/python-lxc/examples/pyconsole.py
+lxc-1.1.2/src/python-lxc/examples/pyconsole-vte.py
+lxc-1.1.2/src/python-lxc/lxc/
+lxc-1.1.2/src/python-lxc/lxc/__init__.py
+lxc-1.1.2/src/python-lxc/Makefile.in
+lxc-1.1.2/src/python-lxc/Makefile.am
+lxc-1.1.2/src/python-lxc/setup.py.in
+lxc-1.1.2/src/python-lxc/lxc.c
+lxc-1.1.2/src/lua-lxc/
+lxc-1.1.2/src/lua-lxc/test/
+lxc-1.1.2/src/lua-lxc/test/apitest.lua
+lxc-1.1.2/src/lua-lxc/Makefile.in
+lxc-1.1.2/src/lua-lxc/Makefile.am
+lxc-1.1.2/src/lua-lxc/core.c
+lxc-1.1.2/src/lua-lxc/lxc.lua
+lxc-1.1.2/INSTALL
+lxc-1.1.2/NEWS
+lxc-1.1.2/README
+lxc-1.1.2/AUTHORS
+lxc-1.1.2/ChangeLog
+lxc-1.1.2/Makefile.in
+lxc-1.1.2/Makefile.am
+lxc-1.1.2/configure
+lxc-1.1.2/configure.ac
+lxc-1.1.2/aclocal.m4
+lxc-1.1.2/lxc.pc.in
+lxc-1.1.2/lxc.spec.in
+lxc-1.1.2/COPYING
+lxc-1.1.2/autogen.sh
+lxc-1.1.2/lxc.spec
+lxc-1.1.2/CONTRIBUTING
+lxc-1.1.2/MAINTAINERS
+lxc-1.1.2/templates/
+lxc-1.1.2/templates/Makefile.in
+lxc-1.1.2/templates/Makefile.am
+lxc-1.1.2/templates/lxc-alpine.in
+lxc-1.1.2/templates/lxc-altlinux.in
+lxc-1.1.2/templates/lxc-archlinux.in
+lxc-1.1.2/templates/lxc-busybox.in
+lxc-1.1.2/templates/lxc-centos.in
+lxc-1.1.2/templates/lxc-cirros.in
+lxc-1.1.2/templates/lxc-debian.in
+lxc-1.1.2/templates/lxc-download.in
+lxc-1.1.2/templates/lxc-fedora.in
+lxc-1.1.2/templates/lxc-gentoo.in
+lxc-1.1.2/templates/lxc-openmandriva.in
+lxc-1.1.2/templates/lxc-opensuse.in
+lxc-1.1.2/templates/lxc-oracle.in
+lxc-1.1.2/templates/lxc-plamo.in
+lxc-1.1.2/templates/lxc-sshd.in
+lxc-1.1.2/templates/lxc-ubuntu.in
+lxc-1.1.2/templates/lxc-ubuntu-cloud.in
+lxc-1.1.2/hooks/
+lxc-1.1.2/hooks/Makefile.in
+lxc-1.1.2/hooks/Makefile.am
+lxc-1.1.2/hooks/clonehostname
+lxc-1.1.2/hooks/mountecryptfsroot
+lxc-1.1.2/hooks/ubuntu-cloud-prep
+lxc-1.1.2/hooks/squid-deb-proxy-client
+
+configure --prefix=/opt/Lxc/1.1.2/Debian7/Linux/amd64 
+
+checking for pkg-config... no
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking for style of include used by make... GNU
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking host distribution... debian
+checking for init system type... upstart,systemd
+checking for docbook2x-man... no
+checking for doxygen... no
+checking for aa_change_profile in -lapparmor... no
+checking for gnutls_hash_fast in -lgnutls... no
+checking for setexeccon_raw in -lselinux... no
+checking for seccomp_init in -lseccomp... no
+checking for cgmanager_create in -lcgmanager... no
+checking for get_pid_cgroup_abs_sync... checking for library containing cgmanager_get_pid_cgroup_abs_sync... no
+no
+checking for cap_init in -lcap... yes
+checking for cap_set_proc in -lcap... yes
+checking for cap_set_proc in -lcap... (cached) yes
+checking for scmp_filter_ctx... no
+checking whether seccomp_syscall_resolve_name_arch is declared... no
+checking for PYTHONDEV... no
+checking for LUA... no
+checking for LUA... no
+checking for LUA... no
+checking Whether to place logfiles in container config path... no
+checking for linux/unistd.h... yes
+checking for linux/netlink.h... yes
+checking for linux/genetlink.h... yes
+checking for bionic libc... no
+checking whether PR_CAPBSET_DROP is declared... yes
+checking sys/signalfd.h usability... yes
+checking sys/signalfd.h presence... yes
+checking for sys/signalfd.h... yes
+checking pty.h usability... yes
+checking pty.h presence... yes
+checking for pty.h... yes
+checking ifaddrs.h usability... yes
+checking ifaddrs.h presence... yes
+checking for ifaddrs.h... yes
+checking sys/capability.h usability... yes
+checking sys/capability.h presence... yes
+checking for sys/capability.h... yes
+checking sys/personality.h usability... yes
+checking sys/personality.h presence... yes
+checking for sys/personality.h... yes
+checking utmpx.h usability... yes
+checking utmpx.h presence... yes
+checking for utmpx.h... yes
+checking sys/timerfd.h usability... yes
+checking sys/timerfd.h presence... yes
+checking for sys/timerfd.h... yes
+checking for setns... no
+checking for pivot_root... yes
+checking for sethostname... yes
+checking for unshare... yes
+checking for rand_r... yes
+checking for confstr... yes
+checking for faccessat... yes
+checking for main in -lpthread... yes
+checking for pthread_atfork... yes
+checking for statvfs... yes
+checking for openpty in -lutil... yes
+checking for openpty... yes
+checking for hasmntopt... yes
+checking for setmntent... yes
+checking for endmntent... yes
+checking for utmpxname... yes
+checking for getline... yes
+checking for fgetln... no
+checking for library containing sem_open... none required
+checking for library containing clock_gettime... -lrt
+checking whether gcc needs -traditional... no
+checking for a sed that does not truncate output... /bin/sed
+checking for TLS... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating lxc.pc
+config.status: creating lxc.spec
+config.status: creating config/Makefile
+config.status: creating config/apparmor/Makefile
+config.status: creating config/selinux/Makefile
+config.status: creating config/bash/Makefile
+config.status: creating config/bash/lxc
+config.status: creating config/init/Makefile
+config.status: creating config/init/common/Makefile
+config.status: creating config/init/common/lxc-containers
+config.status: creating config/init/common/lxc-net
+config.status: creating config/init/systemd/Makefile
+config.status: creating config/init/systemd/lxc.service
+config.status: creating config/init/systemd/lxc-net.service
+config.status: creating config/init/sysvinit/Makefile
+config.status: creating config/init/sysvinit/lxc-containers
+config.status: creating config/init/sysvinit/lxc-net
+config.status: creating config/init/upstart/lxc-net.conf
+config.status: creating config/init/upstart/Makefile
+config.status: creating config/etc/Makefile
+config.status: creating config/templates/Makefile
+config.status: creating config/templates/archlinux.common.conf
+config.status: creating config/templates/archlinux.userns.conf
+config.status: creating config/templates/centos.common.conf
+config.status: creating config/templates/centos.userns.conf
+config.status: creating config/templates/common.conf
+config.status: creating config/templates/common.conf.d/Makefile
+config.status: creating config/templates/debian.common.conf
+config.status: creating config/templates/debian.userns.conf
+config.status: creating config/templates/fedora.common.conf
+config.status: creating config/templates/fedora.userns.conf
+config.status: creating config/templates/gentoo.common.conf
+config.status: creating config/templates/gentoo.moresecure.conf
+config.status: creating config/templates/gentoo.userns.conf
+config.status: creating config/templates/opensuse.common.conf
+config.status: creating config/templates/opensuse.userns.conf
+config.status: creating config/templates/oracle.common.conf
+config.status: creating config/templates/oracle.userns.conf
+config.status: creating config/templates/plamo.common.conf
+config.status: creating config/templates/plamo.userns.conf
+config.status: creating config/templates/ubuntu-cloud.common.conf
+config.status: creating config/templates/ubuntu-cloud.lucid.conf
+config.status: creating config/templates/ubuntu-cloud.userns.conf
+config.status: creating config/templates/ubuntu.common.conf
+config.status: creating config/templates/ubuntu.lucid.conf
+config.status: creating config/templates/ubuntu.userns.conf
+config.status: creating config/templates/openwrt.common.conf
+config.status: creating config/templates/userns.conf
+config.status: creating config/yum/Makefile
+config.status: creating config/sysconfig/Makefile
+config.status: creating config/sysconfig/lxc
+config.status: creating doc/Makefile
+config.status: creating doc/api/Makefile
+config.status: creating doc/legacy/lxc-ls.sgml
+config.status: creating doc/lxc-attach.sgml
+config.status: creating doc/lxc-autostart.sgml
+config.status: creating doc/lxc-cgroup.sgml
+config.status: creating doc/lxc-checkconfig.sgml
+config.status: creating doc/lxc-checkpoint.sgml
+config.status: creating doc/lxc-clone.sgml
+config.status: creating doc/lxc-config.sgml
+config.status: creating doc/lxc-console.sgml
+config.status: creating doc/lxc-create.sgml
+config.status: creating doc/lxc-destroy.sgml
+config.status: creating doc/lxc-device.sgml
+config.status: creating doc/lxc-execute.sgml
+config.status: creating doc/lxc-freeze.sgml
+config.status: creating doc/lxc-info.sgml
+config.status: creating doc/lxc-ls.sgml
+config.status: creating doc/lxc-monitor.sgml
+config.status: creating doc/lxc-snapshot.sgml
+config.status: creating doc/lxc-start-ephemeral.sgml
+config.status: creating doc/lxc-start.sgml
+config.status: creating doc/lxc-stop.sgml
+config.status: creating doc/lxc-top.sgml
+config.status: creating doc/lxc-unfreeze.sgml
+config.status: creating doc/lxc-unshare.sgml
+config.status: creating doc/lxc-user-nic.sgml
+config.status: creating doc/lxc-usernsexec.sgml
+config.status: creating doc/lxc-wait.sgml
+config.status: creating doc/lxc.conf.sgml
+config.status: creating doc/lxc.container.conf.sgml
+config.status: creating doc/lxc.system.conf.sgml
+config.status: creating doc/lxc-usernet.sgml
+config.status: creating doc/lxc.sgml
+config.status: creating doc/common_options.sgml
+config.status: creating doc/see_also.sgml
+config.status: creating doc/rootfs/Makefile
+config.status: creating doc/examples/Makefile
+config.status: creating doc/examples/lxc-macvlan.conf
+config.status: creating doc/examples/lxc-vlan.conf
+config.status: creating doc/examples/lxc-no-netns.conf
+config.status: creating doc/examples/lxc-empty-netns.conf
+config.status: creating doc/examples/lxc-phys.conf
+config.status: creating doc/examples/lxc-veth.conf
+config.status: creating doc/examples/lxc-complex.conf
+config.status: creating doc/ja/Makefile
+config.status: creating doc/ja/legacy/lxc-ls.sgml
+config.status: creating doc/ja/lxc-attach.sgml
+config.status: creating doc/ja/lxc-autostart.sgml
+config.status: creating doc/ja/lxc-cgroup.sgml
+config.status: creating doc/ja/lxc-checkconfig.sgml
+config.status: creating doc/ja/lxc-checkpoint.sgml
+config.status: creating doc/ja/lxc-clone.sgml
+config.status: creating doc/ja/lxc-config.sgml
+config.status: creating doc/ja/lxc-console.sgml
+config.status: creating doc/ja/lxc-create.sgml
+config.status: creating doc/ja/lxc-destroy.sgml
+config.status: creating doc/ja/lxc-device.sgml
+config.status: creating doc/ja/lxc-execute.sgml
+config.status: creating doc/ja/lxc-freeze.sgml
+config.status: creating doc/ja/lxc-info.sgml
+config.status: creating doc/ja/lxc-ls.sgml
+config.status: creating doc/ja/lxc-monitor.sgml
+config.status: creating doc/ja/lxc-snapshot.sgml
+config.status: creating doc/ja/lxc-start-ephemeral.sgml
+config.status: creating doc/ja/lxc-start.sgml
+config.status: creating doc/ja/lxc-stop.sgml
+config.status: creating doc/ja/lxc-top.sgml
+config.status: creating doc/ja/lxc-unfreeze.sgml
+config.status: creating doc/ja/lxc-unshare.sgml
+config.status: creating doc/ja/lxc-user-nic.sgml
+config.status: creating doc/ja/lxc-usernsexec.sgml
+config.status: creating doc/ja/lxc-wait.sgml
+config.status: creating doc/ja/lxc.conf.sgml
+config.status: creating doc/ja/lxc.container.conf.sgml
+config.status: creating doc/ja/lxc.system.conf.sgml
+config.status: creating doc/ja/lxc-usernet.sgml
+config.status: creating doc/ja/lxc.sgml
+config.status: creating doc/ja/common_options.sgml
+config.status: creating doc/ja/see_also.sgml
+config.status: creating hooks/Makefile
+config.status: creating templates/Makefile
+config.status: creating templates/lxc-alpine
+config.status: creating templates/lxc-altlinux
+config.status: creating templates/lxc-archlinux
+config.status: creating templates/lxc-busybox
+config.status: creating templates/lxc-centos
+config.status: creating templates/lxc-cirros
+config.status: creating templates/lxc-debian
+config.status: creating templates/lxc-download
+config.status: creating templates/lxc-fedora
+config.status: creating templates/lxc-gentoo
+config.status: creating templates/lxc-openmandriva
+config.status: creating templates/lxc-opensuse
+config.status: creating templates/lxc-oracle
+config.status: creating templates/lxc-plamo
+config.status: creating templates/lxc-sshd
+config.status: creating templates/lxc-ubuntu
+config.status: creating templates/lxc-ubuntu-cloud
+config.status: creating src/Makefile
+config.status: creating src/lxc/Makefile
+config.status: creating src/lxc/lxc-checkconfig
+config.status: creating src/lxc/lxc-ls
+config.status: creating src/lxc/lxc-start-ephemeral
+config.status: creating src/lxc/legacy/lxc-ls
+config.status: creating src/lxc/lxc.functions
+config.status: creating src/lxc/version.h
+config.status: creating src/python-lxc/Makefile
+config.status: creating src/python-lxc/setup.py
+config.status: creating src/lua-lxc/Makefile
+config.status: creating src/tests/Makefile
+config.status: creating src/tests/lxc-test-usernic
+config.status: creating src/config.h
+config.status: linking config/etc/default.conf.unknown to config/etc/default.conf
+config.status: executing depfiles commands
+config.status: executing default commands
+
+----------------------------
+Environment:
+ - compiler: gcc
+ - distribution: debian
+ - init script type(s): upstart,systemd
+ - rpath: no
+ - GnuTLS: no
+ - Bash integration: yes
+
+Security features:
+ - Apparmor: no
+ - Linux capabilities: yes
+ - seccomp: no
+ - SELinux: no
+ - cgmanager: no
+
+Bindings:
+ - lua: no
+ - python3: no
+
+Documentation:
+ - examples: yes
+ - API documentation: no
+ - user documentation: no
+
+Debugging:
+ - tests: no
+ - mutex debugging: no
+
+Paths:
+ - Logs in configpath: no
+
+lxc.pre-cook
+
+
+make
+
+Making all in config
+make[1]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config'
+Making all in apparmor
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/apparmor'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/apparmor'
+Making all in bash
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/bash'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/bash'
+Making all in etc
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/etc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/etc'
+Making all in init
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init'
+Making all in common
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/common'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/common'
+Making all in systemd
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/systemd'
+make  all-am
+make[4]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/systemd'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/systemd'
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/systemd'
+Making all in sysvinit
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/sysvinit'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/sysvinit'
+Making all in upstart
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/upstart'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/upstart'
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init'
+make[3]: Nothing to be done for `all-am'.
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init'
+Making all in selinux
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/selinux'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/selinux'
+Making all in templates
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/templates'
+Making all in common.conf.d
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/templates/common.conf.d'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/templates/common.conf.d'
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/templates'
+make[3]: Nothing to be done for `all-am'.
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/templates'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/templates'
+Making all in yum
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/yum'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/yum'
+Making all in sysconfig
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/sysconfig'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/sysconfig'
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config'
+make[1]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config'
+Making all in src
+make[1]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src'
+make  all-recursive
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src'
+Making all in lxc
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/lxc'
+depbase=`echo lxc_attach.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+	gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -MT lxc_attach.o -MD -MP -MF $depbase.Tpo -c -o lxc_attach.o lxc_attach.c &&\
+	mv -f $depbase.Tpo $depbase.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-arguments.o -MD -MP -MF .deps/liblxc_so-arguments.Tpo -c -o liblxc_so-arguments.o `test -f 'arguments.c' || echo './'`arguments.c
+mv -f .deps/liblxc_so-arguments.Tpo .deps/liblxc_so-arguments.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-bdev.o -MD -MP -MF .deps/liblxc_so-bdev.Tpo -c -o liblxc_so-bdev.o `test -f 'bdev.c' || echo './'`bdev.c
+mv -f .deps/liblxc_so-bdev.Tpo .deps/liblxc_so-bdev.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-commands.o -MD -MP -MF .deps/liblxc_so-commands.Tpo -c -o liblxc_so-commands.o `test -f 'commands.c' || echo './'`commands.c
+mv -f .deps/liblxc_so-commands.Tpo .deps/liblxc_so-commands.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-start.o -MD -MP -MF .deps/liblxc_so-start.Tpo -c -o liblxc_so-start.o `test -f 'start.c' || echo './'`start.c
+mv -f .deps/liblxc_so-start.Tpo .deps/liblxc_so-start.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-execute.o -MD -MP -MF .deps/liblxc_so-execute.Tpo -c -o liblxc_so-execute.o `test -f 'execute.c' || echo './'`execute.c
+mv -f .deps/liblxc_so-execute.Tpo .deps/liblxc_so-execute.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-monitor.o -MD -MP -MF .deps/liblxc_so-monitor.Tpo -c -o liblxc_so-monitor.o `test -f 'monitor.c' || echo './'`monitor.c
+mv -f .deps/liblxc_so-monitor.Tpo .deps/liblxc_so-monitor.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-console.o -MD -MP -MF .deps/liblxc_so-console.Tpo -c -o liblxc_so-console.o `test -f 'console.c' || echo './'`console.c
+mv -f .deps/liblxc_so-console.Tpo .deps/liblxc_so-console.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-freezer.o -MD -MP -MF .deps/liblxc_so-freezer.Tpo -c -o liblxc_so-freezer.o `test -f 'freezer.c' || echo './'`freezer.c
+mv -f .deps/liblxc_so-freezer.Tpo .deps/liblxc_so-freezer.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-error.o -MD -MP -MF .deps/liblxc_so-error.Tpo -c -o liblxc_so-error.o `test -f 'error.c' || echo './'`error.c
+mv -f .deps/liblxc_so-error.Tpo .deps/liblxc_so-error.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-parse.o -MD -MP -MF .deps/liblxc_so-parse.Tpo -c -o liblxc_so-parse.o `test -f 'parse.c' || echo './'`parse.c
+mv -f .deps/liblxc_so-parse.Tpo .deps/liblxc_so-parse.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-cgfs.o -MD -MP -MF .deps/liblxc_so-cgfs.Tpo -c -o liblxc_so-cgfs.o `test -f 'cgfs.c' || echo './'`cgfs.c
+mv -f .deps/liblxc_so-cgfs.Tpo .deps/liblxc_so-cgfs.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-cgroup.o -MD -MP -MF .deps/liblxc_so-cgroup.Tpo -c -o liblxc_so-cgroup.o `test -f 'cgroup.c' || echo './'`cgroup.c
+mv -f .deps/liblxc_so-cgroup.Tpo .deps/liblxc_so-cgroup.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-utils.o -MD -MP -MF .deps/liblxc_so-utils.Tpo -c -o liblxc_so-utils.o `test -f 'utils.c' || echo './'`utils.c
+mv -f .deps/liblxc_so-utils.Tpo .deps/liblxc_so-utils.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-sync.o -MD -MP -MF .deps/liblxc_so-sync.Tpo -c -o liblxc_so-sync.o `test -f 'sync.c' || echo './'`sync.c
+mv -f .deps/liblxc_so-sync.Tpo .deps/liblxc_so-sync.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-namespace.o -MD -MP -MF .deps/liblxc_so-namespace.Tpo -c -o liblxc_so-namespace.o `test -f 'namespace.c' || echo './'`namespace.c
+mv -f .deps/liblxc_so-namespace.Tpo .deps/liblxc_so-namespace.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-conf.o -MD -MP -MF .deps/liblxc_so-conf.Tpo -c -o liblxc_so-conf.o `test -f 'conf.c' || echo './'`conf.c
+mv -f .deps/liblxc_so-conf.Tpo .deps/liblxc_so-conf.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-confile.o -MD -MP -MF .deps/liblxc_so-confile.Tpo -c -o liblxc_so-confile.o `test -f 'confile.c' || echo './'`confile.c
+mv -f .deps/liblxc_so-confile.Tpo .deps/liblxc_so-confile.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-state.o -MD -MP -MF .deps/liblxc_so-state.Tpo -c -o liblxc_so-state.o `test -f 'state.c' || echo './'`state.c
+mv -f .deps/liblxc_so-state.Tpo .deps/liblxc_so-state.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-log.o -MD -MP -MF .deps/liblxc_so-log.Tpo -c -o liblxc_so-log.o `test -f 'log.c' || echo './'`log.c
+mv -f .deps/liblxc_so-log.Tpo .deps/liblxc_so-log.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-attach.o -MD -MP -MF .deps/liblxc_so-attach.Tpo -c -o liblxc_so-attach.o `test -f 'attach.c' || echo './'`attach.c
+mv -f .deps/liblxc_so-attach.Tpo .deps/liblxc_so-attach.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-network.o -MD -MP -MF .deps/liblxc_so-network.Tpo -c -o liblxc_so-network.o `test -f 'network.c' || echo './'`network.c
+mv -f .deps/liblxc_so-network.Tpo .deps/liblxc_so-network.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-nl.o -MD -MP -MF .deps/liblxc_so-nl.Tpo -c -o liblxc_so-nl.o `test -f 'nl.c' || echo './'`nl.c
+mv -f .deps/liblxc_so-nl.Tpo .deps/liblxc_so-nl.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-rtnl.o -MD -MP -MF .deps/liblxc_so-rtnl.Tpo -c -o liblxc_so-rtnl.o `test -f 'rtnl.c' || echo './'`rtnl.c
+mv -f .deps/liblxc_so-rtnl.Tpo .deps/liblxc_so-rtnl.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-genl.o -MD -MP -MF .deps/liblxc_so-genl.Tpo -c -o liblxc_so-genl.o `test -f 'genl.c' || echo './'`genl.c
+mv -f .deps/liblxc_so-genl.Tpo .deps/liblxc_so-genl.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-caps.o -MD -MP -MF .deps/liblxc_so-caps.Tpo -c -o liblxc_so-caps.o `test -f 'caps.c' || echo './'`caps.c
+mv -f .deps/liblxc_so-caps.Tpo .deps/liblxc_so-caps.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-mainloop.o -MD -MP -MF .deps/liblxc_so-mainloop.Tpo -c -o liblxc_so-mainloop.o `test -f 'mainloop.c' || echo './'`mainloop.c
+mv -f .deps/liblxc_so-mainloop.Tpo .deps/liblxc_so-mainloop.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-af_unix.o -MD -MP -MF .deps/liblxc_so-af_unix.Tpo -c -o liblxc_so-af_unix.o `test -f 'af_unix.c' || echo './'`af_unix.c
+mv -f .deps/liblxc_so-af_unix.Tpo .deps/liblxc_so-af_unix.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-lxcutmp.o -MD -MP -MF .deps/liblxc_so-lxcutmp.Tpo -c -o liblxc_so-lxcutmp.o `test -f 'lxcutmp.c' || echo './'`lxcutmp.c
+mv -f .deps/liblxc_so-lxcutmp.Tpo .deps/liblxc_so-lxcutmp.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-lxclock.o -MD -MP -MF .deps/liblxc_so-lxclock.Tpo -c -o liblxc_so-lxclock.o `test -f 'lxclock.c' || echo './'`lxclock.c
+mv -f .deps/liblxc_so-lxclock.Tpo .deps/liblxc_so-lxclock.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT liblxc_so-lxccontainer.o -MD -MP -MF .deps/liblxc_so-lxccontainer.Tpo -c -o liblxc_so-lxccontainer.o `test -f 'lxccontainer.c' || echo './'`lxccontainer.c
+mv -f .deps/liblxc_so-lxccontainer.Tpo .deps/liblxc_so-lxccontainer.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT lsm/liblxc_so-nop.o -MD -MP -MF lsm/.deps/liblxc_so-nop.Tpo -c -o lsm/liblxc_so-nop.o `test -f 'lsm/nop.c' || echo './'`lsm/nop.c
+mv -f lsm/.deps/liblxc_so-nop.Tpo lsm/.deps/liblxc_so-nop.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -MT lsm/liblxc_so-lsm.o -MD -MP -MF lsm/.deps/liblxc_so-lsm.Tpo -c -o lsm/liblxc_so-lsm.o `test -f 'lsm/lsm.c' || echo './'`lsm/lsm.c
+mv -f lsm/.deps/liblxc_so-lsm.Tpo lsm/.deps/liblxc_so-lsm.Po
+gcc -fPIC -DPIC -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -pthread  -g -O2 -Wall -Werror -pthread -shared -Wl,-soname,liblxc.so.1  -o liblxc.so liblxc_so-arguments.o liblxc_so-bdev.o liblxc_so-commands.o liblxc_so-start.o liblxc_so-execute.o liblxc_so-monitor.o liblxc_so-console.o liblxc_so-freezer.o liblxc_so-error.o liblxc_so-parse.o liblxc_so-cgfs.o liblxc_so-cgroup.o liblxc_so-utils.o liblxc_so-sync.o liblxc_so-namespace.o liblxc_so-conf.o liblxc_so-confile.o liblxc_so-state.o liblxc_so-log.o liblxc_so-attach.o liblxc_so-network.o liblxc_so-nl.o liblxc_so-rtnl.o liblxc_so-genl.o liblxc_so-caps.o liblxc_so-mainloop.o liblxc_so-af_unix.o liblxc_so-lxcutmp.o liblxc_so-lxclock.o liblxc_so-lxccontainer.o lsm/liblxc_so-nop.o lsm/liblxc_so-lsm.o       -lcap     -lrt -lutil -lpthread 
+gcc -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -Wl,-E   -o lxc-attach lxc_attach.o liblxc.so -lcap    -lrt -lutil -lpthread 
+depbase=`echo lxc_autostart.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+	gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -MT lxc_autostart.o -MD -MP -MF $depbase.Tpo -c -o lxc_autostart.o lxc_autostart.c &&\
+	mv -f $depbase.Tpo $depbase.Po
+gcc -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -Wl,-E   -o lxc-autostart lxc_autostart.o liblxc.so -lcap    -lrt -lutil -lpthread 
+depbase=`echo lxc_cgroup.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+	gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -MT lxc_cgroup.o -MD -MP -MF $depbase.Tpo -c -o lxc_cgroup.o lxc_cgroup.c &&\
+	mv -f $depbase.Tpo $depbase.Po
+gcc -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -Wl,-E   -o lxc-cgroup lxc_cgroup.o liblxc.so -lcap    -lrt -lutil -lpthread 
+depbase=`echo lxc_checkpoint.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+	gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -MT lxc_checkpoint.o -MD -MP -MF $depbase.Tpo -c -o lxc_checkpoint.o lxc_checkpoint.c &&\
+	mv -f $depbase.Tpo $depbase.Po
+gcc -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -Wl,-E   -o lxc-checkpoint lxc_checkpoint.o liblxc.so -lcap    -lrt -lutil -lpthread 
+depbase=`echo lxc_clone.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+	gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -MT lxc_clone.o -MD -MP -MF $depbase.Tpo -c -o lxc_clone.o lxc_clone.c &&\
+	mv -f $depbase.Tpo $depbase.Po
+gcc -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -Wl,-E   -o lxc-clone lxc_clone.o liblxc.so -lcap    -lrt -lutil -lpthread 
+depbase=`echo lxc_config.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+	gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -MT lxc_config.o -MD -MP -MF $depbase.Tpo -c -o lxc_config.o lxc_config.c &&\
+	mv -f $depbase.Tpo $depbase.Po
+gcc -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -Wl,-E   -o lxc-config lxc_config.o liblxc.so -lcap    -lrt -lutil -lpthread 
+depbase=`echo lxc_console.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+	gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -MT lxc_console.o -MD -MP -MF $depbase.Tpo -c -o lxc_console.o lxc_console.c &&\
+	mv -f $depbase.Tpo $depbase.Po
+gcc -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -Wl,-E   -o lxc-console lxc_console.o liblxc.so -lcap    -lrt -lutil -lpthread 
+depbase=`echo lxc_create.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+	gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -MT lxc_create.o -MD -MP -MF $depbase.Tpo -c -o lxc_create.o lxc_create.c &&\
+	mv -f $depbase.Tpo $depbase.Po
+gcc -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -Wl,-E   -o lxc-create lxc_create.o liblxc.so -lcap    -lrt -lutil -lpthread 
+depbase=`echo lxc_destroy.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+	gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -MT lxc_destroy.o -MD -MP -MF $depbase.Tpo -c -o lxc_destroy.o lxc_destroy.c &&\
+	mv -f $depbase.Tpo $depbase.Po
+gcc -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -Wl,-E   -o lxc-destroy lxc_destroy.o liblxc.so -lcap    -lrt -lutil -lpthread 
+depbase=`echo lxc_device.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+	gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -MT lxc_device.o -MD -MP -MF $depbase.Tpo -c -o lxc_device.o lxc_device.c &&\
+	mv -f $depbase.Tpo $depbase.Po
+gcc -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -Wl,-E   -o lxc-device lxc_device.o liblxc.so -lcap    -lrt -lutil -lpthread 
+depbase=`echo lxc_execute.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+	gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -MT lxc_execute.o -MD -MP -MF $depbase.Tpo -c -o lxc_execute.o lxc_execute.c &&\
+	mv -f $depbase.Tpo $depbase.Po
+gcc -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -Wl,-E   -o lxc-execute lxc_execute.o liblxc.so -lcap    -lrt -lutil -lpthread 
+depbase=`echo lxc_freeze.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+	gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -MT lxc_freeze.o -MD -MP -MF $depbase.Tpo -c -o lxc_freeze.o lxc_freeze.c &&\
+	mv -f $depbase.Tpo $depbase.Po
+gcc -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -Wl,-E   -o lxc-freeze lxc_freeze.o liblxc.so -lcap    -lrt -lutil -lpthread 
+depbase=`echo lxc_info.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+	gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -MT lxc_info.o -MD -MP -MF $depbase.Tpo -c -o lxc_info.o lxc_info.c &&\
+	mv -f $depbase.Tpo $depbase.Po
+gcc -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -Wl,-E   -o lxc-info lxc_info.o liblxc.so -lcap    -lrt -lutil -lpthread 
+depbase=`echo lxc_monitor.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+	gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -MT lxc_monitor.o -MD -MP -MF $depbase.Tpo -c -o lxc_monitor.o lxc_monitor.c &&\
+	mv -f $depbase.Tpo $depbase.Po
+gcc -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -Wl,-E   -o lxc-monitor lxc_monitor.o liblxc.so -lcap    -lrt -lutil -lpthread 
+depbase=`echo lxc_snapshot.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+	gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -MT lxc_snapshot.o -MD -MP -MF $depbase.Tpo -c -o lxc_snapshot.o lxc_snapshot.c &&\
+	mv -f $depbase.Tpo $depbase.Po
+gcc -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -Wl,-E   -o lxc-snapshot lxc_snapshot.o liblxc.so -lcap    -lrt -lutil -lpthread 
+depbase=`echo lxc_start.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+	gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -MT lxc_start.o -MD -MP -MF $depbase.Tpo -c -o lxc_start.o lxc_start.c &&\
+	mv -f $depbase.Tpo $depbase.Po
+gcc -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -Wl,-E   -o lxc-start lxc_start.o liblxc.so -lcap    -lrt -lutil -lpthread 
+depbase=`echo lxc_stop.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+	gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -MT lxc_stop.o -MD -MP -MF $depbase.Tpo -c -o lxc_stop.o lxc_stop.c &&\
+	mv -f $depbase.Tpo $depbase.Po
+gcc -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -Wl,-E   -o lxc-stop lxc_stop.o liblxc.so -lcap    -lrt -lutil -lpthread 
+depbase=`echo lxc_top.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+	gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -MT lxc_top.o -MD -MP -MF $depbase.Tpo -c -o lxc_top.o lxc_top.c &&\
+	mv -f $depbase.Tpo $depbase.Po
+gcc -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -Wl,-E   -o lxc-top lxc_top.o liblxc.so -lcap    -lrt -lutil -lpthread 
+depbase=`echo lxc_unfreeze.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+	gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -MT lxc_unfreeze.o -MD -MP -MF $depbase.Tpo -c -o lxc_unfreeze.o lxc_unfreeze.c &&\
+	mv -f $depbase.Tpo $depbase.Po
+gcc -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -Wl,-E   -o lxc-unfreeze lxc_unfreeze.o liblxc.so -lcap    -lrt -lutil -lpthread 
+depbase=`echo lxc_unshare.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+	gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -MT lxc_unshare.o -MD -MP -MF $depbase.Tpo -c -o lxc_unshare.o lxc_unshare.c &&\
+	mv -f $depbase.Tpo $depbase.Po
+gcc -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -Wl,-E   -o lxc-unshare lxc_unshare.o liblxc.so -lcap    -lrt -lutil -lpthread 
+depbase=`echo lxc_usernsexec.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+	gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -MT lxc_usernsexec.o -MD -MP -MF $depbase.Tpo -c -o lxc_usernsexec.o lxc_usernsexec.c &&\
+	mv -f $depbase.Tpo $depbase.Po
+gcc -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -Wl,-E   -o lxc-usernsexec lxc_usernsexec.o liblxc.so -lcap    -lrt -lutil -lpthread 
+depbase=`echo lxc_wait.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+	gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -MT lxc_wait.o -MD -MP -MF $depbase.Tpo -c -o lxc_wait.o lxc_wait.c &&\
+	mv -f $depbase.Tpo $depbase.Po
+gcc -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -Wl,-E   -o lxc-wait lxc_wait.o liblxc.so -lcap    -lrt -lutil -lpthread 
+depbase=`echo lxc_monitord.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+	gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -MT lxc_monitord.o -MD -MP -MF $depbase.Tpo -c -o lxc_monitord.o lxc_monitord.c &&\
+	mv -f $depbase.Tpo $depbase.Po
+gcc -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -Wl,-E   -o lxc-monitord lxc_monitord.o liblxc.so -lcap    -lrt -lutil -lpthread 
+depbase=`echo lxc_user_nic.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+	gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -MT lxc_user_nic.o -MD -MP -MF $depbase.Tpo -c -o lxc_user_nic.o lxc_user_nic.c &&\
+	mv -f $depbase.Tpo $depbase.Po
+depbase=`echo network.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+	gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -MT network.o -MD -MP -MF $depbase.Tpo -c -o network.o network.c &&\
+	mv -f $depbase.Tpo $depbase.Po
+gcc -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -Wl,-E   -o lxc-user-nic lxc_user_nic.o network.o liblxc.so -lcap    -lrt -lutil -lpthread 
+depbase=`echo lxc_init.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+	gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -MT lxc_init.o -MD -MP -MF $depbase.Tpo -c -o lxc_init.o lxc_init.c &&\
+	mv -f $depbase.Tpo $depbase.Po
+gcc -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -g -O2 -Wall -Werror -Wl,-E   -o init.lxc lxc_init.o liblxc.so -lcap    -lrt -lutil -lpthread 
+gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -DNO_LXC_CONF -g -O2 -Wall -Werror -MT init_lxc_static-lxc_init.o -MD -MP -MF .deps/init_lxc_static-lxc_init.Tpo -c -o init_lxc_static-lxc_init.o `test -f 'lxc_init.c' || echo './'`lxc_init.c
+mv -f .deps/init_lxc_static-lxc_init.Tpo .deps/init_lxc_static-lxc_init.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -DNO_LXC_CONF -g -O2 -Wall -Werror -MT init_lxc_static-error.o -MD -MP -MF .deps/init_lxc_static-error.Tpo -c -o init_lxc_static-error.o `test -f 'error.c' || echo './'`error.c
+mv -f .deps/init_lxc_static-error.Tpo .deps/init_lxc_static-error.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -DNO_LXC_CONF -g -O2 -Wall -Werror -MT init_lxc_static-log.o -MD -MP -MF .deps/init_lxc_static-log.Tpo -c -o init_lxc_static-log.o `test -f 'log.c' || echo './'`log.c
+mv -f .deps/init_lxc_static-log.Tpo .deps/init_lxc_static-log.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -DNO_LXC_CONF -g -O2 -Wall -Werror -MT init_lxc_static-utils.o -MD -MP -MF .deps/init_lxc_static-utils.Tpo -c -o init_lxc_static-utils.o `test -f 'utils.c' || echo './'`utils.c
+mv -f .deps/init_lxc_static-utils.Tpo .deps/init_lxc_static-utils.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src    -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -DNO_LXC_CONF -g -O2 -Wall -Werror -MT init_lxc_static-caps.o -MD -MP -MF .deps/init_lxc_static-caps.Tpo -c -o init_lxc_static-caps.o `test -f 'caps.c' || echo './'`caps.c
+mv -f .deps/init_lxc_static-caps.Tpo .deps/init_lxc_static-caps.Po
+gcc -I../../src -DLXCROOTFSMOUNT=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs\" -DLXCPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc\" -DLXC_GLOBAL_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc.conf\" -DLXCINITDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLIBEXECDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec\" -DLXCTEMPLATEDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates\" -DLOGPATH=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/var/log/lxc\" -DLXC_DEFAULT_CONFIG=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf\" -DLXC_USERNIC_DB=\"/run/lxc/nics\" -DLXC_USERNIC_CONF=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/lxc-usernet\" -DDEFAULT_CGROUP_PATTERN=\"/lxc/%n\" -DRUNTIME_PATH=\"/run\" -DSBINDIR=\"/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin\"      -DNO_LXC_CONF -g -O2 -Wall -Werror -static  -o init.lxc.static init_lxc_static-lxc_init.o init_lxc_static-error.o init_lxc_static-log.o init_lxc_static-utils.o init_lxc_static-caps.o  -lcap -lrt -lutil -lpthread 
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/lxc'
+Making all in tests
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/tests'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/tests'
+Making all in python-lxc
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/python-lxc'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/python-lxc'
+Making all in lua-lxc
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/lua-lxc'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/lua-lxc'
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src'
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src'
+make[1]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src'
+Making all in templates
+make[1]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/templates'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/templates'
+Making all in doc
+make[1]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc'
+Making all in examples
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/examples'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/examples'
+Making all in rootfs
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/rootfs'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/rootfs'
+Making all in ja
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/ja'
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/ja'
+make[3]: Nothing to be done for `all-am'.
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/ja'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/ja'
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc'
+make[1]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc'
+Making all in hooks
+make[1]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/hooks'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/hooks'
+make[1]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2'
+make[1]: Nothing to be done for `all-am'.
+make[1]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2'
+
+lxc.post-make
+
+
+make install
+
+Making all in config
+make[1]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config'
+Making all in apparmor
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/apparmor'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/apparmor'
+Making all in bash
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/bash'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/bash'
+Making all in etc
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/etc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/etc'
+Making all in init
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init'
+Making all in common
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/common'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/common'
+Making all in systemd
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/systemd'
+make  all-am
+make[4]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/systemd'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/systemd'
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/systemd'
+Making all in sysvinit
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/sysvinit'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/sysvinit'
+Making all in upstart
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/upstart'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/upstart'
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init'
+make[3]: Nothing to be done for `all-am'.
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init'
+Making all in selinux
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/selinux'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/selinux'
+Making all in templates
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/templates'
+Making all in common.conf.d
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/templates/common.conf.d'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/templates/common.conf.d'
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/templates'
+make[3]: Nothing to be done for `all-am'.
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/templates'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/templates'
+Making all in yum
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/yum'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/yum'
+Making all in sysconfig
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/sysconfig'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/sysconfig'
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config'
+make[1]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config'
+Making all in src
+make[1]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src'
+make  all-recursive
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src'
+Making all in lxc
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/lxc'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/lxc'
+Making all in tests
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/tests'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/tests'
+Making all in python-lxc
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/python-lxc'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/python-lxc'
+Making all in lua-lxc
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/lua-lxc'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/lua-lxc'
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src'
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src'
+make[1]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src'
+Making all in templates
+make[1]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/templates'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/templates'
+Making all in doc
+make[1]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc'
+Making all in examples
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/examples'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/examples'
+Making all in rootfs
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/rootfs'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/rootfs'
+Making all in ja
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/ja'
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/ja'
+make[3]: Nothing to be done for `all-am'.
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/ja'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/ja'
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc'
+make[1]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc'
+Making all in hooks
+make[1]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/hooks'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/hooks'
+make[1]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2'
+make[1]: Nothing to be done for `all-am'.
+make[1]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2'
+Making install in config
+make[1]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config'
+Making install in apparmor
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/apparmor'
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/apparmor'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/apparmor'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/apparmor'
+Making install in bash
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/bash'
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/bash'
+make[3]: Nothing to be done for `install-exec-am'.
+/bin/mkdir -p /opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/bash_completion.d/
+/usr/bin/install -c -m 644 lxc /opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/bash_completion.d/
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/bash'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/bash'
+Making install in etc
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/etc'
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/etc'
+make[3]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc'
+ /usr/bin/install -c -m 644 default.conf '/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc'
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/etc'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/etc'
+Making install in init
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init'
+Making install in common
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/common'
+make[4]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/common'
+ /bin/mkdir -p '/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec/lxc'
+ /usr/bin/install -c lxc-containers lxc-net '/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec/lxc'
+make[4]: Nothing to be done for `install-data-am'.
+make[4]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/common'
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/common'
+Making install in systemd
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/systemd'
+make  install-am
+make[4]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/systemd'
+make[5]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/systemd'
+ /bin/mkdir -p '/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec/lxc'
+ /usr/bin/install -c lxc-devsetup lxc-apparmor-load '/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec/lxc'
+/bin/mkdir -p /lib/systemd/system
+/usr/bin/install -c -m 644 lxc.service lxc-net.service /lib/systemd/system/
+make[5]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/systemd'
+make[4]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/systemd'
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/systemd'
+Making install in sysvinit
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/sysvinit'
+make[4]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/sysvinit'
+make[4]: Nothing to be done for `install-exec-am'.
+make[4]: Nothing to be done for `install-data-am'.
+make[4]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/sysvinit'
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/sysvinit'
+Making install in upstart
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/upstart'
+make[4]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/upstart'
+make[4]: Nothing to be done for `install-exec-am'.
+/bin/mkdir -p /opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/init/
+/usr/bin/install -c -m 644 lxc.conf /opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/init/
+/usr/bin/install -c -m 644 lxc-instance.conf /opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/init/
+/usr/bin/install -c -m 644 lxc-net.conf /opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/init/
+make[4]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/upstart'
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init/upstart'
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init'
+make[4]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init'
+make[4]: Nothing to be done for `install-exec-am'.
+make[4]: Nothing to be done for `install-data-am'.
+make[4]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init'
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/init'
+Making install in selinux
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/selinux'
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/selinux'
+make[3]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/selinux'
+ /usr/bin/install -c -m 644 lxc.if lxc.te '/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/selinux'
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/selinux'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/selinux'
+Making install in templates
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/templates'
+Making install in common.conf.d
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/templates/common.conf.d'
+make[4]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/templates/common.conf.d'
+make[4]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/common.conf.d/'
+ /usr/bin/install -c -m 644 README '/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/common.conf.d/'
+make[4]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/templates/common.conf.d'
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/templates/common.conf.d'
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/templates'
+make[4]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/templates'
+make[4]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config'
+ /usr/bin/install -c -m 644 archlinux.common.conf archlinux.userns.conf centos.common.conf centos.userns.conf common.conf common.seccomp debian.common.conf debian.userns.conf fedora.common.conf fedora.userns.conf gentoo.common.conf gentoo.moresecure.conf gentoo.userns.conf opensuse.common.conf opensuse.userns.conf oracle.common.conf oracle.userns.conf plamo.common.conf plamo.userns.conf ubuntu-cloud.common.conf ubuntu-cloud.lucid.conf ubuntu-cloud.userns.conf ubuntu.common.conf ubuntu.lucid.conf ubuntu.userns.conf openwrt.common.conf userns.conf '/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config'
+make[4]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/templates'
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/templates'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/templates'
+Making install in yum
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/yum'
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/yum'
+make[3]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc'
+ /usr/bin/install -c -m 644 lxc-patch.py '/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc'
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/yum'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/yum'
+Making install in sysconfig
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/sysconfig'
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/sysconfig'
+make[3]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/default'
+ /usr/bin/install -c -m 644 lxc '/opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/default'
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/sysconfig'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config/sysconfig'
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config'
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config'
+make[1]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/config'
+Making install in src
+make[1]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src'
+Making install in lxc
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/lxc'
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/lxc'
+ /bin/mkdir -p '/opt/Lxc/1.1.2/Debian7/Linux/amd64/bin'
+  /usr/bin/install -c lxc-attach lxc-autostart lxc-cgroup lxc-checkpoint lxc-clone lxc-config lxc-console lxc-create lxc-destroy lxc-device lxc-execute lxc-freeze lxc-info lxc-monitor lxc-snapshot lxc-start lxc-stop lxc-top lxc-unfreeze lxc-unshare lxc-usernsexec lxc-wait '/opt/Lxc/1.1.2/Debian7/Linux/amd64/bin'
+ /bin/mkdir -p '/opt/Lxc/1.1.2/Debian7/Linux/amd64/bin'
+ /usr/bin/install -c lxc-checkconfig legacy/lxc-ls '/opt/Lxc/1.1.2/Debian7/Linux/amd64/bin'
+ /bin/mkdir -p '/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib'
+  /usr/bin/install -c liblxc.so '/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib'
+mkdir -p /opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc
+install -c -m 644 lxc.functions /opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc
+mv /opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/liblxc.so /opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/liblxc.so.1.1.2
+cd /opt/Lxc/1.1.2/Debian7/Linux/amd64/lib; \
+	ln -sf liblxc.so.1.1.2 liblxc.so.1; \
+	ln -sf liblxc.so.1 liblxc.so
+ /bin/mkdir -p '/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec/lxc'
+  /usr/bin/install -c lxc-monitord lxc-user-nic '/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec/lxc'
+ /bin/mkdir -p '/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin'
+  /usr/bin/install -c init.lxc init.lxc.static '/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin'
+make  install-exec-hook
+make[4]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/lxc'
+chmod u+s /opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec/lxc/lxc-user-nic
+make[4]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/lxc'
+install -c -m 755 lxc-restore-net /opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc
+ /bin/mkdir -p '/opt/Lxc/1.1.2/Debian7/Linux/amd64/include/lxc'
+ /usr/bin/install -c -m 644 attach_options.h lxccontainer.h version.h '/opt/Lxc/1.1.2/Debian7/Linux/amd64/include/lxc'
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/lxc'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/lxc'
+Making install in tests
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/tests'
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/tests'
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/tests'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/tests'
+Making install in python-lxc
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/python-lxc'
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/python-lxc'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/python-lxc'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/python-lxc'
+Making install in lua-lxc
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/lua-lxc'
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/lua-lxc'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/lua-lxc'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src/lua-lxc'
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src'
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src'
+make[1]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/src'
+Making install in templates
+make[1]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/templates'
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/templates'
+make[2]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates'
+ /usr/bin/install -c lxc-alpine lxc-altlinux lxc-archlinux lxc-busybox lxc-centos lxc-cirros lxc-debian lxc-download lxc-fedora lxc-gentoo lxc-openmandriva lxc-opensuse lxc-oracle lxc-plamo lxc-sshd lxc-ubuntu lxc-ubuntu-cloud '/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/templates'
+make[1]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/templates'
+Making install in doc
+make[1]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc'
+Making install in examples
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/examples'
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/examples'
+make[3]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/doc/lxc/examples'
+ /usr/bin/install -c -m 644 lxc-macvlan.conf lxc-vlan.conf lxc-no-netns.conf lxc-empty-netns.conf lxc-phys.conf lxc-veth.conf lxc-complex.conf seccomp-v1.conf seccomp-v2-blacklist.conf seccomp-v2.conf '/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/doc/lxc/examples'
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/examples'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/examples'
+Making install in rootfs
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/rootfs'
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/rootfs'
+make[3]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs'
+ /usr/bin/install -c -m 644 README '/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs'
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/rootfs'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/rootfs'
+Making install in ja
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/ja'
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/ja'
+make[4]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/ja'
+make[4]: Nothing to be done for `install-exec-am'.
+make[4]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/ja'
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/ja'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc/ja'
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc'
+make[3]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc'
+make[1]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/doc'
+Making install in hooks
+make[1]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/hooks'
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/hooks'
+make[2]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/hooks'
+ /usr/bin/install -c clonehostname mountecryptfsroot ubuntu-cloud-prep squid-deb-proxy-client '/opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/hooks'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/hooks'
+make[1]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2/hooks'
+make[1]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2'
+make[2]: Entering directory `/home/mutek/LXC/Costruttore/lxc-1.1.2'
+make[2]: Nothing to be done for `install-exec-am'.
+/bin/mkdir -p /opt/Lxc/1.1.2/Debian7/Linux/amd64/var/lib/lxc
+/bin/mkdir -p /opt/Lxc/1.1.2/Debian7/Linux/amd64/var/cache/lxc
+ /bin/mkdir -p '/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/pkgconfig'
+ /usr/bin/install -c -m 644 lxc.pc '/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/pkgconfig'
+make[2]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2'
+make[1]: Leaving directory `/home/mutek/LXC/Costruttore/lxc-1.1.2'
+
+hash in Lxc.sha512sum
+
+3d4bcec1bdf7a69c2a76852a5d98001ca7f5a5f49a7d85e4efe765cf0f2e4b0beb84f16dd948ee6213685d2b177c16f80d9839b094e3220749a7f945ff4143c4  opt/Lxc/1.1.2/Debian7/Linux/amd64/bin/lxc-cgroup
+09a58ed5087738821fdc7064ae7e9bfcce44f4559094d7fc5e0b1adf254513f1efca91c96d97b82e8de8808fec68af7f0d3ae5549c88ce1199663bf675d54ae1  opt/Lxc/1.1.2/Debian7/Linux/amd64/bin/lxc-checkconfig
+b6ec5f0613b4ac843135cc06e80d321fa3a7cb461bdc82b6f780cdd2cd0e0775eace868d142ea2e3fd4acdcf98a0f528c82ba215d56e2f4a1732039703e9816e  opt/Lxc/1.1.2/Debian7/Linux/amd64/bin/lxc-wait
+524fe7ac9933a02a91482044326c84004affdb3d8fee3c3ba5b6973316055e0bc3c6c92c4168ea36804abaec48a76338a201d66adb0f2de83fdfe39bbf35b825  opt/Lxc/1.1.2/Debian7/Linux/amd64/bin/lxc-ls
+d80235a134ec1879b766014c348126dec0ee1f27ac12885ea82e14af6031bbc312b150eb14364e24e559b4c46a3d73c58f03a57bd9a48f77ddaf8e725a6f2069  opt/Lxc/1.1.2/Debian7/Linux/amd64/bin/lxc-start
+b28942b4c8274d5ee05ebe8b3da3eb84cf91cc6f8c6c083f4583000b0ffa0bfd7eeb10ccac9a5af9c16920289642d92ff9bc3299558aedd0a96eb5a9aae8b5a9  opt/Lxc/1.1.2/Debian7/Linux/amd64/bin/lxc-clone
+13d2f755a07385c5e7dd5d84b31f325b758827d203427cdb25e2f2697e1bf464ad3decf53efa2d3a58af95a1b408ffeb6509b9ecbd0c95a76fa3e24a4d3c4e40  opt/Lxc/1.1.2/Debian7/Linux/amd64/bin/lxc-freeze
+e74f669457eea5d9a00d222e12da79ffdecfd80da0e44e7f78921a460c973c53ab02f94d1078ca393582cc16fa51e805501bb7e5738bc9e48393b208bac043c2  opt/Lxc/1.1.2/Debian7/Linux/amd64/bin/lxc-usernsexec
+8c2a7959f59c2a961a0d96ddbb7c2307636f6876fc462c768a086fcb0f1a272ce35029cb96ac23f32c3365e3c6602467737543ac6da8fbc99287f5b6a6fdfbe9  opt/Lxc/1.1.2/Debian7/Linux/amd64/bin/lxc-stop
+8cdf59dceb6def497027ee68ef317265658a10d90f2017d269aa94968b8b983007e40a3238b213b636ed2eebff5ba2aada8c29a5e4662d896f5e88c1783dec72  opt/Lxc/1.1.2/Debian7/Linux/amd64/bin/lxc-destroy
+49fc7d581dd8fb8944a20e376a2a0db8578f461f035dea2442cfd930ca88e44a5a5baf85172e2c5d9112fb939f32cfc782452358d623b2bf089a8afcf5aded4e  opt/Lxc/1.1.2/Debian7/Linux/amd64/bin/lxc-device
+7d1011123438ab95cfb8a22129ec1ad2b05e3f3a03e7983a18a39adb037ccc8bfab4059289b210ad466b827abf5bbe4308d086a4c23fa9bc7c33f65a588c3387  opt/Lxc/1.1.2/Debian7/Linux/amd64/bin/lxc-unshare
+4262355240f0394228584f8a84bcf1eb875010e97e9e3e480db759d02e917e4a7c3dfa2e021158514071f667e01925a33f0ca25b2fb2b8c8789fda7fcd5003d3  opt/Lxc/1.1.2/Debian7/Linux/amd64/bin/lxc-create
+8db94900a4fe703c3301029d1e8402f5e0bafc1f26a7827783c11694c0f151a40206a2acdc7dffb3bf4917a6a88d199b3cf9261714f6b06d6ac66e5902a67f4a  opt/Lxc/1.1.2/Debian7/Linux/amd64/bin/lxc-info
+38eec2c55a64b35499f4916512b23b982c00eabcac5ae30816b677df4dde5560d5a4d8ad318c06d7f7f6932c9d213746a84ed2249c59b36ea70e0a622328a5ce  opt/Lxc/1.1.2/Debian7/Linux/amd64/bin/lxc-snapshot
+198a48ad27f0b32fab764ef106e94df57f7a5e05ab4be97a2af02200b32fabbb51f1db9d96bcad1aff34b1fbe5c8f71733a987cc9b5c3ca1f428e7cdd498bb7d  opt/Lxc/1.1.2/Debian7/Linux/amd64/bin/lxc-unfreeze
+feded0c371950e4f19e4d97547341881f1d71356b6577b9634c9bc8e5852c26455522965ed0a55edcfd2c46a79e3932e64f895970dcb645f9cd9f586eaadf5f4  opt/Lxc/1.1.2/Debian7/Linux/amd64/bin/lxc-console
+bbe7c0ce16dc4c81c00a43bde09c2c98bda8daf005dc7656d0dd004030b71f4733c14484b0f9ca194c106d53fb68f5314a53fec5f7392093a8d6e9ac287e38ea  opt/Lxc/1.1.2/Debian7/Linux/amd64/bin/lxc-execute
+f7b14bccb31f2bcec58b135cfb316bf1b98f69e3a61044f87d047295f1f0bce796e14a894ad2f853a1ccff2ed8d7c12cc6ae42ccd9ad40a6175438733e534f5b  opt/Lxc/1.1.2/Debian7/Linux/amd64/bin/lxc-attach
+ddbb0bdf93a6e8fe16e38bf96130198ce64620f73213b911373e0239d4016c7119c17be8beb29ca3e94651c8f998589db3383925b09bb628fa5dc3fe48406f5e  opt/Lxc/1.1.2/Debian7/Linux/amd64/bin/lxc-top
+ac707da519a63115c5398cfb9bfdb884d98ac943b2f27714876e1060fdb91dc30b4c24d9b5dd3739464c7c1d42f45c27ed47b50d1e375dbe5d026ae23273bdc2  opt/Lxc/1.1.2/Debian7/Linux/amd64/bin/lxc-autostart
+e19980032eb336e4df39da2bd305e8c8cc570db2f91c003845bf6efe0569b1b38a5d68d0fd63039e732fc3887b5958130e78933cd74956b3340cc6830ab285de  opt/Lxc/1.1.2/Debian7/Linux/amd64/bin/lxc-checkpoint
+f10b8108be0a33664dca20fb91e2adf4e0432dfa1a37a94695e6425039f53ce78148069a349b08febf8759b9ddfd887eee52c87f4cf98496118a389c4e3d522a  opt/Lxc/1.1.2/Debian7/Linux/amd64/bin/lxc-config
+aa69aecd53f73759b1a8f57611641c6071ea52955134e230fe4b995ec254397375f895f7aed69ae8a6d1bb40c3f2cb78a5f26f3a3c89c5b52560e5701ec7fa0c  opt/Lxc/1.1.2/Debian7/Linux/amd64/bin/lxc-monitor
+e97f8eb8864a42b1318452ff81dcbf028736786b4f0e95eefd6f4e249a6a98c32ec8c6e3f72a877b61e54fc00dfe35c9be4329603189b6e657cca274fac6fdec  opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec/lxc/lxc-devsetup
+d8de542f49cb06676f6481656d5fcffe6f53f7a590d2382eee4ac40ca4c4a317c85e893df1e6d292b48d6239fe1e54595a80c1e7eb2f960dda444e843ece24fb  opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec/lxc/lxc-net
+a1dbd8c40fc0d90a6b7d10587634983140d7f2ecc26ae71e5aec7c5064ff3fd17864a8de9ff8d252bbb3947d8255e56a7fd18151175a85709506c918fd4e2271  opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec/lxc/lxc-user-nic
+b5c2b8b6dec965b4ead4f5800c40a05594d826d5277292b6e1a90552dc98ea874f8a2190eec2ef7ca09818ed5387d5bc3825b5b826a89d822603302681e74243  opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec/lxc/lxc-containers
+c36783b13fa67d0f9f80c4cfef15fb3861b85d74f623371a217864e81c7bce546881b97e7d96d7c8a2fc7db68c0549906304890eca9250508f673db493723b89  opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec/lxc/lxc-apparmor-load
+5e5fe04c118c4d01f5c7824bbdb222f86f306c66bd13ed0a155e82cf38f9da5c6220493d9fe8b1bedf078e3ade78791096450aef873c37bbdc68bc827ed22eb5  opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec/lxc/lxc-monitord
+82e3dc22345a664d370cb2cfe539ad7e1a3ee7091e4c496fe47f2334305bc5b853fda18625592f3fea125e2b8e5f34cf18b43bd3cbc3f56212abd299d584c53a  opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/default/lxc
+1cfe38ab8e80c502f256a67df0fc807d1262332290f81a029f7a12a121018132c242cb714626f68a1e79b19adaa467d67d2e5b50bce742c9b7cf1b5ab0648ff2  opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/bash_completion.d/lxc
+897919c636453c948dce00d6ab898ed791281af08a65615dc5c185c56fa241b95d91d32d1529f6eac1ed3c09a5b3622c995201c45b5a50caf778897817aed977  opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/init/lxc.conf
+73ff5199b6b58a763176b6fd4b462d902ebff46e7c7e22ae4217dc4965f24bed65482ed6691048594180ee3ddc0e3a65e45fc6dd05fed90979b22a1a7a75a648  opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/init/lxc-net.conf
+1e161dacc3b85888639c1eaf4dc784aa35187f8f5ff0064b3dfc41413c6c0058420519d8fa25bf8757ae64afa7aef2e84c4d14d590f86c9949f38590c316a3df  opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/init/lxc-instance.conf
+4284f69e758e08b20695ce30628f93ed600ce089d3e91c5b16c3541b895e28d378718a8257abad9717f99b2f8ee2dfa0b33a6994f782fe0f5b17eab19a7df235  opt/Lxc/1.1.2/Debian7/Linux/amd64/etc/lxc/default.conf
+53216ee7b28504e4dd819011849eccede4307a3344b1f12ba60f06416f2f791c5503139e6667edf41121d200056a0e0a659aeea963218c8e34e890d41c9780de  opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/liblxc.so.1.1.2
+17635dff97aea30f4529cf84b88238aa674a73fcf312f8a75103b0eaee6338a12c9003406277883089076ccc75765c42029c7cf58612c7abd099649b05516579  opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/lxc/rootfs/README
+b90b4da06926c5b61ac467dc2bab0c4f0ec903e7d41849209c2185ce3fe3c6146cc176ad6c4b872405b360ace822e864590825cb80695ebca527db504fc24d25  opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/pkgconfig/lxc.pc
+53216ee7b28504e4dd819011849eccede4307a3344b1f12ba60f06416f2f791c5503139e6667edf41121d200056a0e0a659aeea963218c8e34e890d41c9780de  opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/liblxc.so
+53216ee7b28504e4dd819011849eccede4307a3344b1f12ba60f06416f2f791c5503139e6667edf41121d200056a0e0a659aeea963218c8e34e890d41c9780de  opt/Lxc/1.1.2/Debian7/Linux/amd64/lib/liblxc.so.1
+2854a880137de8357f9d1897b5bbb1c15e1871cc26daba692ea1c271395c4c24ffe1692af820abbd15ff4c287dbb0c3f21ad89f92f81bd29c2022e934a5cb80f  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/archlinux.common.conf
+0660761e08842d1777e073c46b5726305ccbc4114dbb49339f35ad8011fcf4aa837ac606ecf8e9e17385f107157e550aeb766d5dd59e1358fe89a8a5f8db32b5  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/gentoo.common.conf
+e7639d3cda5c7f1f1fcbd6978ed996c3347aff688ab720992d1f3def0449e8e08501256364cead3527fb58fb7760a930d5895fc3f9b8419018cffea08881bd2d  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/plamo.userns.conf
+e7639d3cda5c7f1f1fcbd6978ed996c3347aff688ab720992d1f3def0449e8e08501256364cead3527fb58fb7760a930d5895fc3f9b8419018cffea08881bd2d  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/gentoo.userns.conf
+a592bb8ec91266f0198f1a25dae2fa7699c4a9dac1ff0a47c345f3cf17e4f4d77737b5a74b93a0ada9e836aa6fa5f20f1df0b2b00466be93e5ab059d7ecf59eb  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/ubuntu-cloud.lucid.conf
+e7639d3cda5c7f1f1fcbd6978ed996c3347aff688ab720992d1f3def0449e8e08501256364cead3527fb58fb7760a930d5895fc3f9b8419018cffea08881bd2d  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/opensuse.userns.conf
+b3de63389c7d2058cad2aad4a0a716c07d73742df4088e7ab1a522eac146a44ee86af0099a9fd8bde7a2c05e2d4d9f062df0fe6b37e0110945b901403f2a32e1  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/ubuntu-cloud.common.conf
+469069fe5fed1fc997760d9d076e3668254cba76f72292815f8dbc339e45ddbee1e164570628efbad38732936ae3772c5ed0d95f2cd0646454ebfd1e65daa4e5  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/common.seccomp
+ae69ee1f789ae71b789e496a902027428bf97409b22ba9d6a071f7cca0f16c02f39dd0ff7d19c6ccbaa5326a51d0aa50bd5ce2b539f78dfa259d90e1b21dba9b  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/ubuntu.lucid.conf
+dee8cfdaf46fe0a8e2dc72dd004871e06cdee2c59d845e43df2a81b8dacbd8da4d40f88655189db50e99bc57a3031fb79acb6a90096e373cd867afb23fa6a35c  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/gentoo.moresecure.conf
+d1600bd58ac51b65dc8fc8be6ae23c8acaf0fb1d923a05ae6f43db4083618c75feb1e108fed8d4d7daa0e10bcd25a70c6efbfd3dbcb5a0a7855d6b463905a08b  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/ubuntu.common.conf
+fe425f469d2157287efb433cb5dca723a424578ff8d0533306a080bacb38f83e3b734c23c5edf989fcd3e4f25c8b5e42a50e3fb251c2e775b923337835c35cc7  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/openwrt.common.conf
+81c4803fb6d413496295714b280417200c63cd2fa54787a17e734d36e43e050cd21c9f61eee40d78f7caceef42b5a07764878e89233d7b28608e2fa3515d0610  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/ubuntu-cloud.userns.conf
+e7639d3cda5c7f1f1fcbd6978ed996c3347aff688ab720992d1f3def0449e8e08501256364cead3527fb58fb7760a930d5895fc3f9b8419018cffea08881bd2d  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/oracle.userns.conf
+b9fdb9f6a5d8fcedffa1935d88b17ca4649631a7286170fd9d941446cd3311f56f1a088574f6410f0f8e8501f765a7ef24dec7a6e62b3fb8787dc8177bf89de9  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/ubuntu.userns.conf
+587f17979ad19b4bdc9e1eb29712d12c87e14346235228243b7732b59978b04e42b5d0cfa98b5f3f98ddc394824211fde1660347313b2f9a3b64bf8279e96998  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/common.conf.d/README
+7a7ff60e4ce9ab4b3a906eda9f210f0ee1a8be46e7ac7822e1a133542e99ed802922c47ee8c6558644b4a0dd3a295313e6fc1cd0aaf801fec5eca68d93eaa989  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/plamo.common.conf
+e7639d3cda5c7f1f1fcbd6978ed996c3347aff688ab720992d1f3def0449e8e08501256364cead3527fb58fb7760a930d5895fc3f9b8419018cffea08881bd2d  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/debian.userns.conf
+e7639d3cda5c7f1f1fcbd6978ed996c3347aff688ab720992d1f3def0449e8e08501256364cead3527fb58fb7760a930d5895fc3f9b8419018cffea08881bd2d  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/archlinux.userns.conf
+052f143741d11e0de2a2bd9f6cdfbb28723866ac846cbf8c7f3abf443cd16316fe4fb78d8355ae59d9400a8d584c78194ec401a86576b8bf59454eb4e71e6279  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/centos.common.conf
+5f18021d7ab68a5ac849a875230a49d63e79038cff73ec21f257e6ef87f9f4e4ce9568c6bdb007cc558bc31fc1aff0162c02afd42d72b69f6a15595e6e1e330e  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/fedora.common.conf
+f9aceb506eac441c5741f0428265bd570a781c69ab6c6fe71c9d702aa2785fe0fb44b92a8ebb54742cded0471bdb906cea4cfa654e9f935fa5bb9017a86122d1  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/debian.common.conf
+e7639d3cda5c7f1f1fcbd6978ed996c3347aff688ab720992d1f3def0449e8e08501256364cead3527fb58fb7760a930d5895fc3f9b8419018cffea08881bd2d  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/centos.userns.conf
+5cb79c5e4ef3b98a968c9e0cf750bf69c99d0976c7adf859aeff6ec73eccf45c7ad796015f44335d76680a0937f777198aa5a33b3f9c80d0d96ebdb80a2e83f0  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/common.conf
+9f57c0f14290807cf7e12e8f612794d9830470da7960a0982e4c7e854da32f56aef4bb57298bf34aa1676d43dfc5453e39cec3d54dd0811d677c6b15ffe98af7  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/oracle.common.conf
+dceb98939d2337e33965bc22825112f78d353cc43af11626ebe711981e5b6bd1771d616f05462f8a9abeb5a311a499510bf7c599f0f9041b0d8a217b52234b31  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/opensuse.common.conf
+28816cd3d48a21617469625c4499734654f2b019e75b95d500bbaad28128fef04844fed399c72b28d4c2ef7d1dfc8eeb56d1c12fb5aefc929e7127f921d4f35c  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/userns.conf
+e7639d3cda5c7f1f1fcbd6978ed996c3347aff688ab720992d1f3def0449e8e08501256364cead3527fb58fb7760a930d5895fc3f9b8419018cffea08881bd2d  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/config/fedora.userns.conf
+bacef7d4ef94c2502290372f77e3e00c3fe9ac422745fbe1fdb9475597f27204d03acfd59934833a19d2e3f4a040696542c5055f57983a05bdb40b1e378156a6  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/hooks/mountecryptfsroot
+2f8b60ed2ba7a7d2dcbb60ddce363c4adf311fabf36089144b1d0fcfaed5423b90aed6d1e04eab5fdea0b5a638e589054e47014b3e1e3af1ea4ae022c9fd7f21  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/hooks/clonehostname
+6dda18342210a179c65be2c293e0ed0032f379099c6497307f182a8d9abb0ba168e4b18826f428b25dea1fdd5f05994a95ae6dda3a92ccc1ee441ca0ed160c78  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/hooks/ubuntu-cloud-prep
+cd71739e64f78a27586a984af578a00de141ff476d428a4de69c171e49a4af7fde3c916aff0b5e0c286abba8b2c897ec0afb7745b5fa5f025a51bb85a7285de9  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/hooks/squid-deb-proxy-client
+786b2712436b26da403cbfbdff56e94cacc102ef42c414f2642d315a3cafa31880c860fbdae4aa602671e61098621cf8f91f4996fed174937ca1c1145fb2385e  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates/lxc-archlinux
+672ed89388e523a58f2306a8db21fc04fcdce35aeea0e888bd0c2764db5faad00dee66b5b90ccde86c1a95e43a293bb0b9825a6382ecc580b940bd9b1b4d9c57  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates/lxc-openmandriva
+173ddd5d752d436b1e3dc9679a7991b6803fb35a87acb6f19fbf7158c4a44e16ad859e3565d405e34ceaf485ec1fdf6b916246be1fbc5777fdcef18b00b5d7eb  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates/lxc-opensuse
+7a07721913d5fb3ece7a7fbd02c9da2600e1cc12320392abc8464aa4c2290bb9703d77968c23a676a79d4e45d0661842286a5ea9bea5c21103974af4f7b931fd  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates/lxc-altlinux
+b4a8c68dec3eb4435a2fa2b2fdbc5a4e548b85fc4ef4d546cbed9797f3171ba11d6a3d70618bc6e1623936fb9873a177fb10ed1b585a4c22917a49c91eba77c1  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates/lxc-sshd
+8341586916bbd9e3cc36fc314c7fe6fbb708c3320c45672e6d166fa25f67d3f1c60fe52b2020119ab5850dceb8d04ec32758c4613a83f4f59360b1cbe674a7cd  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates/lxc-busybox
+5cf84cfe4e409df4549709a4508f6a8e5d37193d3c000f48a55e52042a69bae1df31813d49cc4423211d3d879da285dfd21d572bbea4f3c1a80abc8f56baecd8  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates/lxc-oracle
+8dafae82b391241719c43b0ef2c86edc576daae1706b179abb740021e5c11e662e8a5a3f5e52d5bd29be225363a94c20877f44ab92149ef1f9765e8e6fa22bb1  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates/lxc-gentoo
+50ec90badfafbc7bef0e797baa8b69f86278e148ec0f6f4bae1e03e9241ae679221c21322fe47eb682ab6869d6af60656854bbab6e93b0350a2d96480285f653  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates/lxc-centos
+2e0bf837b35ed78fdd08174c2f3d82cbb8829f140c8a9ab0402e56e3e478e363628abb45950c500388b8ae4a5ec1eb0e352f1bbaaa0fc904e21a9618f6e42c8e  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates/lxc-download
+04fe6f96e84c2d4f8624bd6c43580fcd4a331560a41251e7ebfeec67ad1cbed58fe9bba19591e80d78609b9a23b8e3a049a3135cbc7ca2c93fdcfcf3d7de9516  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates/lxc-ubuntu-cloud
+0076f4144bcbb41cf066cf8e608191ceda4e794214ed25ab433d8e5a3ed9c047e3a24fbeee54f9e4b4ad7468e3f862a36c9f6fda720bd7c896eccc25f0d66f3e  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates/lxc-plamo
+914d62fb1eedf0b57ef1effa39a867dcb2dbdc0ccb92336213d276b839b5354e12c299eff28406a1b236d9fcd50ed642eb9e68b87bb8a8d01d79f2a41a03e934  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates/lxc-debian
+4b44536d625d11c0f93bc7103a5ec8eb13d93fe07071e6d43462cd3065ee2acc9e8e2a6ea7740f8aec7df67e6ead7808dc99f106c854550a315a06ff933b8b2d  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates/lxc-ubuntu
+adc650df17e6197eba8b46fcd4c39f66b4c651a5d795a94815acb220dc8d1ecce641a16c5d00bcf2cd4bbcaa9431ddd94327b529eb5047871d50c69f5271c962  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates/lxc-cirros
+c7ac545af1bbe58401843502cac8e4b284c94ffe874e8fe2e5aa084d6b7e845d0784a58196088590b20d4a6089bd889be716e462660bfd89da7a650350f4ba1c  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates/lxc-alpine
+64aff2d658af368e838043e5fd8625bb26645b4b3b82a59cd3a673cb16236932a4526e6628ef37b49129d675040aa3e5398cfc8f3f0a93ae1785607a58658b8a  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/templates/lxc-fedora
+3137f0f92960cec17db78f8a4b804df13d2e99b60097fc6631f10696fbb878135e8db2b54c317e3aaed3615f4da142ddc99fe6abeca8f57f9961dc5c903fee95  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/lxc-patch.py
+3f333ce8f112499b1ea143766b21007995a1609e5ee6419d061a4b4909fd39bd755a4ae51687b9ee69b5cd2abb73831455b7bd92d5c006c6336112e2f8ea7880  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/lxc-restore-net
+69f4a8be23e46455d83ea679c61cbdae427bf3ef58fb398c8c27a59da382e0e03bf9a6ad8c14bc5a1a3eb44620f292100178238da4e8571d630978e90302b08d  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/lxc.functions
+6eead4febb6617885fdb7c7e00c64731d13bf677cee1d8ae1ee98c36694b441461ac6014b2f48a7aa5e33c920d440abcda174e577a81d6bb49a50f1b9bcabba7  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/selinux/lxc.if
+8be873415bf63ad9664a528f6727a972065faa1e8830505481a685a183a470ee8bb82081f206a120fda766d29d181d6153b0ecfc449181c400ec55d19ffcfc24  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/lxc/selinux/lxc.te
+b363aac92f17f966f2120af8e20d34afc1502ccb13a2d169f29c48c1b6fa9b1eda5d6f2f426d4a6c85face090eb6c0444709708b2177b88463d80add79338951  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/doc/lxc/examples/lxc-complex.conf
+1cf56a9ccb0ae8d8889e56c9695b9c635d2b07d73a8d2b47e5df672aa3f70b45caedad9ee82dcc3e84ee76c705053ead9c550ef1b273c69734fcff2f8fd424e2  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/doc/lxc/examples/lxc-macvlan.conf
+1eeefb4105506baa8ca1a554059238c56b2ea1831ca2337a5fef51f33a7226f54812ecccc167275d66f7855e8cdc8271506f3e7b386a219ea8886285d29c6f38  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/doc/lxc/examples/lxc-phys.conf
+7a93d16066343c041ef8c082ffcd4a8a35f21366c953e621a8b388c0419f796ae430d673b307f70a598367aca7f9c5daf26fad05068a12a53f005f220caf0fde  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/doc/lxc/examples/lxc-veth.conf
+c6d892f581a9a313292b4025ebcf537852a83117b17d159cfad8fd75d8918f90dda6a367a624deb990869b03dd063d879cd9f683a6946366e6f6bd8b1e97b451  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/doc/lxc/examples/seccomp-v2-blacklist.conf
+68712cca61941f158d5f210b4b8e2e031d05de5364e49eb6e414852c543659f4c5674582202fe0b4d55bb3f9d86cdc8a1c9c6e74587661ed526558f5600b699d  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/doc/lxc/examples/lxc-empty-netns.conf
+5c8bcb14363be175be6cbc926640144347c049d53ca48a2bb74220433dbf41732af693955f1ec69d01ed0aa8525697bfc52b4bd3c228d45ca6ccec33747840de  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/doc/lxc/examples/lxc-no-netns.conf
+70e2632caf3b1c6c9ec0f314b9b3ab630b07bda9b0faa77f5f5cda6a35caab63334c95f301a8c93ecdb4ece862146596912009888a8e92bcdf4863304f81c24d  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/doc/lxc/examples/seccomp-v2.conf
+060cfe3b2a3ceb7d06e227d4358959c4defa1d7147f37dec622c604463e7789d208ef81da50c06f0d17f8bb5773838b0f0529b649534e95c23c355994d9da810  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/doc/lxc/examples/seccomp-v1.conf
+58efc4d38865094fb0cb6ee1489126850ef8e2e91e22423ad0436851e837da6226f1c4df8b5bda4af70efbe554a84d4ef1129d0b53316ec43d37f14bab538185  opt/Lxc/1.1.2/Debian7/Linux/amd64/share/doc/lxc/examples/lxc-vlan.conf
+28b9819724d17bae379070454d889f600f5bd1344cd5a32a61080ecf0320121c2dcda5c3f1be6dc795ed3e928caa215c7954831ec8ad71b01746a72724347064  opt/Lxc/1.1.2/Debian7/Linux/amd64/include/lxc/lxccontainer.h
+4ece3e8717c95bd24958148f7dfe5841711623d22477cb92c74e835c0c2f08c1cd6d844aa1485159716b9e254c35b89faf1fe2be913b0128534e48b3209c66fb  opt/Lxc/1.1.2/Debian7/Linux/amd64/include/lxc/attach_options.h
+40297f70c41241bcbc3190fb5b3f7733e8fa77b8f6be988fbf857f2d53ba0ef5685020951e5c6d47e94890cdb4519124819673612e8e6f730e71723fa02dad7f  opt/Lxc/1.1.2/Debian7/Linux/amd64/include/lxc/version.h
+2d78b7a7a9870a3337f277a22e49aa91a9856452a2305c311fc24688e7805e687ed6971993991122ed32fe5786a1dba1eb968762b1e81f50b2b5bffde67eb157  opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin/init.lxc.static
+a551b280df7a626367b944f228195dcf2bb0b536e7f92d1247f7bdaf208370a833a437351be86a6bd3a3a416f4bdb01391cc9f08e61bbd3ac6c96da3eeb87e63  opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin/init.lxc
+
+hash in Lxc.sha512sum.sha512sum
+
+649c46a4c06c9a1fccdf15856e3a6f9328cab2400c6e1fe1f85ba82918744bef2d8dfc6cb13f1f035a979755d2deac7a35464db8c3ed5e74adc116d137407b0f  Lxc.sha512sum
+
+hash in lxc-1.1.2.tar.gz.sha512sum
+
+15ff16445d0c4bab2c78a422b517158f14e7849f9006dd8ded104f071760494117e588a97ba6b890764b96d5fbc501dfba3966192c3dcd3a4061754e0ebdf770  lxc-1.1.2.tar.gz
+
+total 1088
+drwxr-xr-x 3 mutek mutek   4096 May 11 00:21 .
+drwxr-xr-x 5 mutek mutek   4096 May 10 23:56 ..
+-rw-r--r-- 1 root  root  172947 May 11 00:21 Lxc.log
+-rw-r--r-- 1 root  root   21128 May 11 00:21 Lxc.sha512sum
+-rw-r--r-- 1 root  root     144 May 11 00:21 Lxc.sha512sum.sha512sum
+-rw-r--r-- 1 mutek mutek 838615 May 10 23:54 lxc-1.1.2.tar.gz
+-rw-r--r-- 1 root  root     147 May 11 00:21 lxc-1.1.2.tar.gz.sha512sum
+-rwxr-xr-x 1 mutek mutek  17447 May 10 23:54 lxc-debian-mutek
+-rwxr-xr-x 1 mutek mutek  17632 May 10 23:54 lxc-debian-mutek-1
+-rwxr-xr-x 1 mutek mutek    283 May 10 23:55 lxc.ingredienti
+drwxr-xr-x 3 root  root    4096 May 11 00:21 opt
+-rwxr-xr-x 1 mutek mutek   5871 May 10 23:54 prepara.ricetta
+
