@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+# redirige una prta verso il container di interesse
+
+PORTA=8890
+INDIRIZZO=10.10.10.10
+INTERFACCIA=lxcbr0
+
+iptables -t nat -A PREROUTING -i ${INTERFACCIA} -p tcp --dport ${PORTA} -j DNAT --to ${INDIRIZZO}:${PORTA}
