@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 # 
-# prepara.ricetta 1.4
+# prepara.ricetta 1.5
 #
 # 2014-2015 mutek <mutek _A_T_ riseup _D_O_T_ net>
 # WTF
@@ -79,7 +79,7 @@ do
 	rm --preserve-root -r $PREFIX_ROOT/$APP_NAME
 	mkdir -p $PREFIX
 
-	echo "Scarico: "$ARCHIVE" da "$SOURCE_URL
+	echo "Se non presente localmente scarico: "$ARCHIVE" da "$SOURCE_URL
 	[ ! -f $ARCHIVE ] && curl -L $SOURCE_URL > $ARCHIVE
         echo "" >> $APP_NAME.log
         echo "env" >> $APP_NAME.log
@@ -111,7 +111,7 @@ do
        [ -f ./$PROGRAM_NAME.pre-configure ] && . ./$PROGRAM_NAME.pre-configure
 
 
-	echo "configure --prefix="$PREFIX" "$CONFIGURE_OPTIONS
+	echo "configure --prefix="$PREFIX" "${CONFIGURE_OPTIONS}
 
 	echo "" >> $APP_NAME.log
 	echo "configure --prefix="$PREFIX" "$CONFIGURE_OPTIONS >> $APP_NAME.log
