@@ -124,8 +124,8 @@ lxc.network.type = veth
 lxc.network.link = lxcbr0
 lxc.network.flags = up
 lxc.network.hwaddr = ${MAC_ADDRESS}
-lxc.rootfs = /opt/Lxc/1.1.2/Debian7/Linux/ia32/var/lib/lxc/$NOME_CONTAINER/rootfs
-lxc.include = /opt/Lxc/1.1.2/Debian7/Linux/ia32/share/lxc/config/debian.common.conf
+lxc.rootfs = /opt/Lxc/1.1.2/Debian7/Linux/$ARCHITETTURA/var/lib/lxc/$NOME_CONTAINER/rootfs
+lxc.include = /opt/Lxc/1.1.2/Debian7/Linux/$ARCHITETTURA/share/lxc/config/debian.common.conf
 lxc.utsname = $NOME_CONTAINER
 lxc.arch = $ARCHITETTURA
 CONFIG_LXC
