@@ -40,10 +40,11 @@ echo "CONTAINER_STATIC_IP = "$CONTAINER_STATIC_IP
 
 
 # 0) verifica accesso alla rete
-printf ">> accesso alla rete:"
-ping -q -w 1 -c 1 8.8.8.8 > /dev/null || { echo "ERRORE: non riesco ad accedere ad Internet"; exit; }
-wait
-printf "\t\tok\n"
+# FIX: robotica non permette ping esterno
+#printf ">> accesso alla rete:"
+#ping -q -w 1 -c 1 8.8.8.8 > /dev/null || { echo "ERRORE: non riesco ad accedere ad Internet"; exit; }
+#wait
+#printf "\t\tok\n"
 
 # build_chroot() si preoccupa di costruire la chroot di base
 build_chroot() {
