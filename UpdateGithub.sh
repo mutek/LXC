@@ -47,7 +47,7 @@ echo "Invio i cambiamenti locali al deposito remoto..."
 git push origin master
 wait
 
-[ -z $2 ] || { echo"Versione: "$VERSIONE; git tag -a $VERSIONE -m "$COMMENTO"; git push origin --tags; }
+[ -z $2 ] || { echo"Versione: "$VERSIONE; git tag -a $VERSIONE -m "$COMMENTO"; git push origin --tags; git tag; }
 
 
 #git push origin gh-pages
