@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 #
-# UpdateGithub.sh v1.0
+# UpdateGithub.sh v1.0.1
 #
 #
 # Copyleft )C( 2013-2015 Luca Cappelletti <luca.cappelletti@gmail.com>
@@ -40,14 +40,15 @@ COMMENTO="["$EPOCA_UNIX"] "$commento
 VERSIONE="v"$versione
 
 echo "Commento transazione: "$COMMENTO
-[ -z $2 ] || { echo"Versione: "$VERSIONE; git tag -a $VERSIONE -m "$COMMENTO"; }
-wait
 git commit -a -m "$COMMENTO"
 wait
 
 echo "Invio i cambiamenti locali al deposito remoto..."
 git push origin master
 wait
-git push origin --tags
+
+[ -z $2 ] || { echo"Versione: "$VERSIONE; git tag -a $VERSIONE -m "$COMMENTO"; git push origin --tags; }
+
+
 #git push origin gh-pages
 echo "ok"
