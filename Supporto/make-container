@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# make-container v0.9.10
+# make-container v0.9.11
 # Compila un Container LXC
 # Luca Cappelletti (c) 2015 <luca.cappelletti@gmail.com>
 # WTF
@@ -190,6 +190,21 @@ EORESOLV
 cat << EOHOSTNAME > ${NOME_CONTAINER}/rootfs/etc/hostname
 $NOME_CONTAINER
 EOHOSTNAME
+
+# 8) rigenera chiavi guest
+echo ">> rigenera chiavi <<"
+chroot ${NOME_CONTAINER}/rootfs /bin/bash -x << 'EOKEYS'
+rm --preserve-root /etc/ssh/ssh_host_*
+wait
+dpkg-reconfigure -f noninteractive openssh-server
+EOKEYS
+
+# 9) strip down locales
+chroot ${NOME_CONTAINER}/rootfs /bin/bash -x << 'EOLOCALEPURGE'
+apt-get --yes --force-yes install localepurge
+wait
+dpkg-reconfigure -f noninteractive localepurge
+EOLOCALEPURGE
 
 
 # resume:
