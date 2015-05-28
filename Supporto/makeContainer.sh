@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#  buildLxcContainer.sh v0.9.3
+# makeContainer.sh v0.9.6
 # Compila un Container LXC
 # Luca Cappelletti (c) 2015 <luca.cappelletti@gmail.com>
 # WTF
@@ -35,7 +35,13 @@ CONTAINER_STATIC_IP=$7
 # scova dove cova
 LXC_CONFIG=$(lxc-config lxc.lxcpath)
 INSTALL_ARCH=$ARCHITETTURA
+
+# workaround momentaneo per l'hardpath del lxc config
 [ "$ARCHITETTURA" == "i386" ] && INSTALL_ARCH="ia32"
+
+# imposta il security mirror standard
+SECURITY_MIRROR="http://security.debian.org/"
+
 
 echo "NOME_CONTAINER = "$NOME_CONTAINER
 echo "DISTRO_RELEASE = "$DISTRO_RELEASE
@@ -48,7 +54,7 @@ echo "LXC_CONFIG = "$LXC_CONFIG
 
 # -1) sposta nel covo LXC
 cd $LXC_CONFIG || { echo "ERRORE: non riesco a spostarmi in: " $LXC_CONFIG; exit; }
-
+ls --color
 # 0) verifica accesso alla rete
 # FIX: robotica non permette ping esterno...disabilitato momentaneamente
 #printf ">> accesso alla rete:"
@@ -144,6 +150,20 @@ CONFIG_LXC
 cat $NOME_CONTAINER/config
 echo ""
 # sed -i "s/^lxc.network.hwaddr = .*/lxc.network.hwaddr = ${MAC_ADDRESS}/g" $NOME_CONTAINER/config
+
+# 4) aggiorna sources.list
+mkdir -p ${NOME_CONTAINER}/rootfs/etc/apt || { echo "ERRORE: non riesco ad aggiornare il source.list"; exit; }
+cat << EOF > ${NOME_CONTAINER}/rootfs/etc/apt/sources.list
+# STANDARD
+deb $MIRROR          ${DISTRO_RELEASE}         main contrib non-free
+deb $SECURITY_MIRROR ${DISTRO_RELEASE}/updates main contrib non-free
+
+# BACKPORTS
+deb $MIRROR ${DISTRO_RELEASE}-backports main contrib non-free
+deb $MIRROR ${DISTRO_RELEASE}-updates main contrib non-free
+deb $MIRROR ${DISTRO_RELEASE}-proposed-updates main contrib non-free
+
+EOF
 
 # resume:
 
