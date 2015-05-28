@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# make-container v0.9.11
+# make-container v0.9.11.1
 # Compila un Container LXC
 # Luca Cappelletti (c) 2015 <luca.cappelletti@gmail.com>
 # WTF
@@ -16,6 +16,7 @@ MIRROR=$4
 MAC_ADDRESS=$5
 WORKING_DIR=$6
 CONTAINER_STATIC_IP=$7
+BRIDGE_HOST_IP=$8
 
 [ "$1" == "--help" ] && { echo "uso: "$0" NOME_CONTAINER DISTRO_RELEASE[wheezy,jessie,...] ARCHITETTURA[i386,amd64,armhf,...]"; exit; }
 
@@ -33,6 +34,7 @@ CONTAINER_STATIC_IP=$7
 [ -z $MAC_ADDRESS ] && MAC_ADDRESS=$(echo 00$(od -txC -An -N5 /dev/urandom|tr \  :))
 [ -z $WORKING_DIR ] && WORKING_DIR=$(mktemp -u --tmpdir=./ | cut -d"/" -f 2)
 [ -z $CONTAINER_STATIC_IP ] && CONTAINER_STATIC_IP="10.10.10."$(dd if=/dev/urandom bs=1 count=1 2>/dev/null | od -An -tu1 | sed -e 's/^ *//' -e 's/  */./g')
+[ -z $BRIDGE_HOST_IP ] && BRIDGE_HOST_IP="10.10.10.1"
 
 # scova dove cova
 LXC_CONFIG=$(lxc-config lxc.lxcpath)
@@ -217,10 +219,11 @@ EOLOCALEPURGE
 #echo "WORKIG_DIR = "$WORKING_DIR
 #echo "CONTAINER_STATIC_IP = "$CONTAINER_STATIC_IP
 #echo "LXC_CONFIG = "$LXC_CONFIG
+#echo "BRIDGE_HOST_IP = $BRIDGE_HOST_IP"
 
 # log
 
-cat << EOLOG > ${NOME_CONTAINER}.log
+cat << EOLOG > ${NOME_CONTAINER}/${NOME_CONTAINER}.log
 NOME_CONTAINER = $NOME_CONTAINER
 DISTRO_RELEASE = $DISTRO_RELEASE
 ARCHITETTURA = $ARCHITETTURA
@@ -229,7 +232,8 @@ MAC_ADDRESS = $MAC_ADDRESS
 WORKIG_DIR = $WORKING_DIR
 CONTAINER_STATIC_IP = $CONTAINER_STATIC_IP
 LXC_CONFIG = $LXC_CONFIG
+BRIDGE_HOST_IP = $BRIDGE_HOST_IP 
 EOLOG
 
-cat ${NOME_CONTAINER}.log
+cat ${NOME_CONTAINER}/${NOME_CONTAINER}.log
 
