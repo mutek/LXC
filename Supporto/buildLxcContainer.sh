@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#  buildLxcContainer.sh v0.9.1
+#  buildLxcContainer.sh v0.9.2
 # Compila un Container LXC
 # Luca Cappelletti (c) 2015 <luca.cappelletti@gmail.com>
 # WTF
@@ -20,6 +20,7 @@ CONTAINER_STATIC_IP=$7
 # verifica la presenza dei tools di comodo
 [ $(which mktemp) ] || { echo "ERRORE: mktemp non trovato"; exit; }
 [ $(which debootstrap) ] || { echo "ERRORE: debootstrap non trovato"; exit; }
+[ $(which rsync) ] || { echo "ERRORE: rsync non trovato"; exit; }
 
 # assegna default in caso di lacune in input
 [ -z $NOME_CONTAINER ] && NOME_CONTAINER=DefaultWheezy
@@ -48,33 +49,20 @@ echo "CONTAINER_STATIC_IP = "$CONTAINER_STATIC_IP
 
 # build_chroot() si preoccupa di costruire la chroot di base
 build_chroot() {
-ARCHITETTURA=$1
-DISTRO_RELEASE=$2
-WORKING_DIR=$3
-MIRROR=$4
+local ARCHITETTURA=$1
+local DISTRO_RELEASE=$2
+local WORKING_DIR=$3
+local MIRROR=$4
 
-PACCHETTI=\
-ifupdown,\
-locales,\
-libui-dialog-perl,\
-dialog,\
-isc-dhcp-client,\
-netbase,\
-net-tools,\
-iproute,\
-openssh-server,\
-htop,\
-nmap,\
-sshguard,\
-vlan,\
-fail2ban
+local PACCHETTI="ifupdown,locales,libui-dialog-perl,dialog,isc-dhcp-client,netbase,net-tools,iproute,openssh-server,htop,nmap,sshguard,vlan,fail2ban"
 
 echo "build_chroot: ARCHITETTURA = "$ARCHITETTURA
 echo "build_chroot: DISTRO_RELEASE = "$DISTRO_RELEASE
 echo "build_chroot: WORKING_DIR = "$WORKING_DIR
 echo "build_chroot: MIRROR = "$MIRROR
-#echo "build_chroot()"
-debootstrap --verbose --components=main,restricted,non-free --include=$PACCHETTI --arch $ARCHITETTURA $DISTRO_RELEASE $WORKING_DIR $MIRROR || return 1
+echo "build_chroot: PACCHETTI = "$PACCHETTI
+echo ""
+debootstrap --verbose --components=main,restricted,non-free --include=$PACCHETTI --arch $ARCHITETTURA $DISTRO_RELEASE $WORKING_DIR $MIRROR #|| return 1
 wait
 
 return 0
@@ -82,8 +70,7 @@ return 0
 
 # 1) genera chroot
 printf "build_chroot():\n"
-#debootstrap --arch $ARCHITETTURA $DISTRO_RELEASE $WORKING_DIR $MIRROR || {echo "ERRORE: non riesco a completare l'operazione di debootstrap"; exit; }
-build_chroot $ARCHITETTURA $DISTRO_RELEASE $WORKING_DIR $MIRROR  || { echo "ERRORE: non riesco a completare l'operazione di debootstrap"; exit; }
+build_chroot $ARCHITETTURA $DISTRO_RELEASE $WORKING_DIR $MIRROR  #|| { echo "ERRORE: non riesco a completare l'operazione di debootstrap"; exit; }
 wait
 printf "build_chroot(): \t\tok\n"
 
@@ -93,7 +80,7 @@ printf "build_chroot(): \t\tok\n"
 # 1.1) migra la chroot dalla WORKING_DIR alla rootfs del container locale
 # --------------------------------------------------------------------------
 # 1.1.1) crea cartella del container
-printf "creo $NOME_CONTAINER"
+printf "creo $NOME_CONTAINER "
 mkdir $NOME_CONTAINER || { echo "ERRORE: non riesco a creare la cartella del Container: "$NOME_CONTAINER; echo ""; exit;}
 wait
 # 1.1.2) verifica la presenza della cartella del container e della cartella del rootfs
@@ -103,6 +90,9 @@ printf "\t\tok\n"
 
 # 1..1.3) sposta la chroot nella rootfs
 printf "sposto chroot in rootfs"
+
+# transaction safe con git || rsync
+#rsync -Ha $WORKING_DIR $NOME_CONTAINER/rootfs
 mv $WORKING_DIR $NOME_CONTAINER/rootfs || { echo "ERRORE: non riesco a spostare la chroot da "$WORKING_DIR" a "$NOME_CONTAINER/rootfs; exit;}
 wait
 
