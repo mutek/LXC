@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# makeContainer.sh v0.9.7
+# make-container v0.9.8
 # Compila un Container LXC
 # Luca Cappelletti (c) 2015 <luca.cappelletti@gmail.com>
 # WTF
@@ -16,6 +16,8 @@ MIRROR=$4
 MAC_ADDRESS=$5
 WORKING_DIR=$6
 CONTAINER_STATIC_IP=$7
+
+[ "$1" == "--help"] && { echo "uso: "$0" NOME_CONTAINER DISTRO_RELEASE[wheezy,jessie,...] ARCHITETTURA[i386,amd64,armhf,...]"; exit; }
 
 # verifica la presenza dei tools di comodo
 [ $(which mktemp) ] || { echo "ERRORE: mktemp non trovato"; exit; }
@@ -68,7 +70,7 @@ local ARCHITETTURA=$1
 local DISTRO_RELEASE=$2
 local WORKING_DIR=$3
 local MIRROR=$4
-local PACCHETTI="ifupdown,locales,libui-dialog-perl,dialog,isc-dhcp-client,netbase,net-tools,iproute,openssh-server,htop,nmap,sshguard,vlan,fail2ban"
+local PACCHETTI="ifupdown,locales,libui-dialog-perl,dialog,isc-dhcp-client,netbase,net-tools,iproute,openssh-server,htop,nmap,sshguard,vlan,fail2ban,psmisc"
 
 echo "build_chroot: ARCHITETTURA = "$ARCHITETTURA
 echo "build_chroot: DISTRO_RELEASE = "$DISTRO_RELEASE
@@ -185,12 +187,27 @@ EOHOSTNAME
 
 # resume:
 
-echo "NOME_CONTAINER = "$NOME_CONTAINER
-echo "DISTRO_RELEASE = "$DISTRO_RELEASE
-echo "ARCHITETTURA = "$ARCHITETTURA
-echo "MIRROR = "$MIRROR
-echo "MAC_ADDRESS = "$MAC_ADDRESS
-echo "WORKIG_DIR = "$WORKING_DIR
-echo "CONTAINER_STATIC_IP = "$CONTAINER_STATIC_IP
-echo "LXC_CONFIG = "$LXC_CONFIG
+#echo "NOME_CONTAINER = "$NOME_CONTAINER
+#echo "DISTRO_RELEASE = "$DISTRO_RELEASE
+#echo "ARCHITETTURA = "$ARCHITETTURA
+#echo "MIRROR = "$MIRROR
+#echo "MAC_ADDRESS = "$MAC_ADDRESS
+#echo "WORKIG_DIR = "$WORKING_DIR
+#echo "CONTAINER_STATIC_IP = "$CONTAINER_STATIC_IP
+#echo "LXC_CONFIG = "$LXC_CONFIG
+
+# log
+
+cat << EOLOG > ${NOME_CONTAINER}.log
+NOME_CONTAINER = $NOME_CONTAINER
+DISTRO_RELEASE = $DISTRO_RELEASE
+ARCHITETTURA = $ARCHITETTURA
+MIRROR = $MIRROR
+MAC_ADDRESS = $MAC_ADDRESS
+WORKIG_DIR = $WORKING_DIR
+CONTAINER_STATIC_IP = $CONTAINER_STATIC_IP
+LXC_CONFIG = $LXC_CONFIG
+EOLOG
+
+cat ${NOME_CONTAINER}.log
 
