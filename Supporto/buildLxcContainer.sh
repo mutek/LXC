@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#  buildLxcContainer.sh v0.9.2
+#  buildLxcContainer.sh v0.9.3
 # Compila un Container LXC
 # Luca Cappelletti (c) 2015 <luca.cappelletti@gmail.com>
 # WTF
@@ -21,6 +21,7 @@ CONTAINER_STATIC_IP=$7
 [ $(which mktemp) ] || { echo "ERRORE: mktemp non trovato"; exit; }
 [ $(which debootstrap) ] || { echo "ERRORE: debootstrap non trovato"; exit; }
 [ $(which rsync) ] || { echo "ERRORE: rsync non trovato"; exit; }
+[ $(which lxc-config) ] || { echo "ERRORE: lxc-config non trovato"; exit; }
 
 # assegna default in caso di lacune in input
 [ -z $NOME_CONTAINER ] && NOME_CONTAINER=DefaultWheezy
@@ -31,6 +32,11 @@ CONTAINER_STATIC_IP=$7
 [ -z $WORKING_DIR ] && WORKING_DIR=$(mktemp -u --tmpdir=./ | cut -d"/" -f 2)
 [ -z $CONTAINER_STATIC_IP ] && CONTAINER_STATIC_IP="10.10.10."$(dd if=/dev/urandom bs=1 count=1 2>/dev/null | od -An -tu1 | sed -e 's/^ *//' -e 's/  */./g')
 
+# scova dove cova
+LXC_CONFIG=$(lxc-config lxc.lxcpath)
+INSTALL_ARCH=$ARCHITETTURA
+[ "$ARCHITETTURA" == "i386" ] && INSTALL_ARCH="ia32"
+
 echo "NOME_CONTAINER = "$NOME_CONTAINER
 echo "DISTRO_RELEASE = "$DISTRO_RELEASE
 echo "ARCHITETTURA = "$ARCHITETTURA
@@ -38,10 +44,13 @@ echo "MIRROR = "$MIRROR
 echo "MAC_ADDRESS = "$MAC_ADDRESS
 echo "WORKIG_DIR = "$WORKING_DIR
 echo "CONTAINER_STATIC_IP = "$CONTAINER_STATIC_IP
+echo "LXC_CONFIG = "$LXC_CONFIG
 
+# -1) sposta nel covo LXC
+cd $LXC_CONFIG || { echo "ERRORE: non riesco a spostarmi in: " $LXC_CONFIG; exit; }
 
 # 0) verifica accesso alla rete
-# FIX: robotica non permette ping esterno
+# FIX: robotica non permette ping esterno...disabilitato momentaneamente
 #printf ">> accesso alla rete:"
 #ping -q -w 1 -c 1 8.8.8.8 > /dev/null || { echo "ERRORE: non riesco ad accedere ad Internet"; exit; }
 #wait
@@ -53,7 +62,6 @@ local ARCHITETTURA=$1
 local DISTRO_RELEASE=$2
 local WORKING_DIR=$3
 local MIRROR=$4
-
 local PACCHETTI="ifupdown,locales,libui-dialog-perl,dialog,isc-dhcp-client,netbase,net-tools,iproute,openssh-server,htop,nmap,sshguard,vlan,fail2ban"
 
 echo "build_chroot: ARCHITETTURA = "$ARCHITETTURA
@@ -117,12 +125,9 @@ INTERFACES
 
 cat $NOME_CONTAINER/rootfs/etc/network/interfaces
 
+
 # 3)modifica MAC address del file config nella cartella dei metadati del container
 cat << CONFIG_LXC > $NOME_CONTAINER/config
-#lxc.utsname = myhostname
-#lxc.network.type = veth
-#lxc.network.flags = up
-#lxc.network.link = br0
 #lxc.network.name = eth0
 #lxc.network.ipv4 = 10.2.3.1/24 10.2.3.255
 #lxc.network.ipv6 = 2003:db8:1:0:214:1234:fe0b:3597
@@ -130,8 +135,8 @@ lxc.network.type = veth
 lxc.network.link = lxcbr0
 lxc.network.flags = up
 lxc.network.hwaddr = ${MAC_ADDRESS}
-lxc.rootfs = /opt/Lxc/1.1.2/Debian7/Linux/$ARCHITETTURA/var/lib/lxc/$NOME_CONTAINER/rootfs
-lxc.include = /opt/Lxc/1.1.2/Debian7/Linux/$ARCHITETTURA/share/lxc/config/debian.common.conf
+lxc.rootfs = $LXC_CONFIG/$NOME_CONTAINER/rootfs
+lxc.include = /opt/Lxc/1.1.2/Debian7/Linux/$INSTALL_ARCH/share/lxc/config/debian.common.conf
 lxc.utsname = $NOME_CONTAINER
 lxc.arch = $ARCHITETTURA
 CONFIG_LXC
@@ -149,4 +154,5 @@ echo "MIRROR = "$MIRROR
 echo "MAC_ADDRESS = "$MAC_ADDRESS
 echo "WORKIG_DIR = "$WORKING_DIR
 echo "CONTAINER_STATIC_IP = "$CONTAINER_STATIC_IP
+echo "LXC_CONFIG = "$LXC_CONFIG
 
