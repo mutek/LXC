@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# make-container v0.9.12
+# make-container v0.9.13
 # Compila un Container LXC
 # Luca Cappelletti (c) 2015 <luca.cappelletti@gmail.com>
 # WTF
@@ -201,8 +201,15 @@ wait
 dpkg-reconfigure -f noninteractive openssh-server
 EOKEYS
 
+# 9) wtf locale
+chroot ${NOME_CONTAINER}/rootfs /bin/bash -x << 'EOLOCALE'
+locale-gen en_US.UTF-8 UTF-8
+wait
+update-locale LANG=en_US.UTF-8
+EOLOCALE
 
-# 9) pre configure localepurge
+
+# 10) pre configure localepurge
 cat << EOLOCALENOPURGE > ${NOME_CONTAINER}/rootfs/etc/locale.nopurge
 MANDELETE
 DONTBOTHERNEWLOCALE
@@ -212,7 +219,7 @@ SHOWFREEDSPACE
 en_US.UTF-8
 EOLOCALENOPURGE
 
-# 10) strip down locales
+# 11) strip down locales
 chroot ${NOME_CONTAINER}/rootfs /bin/bash -x << 'EOLOCALEPURGE'
 apt-get --yes --force-yes --assume-yes install localepurge
 wait
