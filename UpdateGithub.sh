@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 #
-# UpdateGithub.sh v1.0.1
+# UpdateGithub.sh v1.0.2
 #
 #
 # Copyleft )C( 2013-2015 Luca Cappelletti <luca.cappelletti@gmail.com>
@@ -50,7 +50,7 @@ wait
 [ -z $2 ] || { echo"Versione: "$VERSIONE; git tag -a $VERSIONE -m "$COMMENTO"; git push origin --tags; git tag; }
 wait
 
-git tag
+[ -z $2 ] && git tag
 
 #git push origin gh-pages
 echo "ok"
