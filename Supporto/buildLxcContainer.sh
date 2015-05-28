@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#  buildLxcContainer.sh v0.9
+#  buildLxcContainer.sh v0.9.1
 # Compila un Container LXC
 # Luca Cappelletti (c) 2015 <luca.cappelletti@gmail.com>
 # WTF
@@ -53,12 +53,28 @@ DISTRO_RELEASE=$2
 WORKING_DIR=$3
 MIRROR=$4
 
+PACCHETTI=\
+ifupdown,\
+locales,\
+libui-dialog-perl,\
+dialog,\
+isc-dhcp-client,\
+netbase,\
+net-tools,\
+iproute,\
+openssh-server,\
+htop,\
+nmap,\
+sshguard,\
+vlan,\
+fail2ban
+
 echo "build_chroot: ARCHITETTURA = "$ARCHITETTURA
 echo "build_chroot: DISTRO_RELEASE = "$DISTRO_RELEASE
 echo "build_chroot: WORKING_DIR = "$WORKING_DIR
 echo "build_chroot: MIRROR = "$MIRROR
 #echo "build_chroot()"
-debootstrap --arch $ARCHITETTURA $DISTRO_RELEASE $WORKING_DIR $MIRROR || return 1
+debootstrap --verbose --components=main,restricted,non-free --include=$PACCHETTI --arch $ARCHITETTURA $DISTRO_RELEASE $WORKING_DIR $MIRROR || return 1
 wait
 
 return 0
