@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# make-container v0.9.8
+# make-container v0.9.9
 # Compila un Container LXC
 # Luca Cappelletti (c) 2015 <luca.cappelletti@gmail.com>
 # WTF
@@ -70,7 +70,7 @@ local ARCHITETTURA=$1
 local DISTRO_RELEASE=$2
 local WORKING_DIR=$3
 local MIRROR=$4
-local PACCHETTI="ifupdown,locales,libui-dialog-perl,dialog,isc-dhcp-client,netbase,net-tools,iproute,openssh-server,htop,nmap,sshguard,vlan,fail2ban,psmisc"
+local PACCHETTI="ifupdown,locales,libui-dialog-perl,dialog,isc-dhcp-client,netbase,net-tools,iproute,openssh-server,htop,nmap,sshguard,vlan,fail2ban,psmisc,file"
 
 echo "build_chroot: ARCHITETTURA = "$ARCHITETTURA
 echo "build_chroot: DISTRO_RELEASE = "$DISTRO_RELEASE
@@ -104,7 +104,7 @@ wait
 wait
 printf "\t\tok\n"
 
-# 1..1.3) sposta la chroot nella rootfs
+# 1.1.3) sposta la chroot nella rootfs
 printf "sposto chroot in rootfs"
 
 # transaction safe con git || rsync
@@ -167,8 +167,11 @@ deb $MIRROR ${DISTRO_RELEASE}-proposed-updates main contrib non-free
 
 EOF
 
-# 4.1 aggiorna gli indici e pulisci archives da resdui spuri
-chroot ${NOME_CONTAINER}/rootfs apt-get update&&apt-get upgrade&&apt-get clean
+echo
+echo ">> apt-get in guest <<"
+echo 
+# 4.1 aggiorna gli indici e pulisci archives da residui spuri
+chroot ${NOME_CONTAINER}/rootfs apt-get update&&apt-get -y --force-yes upgrade&&apt-get clean
 
 # 5) configura un resolv.conf di sicurezza
 cat << EORESOLV > ${NOME_CONTAINER}/rootfs/etc/resolv.conf
