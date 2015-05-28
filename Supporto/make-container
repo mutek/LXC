@@ -17,7 +17,7 @@ MAC_ADDRESS=$5
 WORKING_DIR=$6
 CONTAINER_STATIC_IP=$7
 
-[ "$1" == "--help"] && { echo "uso: "$0" NOME_CONTAINER DISTRO_RELEASE[wheezy,jessie,...] ARCHITETTURA[i386,amd64,armhf,...]"; exit; }
+[ "$1" == "--help" ] && { echo "uso: "$0" NOME_CONTAINER DISTRO_RELEASE[wheezy,jessie,...] ARCHITETTURA[i386,amd64,armhf,...]"; exit; }
 
 # verifica la presenza dei tools di comodo
 [ $(which mktemp) ] || { echo "ERRORE: mktemp non trovato"; exit; }
