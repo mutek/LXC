@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# makeContainer.sh v0.9.6
+# makeContainer.sh v0.9.7
 # Compila un Container LXC
 # Luca Cappelletti (c) 2015 <luca.cappelletti@gmail.com>
 # WTF
@@ -164,6 +164,24 @@ deb $MIRROR ${DISTRO_RELEASE}-updates main contrib non-free
 deb $MIRROR ${DISTRO_RELEASE}-proposed-updates main contrib non-free
 
 EOF
+
+# 4.1 aggiorna gli indici e pulisci archives da resdui spuri
+chroot ${NOME_CONTAINER}/rootfs apt-get update&&apt-get upgrade&&apt-get clean
+
+# 5) configura un resolv.conf di sicurezza
+cat << EORESOLV > ${NOME_CONTAINER}/rootfs/etc/resolv.conf
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+EORESOLV
+
+# 6) eredita il timezone dell'host e lo configura sul guest
+[ -f /etc/timezone ] && { cat /etc/timezone > ${NOME_CONTAINER}/rootfs/etc/timezone; chroot ${NOME_CONTAINER}/rootfs dpkg-reconfigure -f noninteractive tzdata; }
+
+# 7) fissa hostname a NOME_CONTAINER
+cat << EOHOSTNAME > ${NOME_CONTAINER}/rootfs/etc/hostname
+$NOME_CONTAINER
+EOHOSTNAME
+
 
 # resume:
 
