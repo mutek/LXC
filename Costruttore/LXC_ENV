@@ -1,0 +1,6 @@
+VERSION="1.1.2"
+ARCH="amd64"
+export PATH=/opt/Lxc/${VERSION}/Debian7/Linux/${ARCH}/libexec/lxc:$PATH
+export PATH=/opt/Lxc/${VERSION}/Debian7/Linux/${ARCH}/sbin:$PATH
+export PATH=/opt/Lxc/${VERSION}/Debian7/Linux/${ARCH}/bin:$PATH
+export LD_LIBRARY_PATH=/opt/Lxc/${VERSION}/Debian7/Linux/${ARCH}/lib:$LD_LIBRARY_PATH
