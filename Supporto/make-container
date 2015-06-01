@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# make-container v0.9.13
+# make-container v0.9.14
 # Compila un Container LXC
 # Luca Cappelletti (c) 2015 <luca.cappelletti@gmail.com>
 # WTF
@@ -17,8 +17,15 @@ MAC_ADDRESS=$5
 WORKING_DIR=$6
 CONTAINER_STATIC_IP=$7
 BRIDGE_HOST_IP=$8
+EXTRA_DEB=$9
 
-[ "$1" == "--help" ] && { echo "uso: "$0" NOME_CONTAINER DISTRO_RELEASE[wheezy,jessie,...] ARCHITETTURA[i386,amd64,armhf,...]"; exit; }
+[ "$1" == "--help" ] && { echo "uso: "$0" NOME_CONTAINER DISTRO_RELEASE[wheezy,jessie,...] ARCHITETTURA[i386,amd64,armhf,...] \
+MIRROR \
+MAC_ADDRESS \
+WORKING_DIR \
+CONTAINER_STATIC_IP \
+BRIDGE_HOST_IP \
+EXTRA_DEBS"; exit; }
 
 # verifica la presenza dei tools di comodo
 [ $(which mktemp) ] || { echo "ERRORE: mktemp non trovato"; exit; }
@@ -35,6 +42,7 @@ BRIDGE_HOST_IP=$8
 [ -z $WORKING_DIR ] && WORKING_DIR=$(mktemp -u --tmpdir=./ | cut -d"/" -f 2)
 [ -z $CONTAINER_STATIC_IP ] && CONTAINER_STATIC_IP="10.10.10."$(dd if=/dev/urandom bs=1 count=1 2>/dev/null | od -An -tu1 | sed -e 's/^ *//' -e 's/  */./g')
 [ -z $BRIDGE_HOST_IP ] && BRIDGE_HOST_IP="10.10.10.1"
+[ -z $EXTRA_DEBS ] && EXTRA_DEBS=""
 
 # scova dove cova
 LXC_CONFIG=$(lxc-config lxc.lxcpath)
@@ -54,6 +62,8 @@ echo "MIRROR = "$MIRROR
 echo "MAC_ADDRESS = "$MAC_ADDRESS
 echo "WORKIG_DIR = "$WORKING_DIR
 echo "CONTAINER_STATIC_IP = "$CONTAINER_STATIC_IP
+echo "BRIDGE_HOST_IP = "$BRIDGE_HOST_IP
+echo "EXTRA_DEBS = "$EXTRA_DEBS
 echo "LXC_CONFIG = "$LXC_CONFIG
 
 # -1) sposta nel covo LXC
@@ -85,6 +95,7 @@ wait
 
 return 0
 }
+
 
 # 1) genera chroot
 printf "build_chroot():\n"
@@ -230,21 +241,16 @@ wait
 localepurge
 EOLOCALEPURGE
 
+# 12) install extra debs
+chroot ${NOME_CONTAINER}/rootfs /bin/bash -x << 'EOEXTRADEBS'
+apt-get --yes --force-yes --assume-yes install $EXTRA_DEBS
+wait
+apt-get clean
+wait
+localepurge
+EOEXTRADEBS
 
-# resume:
-
-#echo "NOME_CONTAINER = "$NOME_CONTAINER
-#echo "DISTRO_RELEASE = "$DISTRO_RELEASE
-#echo "ARCHITETTURA = "$ARCHITETTURA
-#echo "MIRROR = "$MIRROR
-#echo "MAC_ADDRESS = "$MAC_ADDRESS
-#echo "WORKIG_DIR = "$WORKING_DIR
-#echo "CONTAINER_STATIC_IP = "$CONTAINER_STATIC_IP
-#echo "LXC_CONFIG = "$LXC_CONFIG
-#echo "BRIDGE_HOST_IP = $BRIDGE_HOST_IP"
-
-# log
-
+# 13) log and resume
 cat << EOLOG > ${NOME_CONTAINER}/${NOME_CONTAINER}.log
 NOME_CONTAINER = $NOME_CONTAINER
 DISTRO_RELEASE = $DISTRO_RELEASE
@@ -254,7 +260,8 @@ MAC_ADDRESS = $MAC_ADDRESS
 WORKIG_DIR = $WORKING_DIR
 CONTAINER_STATIC_IP = $CONTAINER_STATIC_IP
 LXC_CONFIG = $LXC_CONFIG
-BRIDGE_HOST_IP = $BRIDGE_HOST_IP 
+BRIDGE_HOST_IP = $BRIDGE_HOST_IP
+EXTRA_DEBS = $EXTRA_DEBS
 EOLOG
 
 cat ${NOME_CONTAINER}/${NOME_CONTAINER}.log
