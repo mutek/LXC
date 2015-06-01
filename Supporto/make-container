@@ -213,6 +213,7 @@ dpkg-reconfigure -f noninteractive openssh-server
 EOKEYS
 
 # 9) wtf locale
+echo ">> wtf locale <<"
 chroot ${NOME_CONTAINER}/rootfs /bin/bash -x << 'EOLOCALE'
 sed -e "s/^# \(en_US.UTF-8 UTF-8\)/\1/" -i /etc/locale.gen 2> /dev/null
 wait
@@ -223,6 +224,7 @@ EOLOCALE
 
 
 # 10) pre configure localepurge
+echo ">> pre configura localepurge <<"
 cat << EOLOCALENOPURGE > ${NOME_CONTAINER}/rootfs/etc/locale.nopurge
 MANDELETE
 DONTBOTHERNEWLOCALE
@@ -233,6 +235,7 @@ en_US.UTF-8
 EOLOCALENOPURGE
 
 # 11) strip down locales
+echo ">> installa localepurge <<"
 chroot ${NOME_CONTAINER}/rootfs /bin/bash -x << 'EOLOCALEPURGE'
 apt-get --yes --force-yes --assume-yes install localepurge
 wait
@@ -242,6 +245,7 @@ localepurge
 EOLOCALEPURGE
 
 # 12) install extra debs
+echo ">> installa $EXTRA_DEBS <<"
 chroot ${NOME_CONTAINER}/rootfs /bin/bash -x << 'EOEXTRADEBS'
 apt-get --yes --force-yes --assume-yes install $EXTRA_DEBS
 wait
@@ -251,6 +255,7 @@ localepurge
 EOEXTRADEBS
 
 # 13) log and resume
+echo ">> The Final Cut <<"
 cat << EOLOG > ${NOME_CONTAINER}/${NOME_CONTAINER}.log
 NOME_CONTAINER = $NOME_CONTAINER
 DISTRO_RELEASE = $DISTRO_RELEASE
