@@ -17,7 +17,7 @@ MAC_ADDRESS=$5
 WORKING_DIR=$6
 CONTAINER_STATIC_IP=$7
 BRIDGE_HOST_IP=$8
-EXTRA_DEB=$9
+EXTRA_DEBS=$9
 
 [ "$1" == "--help" ] && { echo "uso: "$0" NOME_CONTAINER DISTRO_RELEASE[wheezy,jessie,...] ARCHITETTURA[i386,amd64,armhf,...] \
 MIRROR \
