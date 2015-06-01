@@ -245,6 +245,8 @@ localepurge
 EOLOCALEPURGE
 
 # 12) install extra debs
+# senza apici nel HEREDOC permette di eseguire l'espansione
+# con apici non esegue espansione
 echo ">> installa $EXTRA_DEBS <<"
 chroot ${NOME_CONTAINER}/rootfs /bin/bash -x << EOEXTRADEBS
 echo ">> >> installo EXTRA_DEBS = "$EXTRA_DEBS" << <<"
