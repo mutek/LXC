@@ -246,7 +246,8 @@ EOLOCALEPURGE
 
 # 12) install extra debs
 echo ">> installa $EXTRA_DEBS <<"
-chroot ${NOME_CONTAINER}/rootfs /bin/bash -x << 'EOEXTRADEBS'
+chroot ${NOME_CONTAINER}/rootfs /bin/bash -x << EOEXTRADEBS
+echo ">> >> installo EXTRA_DEBS = "$EXTRA_DEBS" << <<"
 apt-get --yes --force-yes --assume-yes install $EXTRA_DEBS
 wait
 apt-get clean
