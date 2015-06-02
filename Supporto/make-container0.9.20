@@ -1,0 +1,351 @@
+#!/usr/bin/env bash
+# make-container v0.9.20
+# Compila un Container LXC
+# Luca Cappelletti (c) 2015 <luca.cappelletti@gmail.com>
+# WTF
+#
+# esempio: ./buildLxcContainer.sh ServerPosta wheezy amd64
+# costruisce un container di nome ServerPosta con Debian Wheezy per architetture Intel/Amd 64bit
+# genera un IP statico random nella rete 10.10.10.0 associato ad un idirizzo di MAC address random
+
+# BEFORE
+readonly RELEASE=0.9.20
+# GENERALI
+MC_NOME_CONTAINER=$1
+MC_DISTRO_RELEASE=$2
+MC_ARCHITETTURA=$3
+MC_MIRROR=$4
+MC_MAC_ADDRESS=$5
+MC_WORKING_DIR=$6
+MC_CONTAINER_STATIC_IP=$7
+MC_BRIDGE_HOST_IP=$8
+MC_EXTRA_DEBS=$9
+
+[ "$1" == "--help" ] && { printf " uso: $0 MC_NOME_CONTAINER MC_DISTRO_RELEASE\n\
+[wheezy,jessie,...] MC_ARCHITETTURA[i386,amd64,armhf,...] MC_MIRROR MC_MAC_ADDRESS\n\
+MC_WORKING_DIR MC_CONTAINER_STATIC_IP MC_BRIDGE_HOST_IP MC_EXTRA_DEBS\n\n \
+E' possibile aggiungere nella cartella di esecuzione di $(basename $0)\n\
+uno o piu files di configurazione aggiuntivi che avranno la precedenza\n\
+sui parametri passati a linea di comando\n\n \
+I files di configurazione possono essere nominati: \n\n \
+MC_NOME_CONTAINER.conf\tse è stato passato a linea di comando un MC_NOME_CONTAINER \n \
+Default.conf\t\tse non è stato passato un MC_NOME_CONTAINER alla linea\n\
+di comando \n \
+make-container.conf\tvalido per tutti i casi e sovrascrive qualsiasi\n \
+scelta precedente\n\n \
+nel file di configurazione potete scrivere qualsiasi cosa, verranno\n \
+prese in considerazione solo le righe che contengono una coppia del tipo \n \
+MC_VARIABILE=valore\n\n \
+ad esempio make-container.conf: \n \
+###################### \n \
+# commento libero \n \
+# stile shell \n \
+# ma anche \n \
+no \n \
+e si puo scrivere quello che si vuole \n \
+importante è questo: \n \
+MC_DISTRO_RELEASE=wheezy \n \
+la precedente coppia è valida \n \
+la seguento no \n \
+PIPPO=paperino \n \
+ma non viene considerata dal make-container \n \
+MC_ARCHITETTURA=amd64 \n \
+invece \n \
+# la precedente ARCHITETTURA=amd64 si \n \
+# fine configurazione \n \
+....non è obbligatorio \n \
+\n \
+###################### \n \
+
+"; exit; }
+
+for TOOL in "mktemp" "debootstrap" "rsync" "lxc-config"
+do
+
+    printf "check:\t$TOOL\n"
+    printf "\t"; which $TOOL || { [ $? -ne 0 ] && echo "ERRORE: "$TOOL" non trovato...";exit; }
+    printf "ok\t$TOOL\n\n"
+
+done
+
+# assegna default in caso di lacune in input
+[ -z $MC_NOME_CONTAINER ] && MC_NOME_CONTAINER=Default
+[ -z $MC_DISTRO_RELEASE ] && MC_DISTRO_RELEASE=wheezy
+[ -z $MC_ARCHITETTURA ] && MC_ARCHITETTURA=amd64
+[ -z $MC_MIRROR ] && MC_MIRROR="http://mirror3.mirror.garr.it/mirrors/debian/"
+[ -z $MC_MAC_ADDRESS ] && MC_MAC_ADDRESS=$(echo 00$(od -txC -An -N5 /dev/urandom|tr \  :))
+[ -z $MC_WORKING_DIR ] && MC_WORKING_DIR=$(mktemp -u --tmpdir=./ | cut -d"/" -f 2)
+[ -z $MC_CONTAINER_STATIC_IP ] && MC_CONTAINER_STATIC_IP="10.10.10."$(dd if=/dev/urandom bs=1 count=1 2>/dev/null | od -An -tu1 | sed -e 's/^ *//' -e 's/  */./g')
+[ -z $MC_BRIDGE_HOST_IP ] && MC_BRIDGE_HOST_IP="10.10.10.1"
+[ -z $MC_EXTRA_DEBS ] && MC_EXTRA_DEBS=""
+
+# Se esiste un file di configurazione takeover qui, ora.
+# Carica in modo opportunistico senza verifica, risparmia tempo, spazio
+# filtra anti iniezione
+[ -f ./$MC_NOME_CONTAINER ] && while read MC_PARAMETRO; do eval $( echo $MC_PARAMETRO | grep ^MC | grep \= ); done <$MC_NOME_CONTAINER.conf
+[ -f ./make-container.conf ] && while read MC_PARAMETRO; do eval $( echo $MC_PARAMETRO | grep ^MC | grep \= ); done <make-container.conf
+
+# scova dove cova
+LXC_CONFIG=$(lxc-config lxc.lxcpath)
+INSTALL_ARCH=$MC_ARCHITETTURA
+
+# workaround momentaneo per l'hardpath del lxc config
+[ "$MC_ARCHITETTURA" == "i386" ] && INSTALL_ARCH="ia32"
+
+# imposta il security mirror standard
+SECURITY_MIRROR="http://security.debian.org/"
+
+
+echo "MC_NOME_CONTAINER = "$MC_NOME_CONTAINER
+echo "MC_DISTRO_RELEASE = "$MC_DISTRO_RELEASE
+echo "MC_ARCHITETTURA = "$MC_ARCHITETTURA
+echo "MC_MIRROR = "$MC_MIRROR
+echo "MC_MAC_ADDRESS = "$MC_MAC_ADDRESS
+echo "MC_WORKING_DIR = "$MC_WORKING_DIR
+echo "MC_CONTAINER_STATIC_IP = "$MC_CONTAINER_STATIC_IP
+echo "MC_BRIDGE_HOST_IP = "$MC_BRIDGE_HOST_IP
+echo "MC_EXTRA_DEBS = "$MC_EXTRA_DEBS
+echo "LXC_CONFIG = "$LXC_CONFIG
+
+# -2) sposta nel covo LXC
+cd $LXC_CONFIG || { echo "ERRORE: non riesco a spostarmi in: " $LXC_CONFIG; exit; }
+ls --color
+
+# -1) se lxc-ls resituisce anche $MC_NOME_CONTAINER allora esce
+#       se ls contiene $MC_NOME_CONTAINER/config && $MC_NOME_CONTAINER/rootfs/etc/issue allora esce
+
+[ "$(lxc-ls | grep $MC_NOME_CONTAINER)" == "$MC_NOME_CONTAINER" ] && {  echo "ERRORE: il Container: "$MC_NOME_CONTAINER" sembra gia esistere!!"; lxc-ls; exit; }
+
+[ -f $MC_NOME_CONTAINER/config ] && [ -f $MC_NOME_CONTAINER/rootfs/etc/issue ] && { echo "ERRORE: esiste gia una struttura di nome: "$MC_NOME_CONTAINER" anche se non viene elencata da lxc-ls"; exit; }
+
+# quindi per esclusione elimino tutto cio che corrisponde a $MC_NOME_CONTAINER 
+[ -d $MC_NOME_CONTAINER ] && { rm -rf --preserve-root --one-file-system $MC_NOME_CONTAINER; }
+# e se era un file in silenzio just
+unlink $MC_NOME_CONTAINER >& /dev/null
+rm  -rf --preserve-root --one-file-system tmp* >& /dev/null
+ls --color
+
+
+
+# 0) verifica accesso alla rete
+# FIX: robotica non permette ping esterno...disabilitato momentaneamente
+#printf ">> accesso alla rete:"
+#ping -q -w 1 -c 1 8.8.8.8 > /dev/null || { echo "ERRORE: non riesco ad accedere ad Internet"; exit; }
+#wait
+#printf "\t\tok\n"
+
+# build_chroot() si preoccupa di costruire la chroot di base
+build_chroot() {
+local ARCHITETTURA=$1
+local DISTRO_RELEASE=$2
+local WORKING_DIR=$3
+local MIRROR=$4
+#local PACCHETTI="ifupdown,locales,libui-dialog-perl,dialog,isc-dhcp-client,netbase,net-tools,iproute,openssh-server,htop,nmap,sshguard,vlan,fail2ban,psmisc,file"
+
+local PACCHETTI="ifupdown,\
+locales,\
+libui-dialog-perl,\
+dialog,\
+isc-dhcp-client,\
+netbase,\
+net-tools,\
+iproute,\
+openssh-server,\
+htop,\
+nmap,\
+sshguard,\
+vlan,\
+fail2ban,\
+psmisc,\
+file"
+
+echo "build_chroot: ARCHITETTURA = "$ARCHITETTURA
+echo "build_chroot: DISTRO_RELEASE = "$DISTRO_RELEASE
+echo "build_chroot: WORKING_DIR = "$WORKING_DIR
+echo "build_chroot: MIRROR = "$MIRROR
+echo "build_chroot: PACCHETTI = "$PACCHETTI
+echo ""
+debootstrap --verbose --components=main,restricted,non-free --include=$PACCHETTI --arch $ARCHITETTURA $DISTRO_RELEASE $WORKING_DIR $MIRROR
+wait
+
+return 0
+}
+
+
+# 1) genera chroot
+printf "build_chroot():\n"
+build_chroot $MC_ARCHITETTURA $MC_DISTRO_RELEASE $MC_WORKING_DIR $MC_MIRROR  #|| { echo "ERRORE: non riesco a completare l'operazione di debootstrap"; exit; }
+wait
+printf "build_chroot(): \t\tok\n"
+
+
+
+# -------------------------------------------------------------------------
+# 1.1) migra la chroot dalla WORKING_DIR alla rootfs del container locale
+# --------------------------------------------------------------------------
+# 1.1.1) crea cartella del container
+printf "creo $MC_NOME_CONTAINER "
+mkdir $MC_NOME_CONTAINER || { echo "ERRORE: non riesco a creare la cartella del Container: "$MC_NOME_CONTAINER; echo ""; exit;}
+wait
+# 1.1.2) verifica la presenza della cartella del container e della cartella del rootfs
+[ -d $MC_NOME_CONTAINER ] || { echo "ERRORE: non trovo la cartella del Container: "$MC_NOME_CONTAINER; ls --color ; exit; }
+wait
+printf "\t\tok\n"
+
+# 1.1.3) sposta la chroot nella rootfs
+printf "sposto chroot in rootfs...\t"
+
+# transaction safe con git || rsync
+#rsync -Ha $MC_WORKING_DIR $NOME_CONTAINER/rootfs
+mv $MC_WORKING_DIR $MC_NOME_CONTAINER/rootfs || { echo " ERRORE: non riesco a spostare la chroot da "$MC_WORKING_DIR" a "$MC_NOME_CONTAINER/rootfs; exit;}
+wait
+
+# 1.1.4) verifica a presenza della cartella rootfs nel container e della validita della chroot
+[ -f MC_$NOME_CONTAINER/rootfs/etc/issue ] || { echo "ERRORE: non trovo la rootfs valida in "$MC_NOME_CONTAINER; exit; }
+wait
+printf "\t\tok\n"
+
+
+# 2) setup network IP statico nel container
+mkdir -p $MC_NOME_CONTAINER/rootfs/etc/network || { echo "ERRORE: non riesco a creare la cartella $MC_NOME_CONTAINER/rootfs/etc/network"; exit 0; }
+cat << INTERFACES > $MC_NOME_CONTAINER/rootfs/etc/network/interfaces
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+	address $MC_CONTAINER_STATIC_IP
+	netmask 255.255.255.0
+	gateway 10.10.10.1
+INTERFACES
+
+cat $MC_NOME_CONTAINER/rootfs/etc/network/interfaces
+
+
+# 3)modifica MAC address del file config nella cartella dei metadati del container
+cat << CONFIG_LXC > $MC_NOME_CONTAINER/config
+#lxc.network.name = eth0
+#lxc.network.ipv4 = 10.2.3.1/24 10.2.3.255
+#lxc.network.ipv6 = 2003:db8:1:0:214:1234:fe0b:3597
+lxc.network.type = veth
+lxc.network.link = lxcbr0
+lxc.network.flags = up
+lxc.network.hwaddr = ${MC_MAC_ADDRESS}
+lxc.rootfs = $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs
+lxc.include = /opt/Lxc/1.1.2/Debian7/Linux/$INSTALL_ARCH/share/lxc/config/debian.common.conf
+lxc.utsname = $MC_NOME_CONTAINER
+lxc.arch = $MC_ARCHITETTURA
+CONFIG_LXC
+
+cat $MC_NOME_CONTAINER/config
+echo ""
+# sed -i "s/^lxc.network.hwaddr = .*/lxc.network.hwaddr = ${MC_MAC_ADDRESS}/g" $MC_NOME_CONTAINER/config
+
+# 4) aggiorna sources.list
+mkdir -p ${MC_NOME_CONTAINER}/rootfs/etc/apt || { echo "ERRORE: non riesco ad aggiornare il source.list"; exit; }
+cat << EOF > ${MC_NOME_CONTAINER}/rootfs/etc/apt/sources.list
+# STANDARD
+deb $MC_MIRROR          ${MC_DISTRO_RELEASE}         main contrib non-free
+deb $SECURITY_MIRROR ${MC_DISTRO_RELEASE}/updates main contrib non-free
+
+# BACKPORTS
+deb $MC_MIRROR ${MC_DISTRO_RELEASE}-backports main contrib non-free
+deb $MC_MIRROR ${MC_DISTRO_RELEASE}-updates main contrib non-free
+deb $MC_MIRROR ${MC_DISTRO_RELEASE}-proposed-updates main contrib non-free
+
+EOF
+
+echo
+echo ">> apt-get in guest <<"
+echo 
+# 4.1 aggiorna gli indici e pulisci archives da residui spuri
+chroot ${MC_NOME_CONTAINER}/rootfs /bin/bash -x << 'EOBASH'
+apt-get update
+apt-get -y --force-yes upgrade
+apt-get clean
+EOBASH
+
+# 5) configura un resolv.conf di sicurezza
+cat << EORESOLV > ${MC_NOME_CONTAINER}/rootfs/etc/resolv.conf
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+EORESOLV
+
+# 6) eredita il timezone dell'host e lo configura sul guest
+[ -f /etc/timezone ] && { cat /etc/timezone > ${MC_NOME_CONTAINER}/rootfs/etc/timezone; chroot ${MC_NOME_CONTAINER}/rootfs dpkg-reconfigure -f noninteractive tzdata; }
+
+# 7) fissa hostname a MC_NOME_CONTAINER
+cat << EOHOSTNAME > ${MC_NOME_CONTAINER}/rootfs/etc/hostname
+$MC_NOME_CONTAINER
+EOHOSTNAME
+
+# 8) rigenera chiavi guest
+echo ">> rigenera chiavi <<"
+chroot ${MC_NOME_CONTAINER}/rootfs /bin/bash -x << 'EOKEYS'
+rm --preserve-root /etc/ssh/ssh_host_*
+wait
+dpkg-reconfigure -f noninteractive openssh-server
+EOKEYS
+
+# 9) wtf locale
+echo ">> wtf locale <<"
+chroot ${MC_NOME_CONTAINER}/rootfs /bin/bash -x << 'EOLOCALE'
+sed -e "s/^# \(en_US.UTF-8 UTF-8\)/\1/" -i /etc/locale.gen 2> /dev/null
+wait
+locale-gen en_US.UTF-8 UTF-8
+wait
+update-locale LANG=en_US.UTF-8
+EOLOCALE
+
+
+# 10) pre configure localepurge
+echo ">> pre configura localepurge <<"
+cat << EOLOCALENOPURGE > ${MC_NOME_CONTAINER}/rootfs/etc/locale.nopurge
+MANDELETE
+DONTBOTHERNEWLOCALE
+SHOWFREEDSPACE
+#QUICKNDIRTYCALC
+#VERBOSE
+en_US.UTF-8
+EOLOCALENOPURGE
+
+# 11) strip down locales
+echo ">> installa localepurge <<"
+chroot ${MC_NOME_CONTAINER}/rootfs /bin/bash -x << 'EOLOCALEPURGE'
+apt-get install --force-yes --assume-yes -y localepurge
+wait
+dpkg-reconfigure -f noninteractive localepurge
+wait
+localepurge
+EOLOCALEPURGE
+
+# 12) install extra debs
+# senza apici nel HEREDOC permette di eseguire l'espansione
+# con apici non esegue espansione
+echo ">> installa $MC_EXTRA_DEBS <<"
+chroot ${MC_NOME_CONTAINER}/rootfs /bin/bash -x << EOEXTRADEBS
+echo ">> >> installo MC_EXTRA_DEBS = "$MC_EXTRA_DEBS" << <<"
+apt-get install --force-yes --assume-yes -y $MC_EXTRA_DEBS
+wait
+apt-get clean
+wait
+localepurge
+EOEXTRADEBS
+
+# 13) log and resume
+echo ">> The Final Cut <<"
+cat << EOLOG > ${MC_NOME_CONTAINER}/${MC_NOME_CONTAINER}.log
+MC_NOME_CONTAINER = $MC_NOME_CONTAINER
+MC_DISTRO_RELEASE = $MC_DISTRO_RELEASE
+MC_ARCHITETTURA = $MC_ARCHITETTURA
+MC_MIRROR = $MC_MIRROR
+MC_MAC_ADDRESS = $MC_MAC_ADDRESS
+MC_WORKIG_DIR = $MC_WORKING_DIR
+MC_CONTAINER_STATIC_IP = $MC_CONTAINER_STATIC_IP
+LXC_CONFIG = $LXC_CONFIG
+MC_BRIDGE_HOST_IP = $MC_BRIDGE_HOST_IP
+MC_EXTRA_DEBS = $MC_EXTRA_DEBS
+EOLOG
+
+cat ${MC_NOME_CONTAINER}/${MC_NOME_CONTAINER}.log
+
