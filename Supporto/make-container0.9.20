@@ -200,8 +200,8 @@ printf "sposto chroot in rootfs...\t"
 mv $MC_WORKING_DIR $MC_NOME_CONTAINER/rootfs || { echo " ERRORE: non riesco a spostare la chroot da "$MC_WORKING_DIR" a "$MC_NOME_CONTAINER/rootfs; exit;}
 wait
 
-# 1.1.4) verifica a presenza della cartella rootfs nel container e della validita della chroot
-[ -f MC_$NOME_CONTAINER/rootfs/etc/issue ] || { echo "ERRORE: non trovo la rootfs valida in "$MC_NOME_CONTAINER; exit; }
+# 1.1.4) verifica la presenza della cartella rootfs nel container e della validita della chroot
+[ -f $MC_NOME_CONTAINER/rootfs/etc/issue ] || { echo "ERRORE: non trovo la rootfs valida in "$MC_NOME_CONTAINER; exit; }
 wait
 printf "\t\tok\n"
 
