@@ -2,8 +2,8 @@
 
 # redirige una prta verso il container di interesse
 
-PORTA=8890
+PORTA=80
 INDIRIZZO=10.10.10.10
-INTERFACCIA=lxcbr0
-
+#INTERFACCIA=lxcbr0
+INTERFACCIA=eth0
 iptables -t nat -A PREROUTING -i ${INTERFACCIA} -p tcp --dport ${PORTA} -j DNAT --to ${INDIRIZZO}:${PORTA}
