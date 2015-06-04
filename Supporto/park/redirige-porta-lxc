@@ -2,8 +2,40 @@
 
 # redirige una prta verso il container di interesse
 
+#PORTA=80
+#INDIRIZZO=10.10.10.10
+#INTERFACCIA=lxcbr0
+
+INTERFACCIA=eth0
+
+
+### DRUGS NGINX 10.10.10.10 SSH 2210 NGINX 80 / 443
 PORTA=80
 INDIRIZZO=10.10.10.10
-#INTERFACCIA=lxcbr0
-INTERFACCIA=eth0
 iptables -t nat -A PREROUTING -i ${INTERFACCIA} -p tcp --dport ${PORTA} -j DNAT --to ${INDIRIZZO}:${PORTA}
+
+# forward della ssh di drugs-nginx sulla 2210
+# la porta si costruisce con 22 + ultimo quartetto IP container
+# essendo 10.10.10.10 allora è 2210
+PORTA=2210
+iptables -t nat -A PREROUTING -i ${INTERFACCIA} -p tcp --dport ${PORTA} -j DNAT --to ${INDIRIZZO}:${PORTA}
+# tls su drugs-nginx
+PORTA=443
+iptables -t nat -A PREROUTING -i ${INTERFACCIA} -p tcp --dport ${PORTA} -j DNAT --to ${INDIRIZZO}:${PORTA}
+
+
+### DRUGS VIRTUOSO 10.10.10.12 SSH 2212 VIRTUOSO 8890
+# 8890 virtuoso per debug poi proxy via nginx
+PORTA=8890
+INDIRIZZO=10.10.10.12
+iptables -t nat -A PREROUTING -i ${INTERFACCIA} -p tcp --dport ${PORTA} -j DNAT --to ${INDIRIZZO}:${PORTA}
+
+
+# 2212 virtuoso ssh 2212
+PORTA=2212
+INDIRIZZO=10.10.10.12
+iptables -t nat -A PREROUTING -i ${INTERFACCIA} -p tcp --dport ${PORTA} -j DNAT --to ${INDIRIZZO}:${PORTA}
+
+
+iptables -vnL
+iptables -t nat -vnL
