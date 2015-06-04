@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 #
-# UpdateGithub.sh v1.0.2
+# update-github v1.0.3
 #
 #
 # Copyleft )C( 2013-2015 Luca Cappelletti <luca.cappelletti@gmail.com>
@@ -20,6 +20,8 @@
 # 0. You just DO WHAT THE FUCK YOU WANT TO.
 #
 
+[ -z $1 ] && commento=""
+
 # i parametri commentati sono stati inseriti nell'hook git pre-commit
 git config --global user.name "mutek"
 git config --global user.email mutek@inventati.org
@@ -27,10 +29,16 @@ git config --global user.email mutek@inventati.org
 commento=$1
 versione=$2
 
-[ -z $1 ] && commento=""
+# lista tags
+git tag
+
+# update-github ha senso con un rpeo centralizzato master
+# implica che il sync prima del push è doveroso
+echo "Allineo il repo locale al remoto prima di spingere i cambiemti locali"
+git pull
+wait
 
 # annota tags
-
 echo "Aggiungo i cambiamenti al database locale"
 git add -A .
 
@@ -52,5 +60,4 @@ wait
 
 [ -z $2 ] && git tag
 
-#git push origin gh-pages
 echo "ok"

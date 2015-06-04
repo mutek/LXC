@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 # 
-# prepara.ricetta 1.5
+# prepara.ricetta 1.6dev
 #
 # 2014-2015 mutek <mutek _A_T_ riseup _D_O_T_ net>
 # WTF
@@ -132,7 +132,8 @@ do
 	echo "make" >> ../$APP_NAME.log
 	echo "" >> ../$APP_NAME.log
 
-	make >> ../$APP_NAME.log || exit 1
+        # make -j non pone limiti al numero di job che puo avviare
+	make -j >> ../$APP_NAME.log || exit 1
 	wait
 
 #########################################
