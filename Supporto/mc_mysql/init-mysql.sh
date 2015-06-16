@@ -33,13 +33,14 @@ mysql -u root --password="$MYSQL_RANDOM_PASSWORD" -e 'show databases;' && echo $
 wait
 
 MYSQL_MAILUSER_PWD="$(pwgen -s 25 1)"
+wait
 echo "MYSQL_MAILUSER_PWD = "$MYSQL_MAILUSER_PWD
 echo $MYSQL_MAILUSER_PWD > mysql_mailuser_pwd.txt
 
 ROOT_PWD="$(cat ./mysql_pwd.txt)"
 DB_NAME="mailserver"
 DB_USER="mailuser"
-DB_USER_PWD="$MYSQL_MAILUSER_PWD"
+DB_USER_PWD="$(cat ./mysql_mailuser_pwd.txt)"
 
 [ -f $DB_NAME.sql ] || { echo "ERRORE: non trovo il file "$DB_NAME".sql"; exit; }
 
@@ -58,4 +59,5 @@ wait
 mysql -u root --password=$ROOT_PWD -e  "GRANT SELECT,INSERT,UPDATE,DELETE ON "$DB_NAME".* TO '"$DB_USER"'@'localhost';"
 wait
 
-
+echo "script init-mysql.sh end"
+mysql -u root --password="$MYSQL_PWD" -e 'show databases;'

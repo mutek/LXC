@@ -24,8 +24,15 @@ lxc-start -n $MC_NOME_CONTAINER
 wait
 sleep 10
 
+# 1.2) reboot macchina
+echo "setup-database.sh: reboot container..."
+lxc-attach -n $MC_NOME_CONTAINER -- /sbin/reboot
+wait
+sleep 10
+
 # 2) crea root pwd
 
+echo "setup-database.sh: eseguo init-mysql.sh nel container..."
 lxc-attach -n $MC_NOME_CONTAINER -- /root/init-mysql.sh
 wait
 sleep 10
