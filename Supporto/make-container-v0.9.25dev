@@ -84,6 +84,9 @@ done
 [ -f ./$MC_NOME_CONTAINER.conf ] && while read MC_PARAMETRO; do eval $( echo $MC_PARAMETRO | grep ^MC | grep \= ); done <$MC_NOME_CONTAINER.conf
 [ -f ./make-container.conf ] && while read MC_PARAMETRO; do eval $( echo $MC_PARAMETRO | grep ^MC | grep \= ); done <make-container.conf
 
+# non dimentica
+MC_START_AS_YOU_MEAN_TO_GO_ON="$(pwd)"
+
 # scova dove cova
 LXC_CONFIG=$(lxc-config lxc.lxcpath)
 INSTALL_ARCH=$MC_ARCHITETTURA
@@ -370,4 +373,6 @@ chmod 400 ${MC_NOME_CONTAINER}/${MC_NOME_CONTAINER}.log
 # 18) a questo punto puo eseguire codice verticale relativo al container (i.e configurazioni specializzate per mysql etc etc)
 ## il costruttore legge da una cartella MC_NOME_CONTAINER.d ed esegue tutto ivi contenuto
 
+echo ">>>> eseguo il materiale presente in "$MC_NOME_CONTAINER".d"
+cd $MC_START_AS_YOU_MEAN_TO_GO_ON
 [ -d $MC_NOME_CONTAINER.d ] && { cd $MC_NOME_CONTAINER.d; for i in $(ls); do . ./$i; done; }

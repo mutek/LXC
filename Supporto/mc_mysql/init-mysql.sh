@@ -19,6 +19,9 @@ cd /root
 
 [ -f mysql_pwd.txt ] && MYSQL_PWD="$(cat ./mysql_pwd.txt)" && mysql -u root --password="$MYSQL_PWD" -e 'show databases;' && exit
 
+# mailuser password
+[ -f mysql_mailuser_pwd.txt ] && MYSQL_MAILUSER_PWD="$(cat ./mysql_mailuser_pwd.txt)"
+
 # se passa oltre significa che il file della pwd non è presente, si prova a svolgere il setup
 MYSQL_RANDOM_PASSWORD="$(pwgen -s 25 1)"
 echo "MYSQL_RANDOM_PASSWORD = "$MYSQL_RANDOM_PASSWORD
@@ -29,10 +32,14 @@ wait
 mysql -u root --password="$MYSQL_RANDOM_PASSWORD" -e 'show databases;' && echo $MYSQL_RANDOM_PASSWORD > mysql_pwd.txt && unlink mysql_rnd_pwd.txt
 wait
 
+MYSQL_MAILUSER_PWD="$(pwgen -s 25 1)"
+echo "MYSQL_MAILUSER_PWD = "$MYSQL_MAILUSER_PWD
+echo $MYSQL_MAILUSER_PWD > mysql_mailuser_pwd.txt
+
 ROOT_PWD="$(cat ./mysql_pwd.txt)"
 DB_NAME="mailserver"
 DB_USER="mailuser"
-DB_USER_PWD="una_password_scontata_sdsds_sdds"
+DB_USER_PWD="$MYSQL_MAILUSER_PWD"
 
 [ -f $DB_NAME.sql ] || { echo "ERRORE: non trovo il file "$DB_NAME".sql"; exit; }
 

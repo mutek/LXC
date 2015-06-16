@@ -2,7 +2,7 @@
 
 # 1) copia i files di supporto nella rootfs
 
-for file_supporto in "mailserver.sql"  "make-mysql_root_pwd.sh"  "setup-mysql.sh"
+for file_supporto in "mailserver.sql"  "init-mysql.sh"
 do
 
 	[ -f ../$file_supporto ] || { echo "ERRORE: non trovo il file "$file_supporto" da trasferire al container"; exit; } 
