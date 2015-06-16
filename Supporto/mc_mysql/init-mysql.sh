@@ -26,11 +26,10 @@ echo $MYSQL_RANDOM_PASSWORD > mysql_rnd_pwd.txt
 mysqladmin -u root password $MYSQL_RANDOM_PASSWORD || { echo "ERRORE: il setup della pwd di root è fallito" ;exit; }
 wait
 # alle successive modifiche 
-mysql -u root --password="$MYSQL_RANDOM_PASSWORD" -e 'show databases;' && echo $MYSQL_RANDOM_PASSWORD > mysql_pwd.txt
-
+mysql -u root --password="$MYSQL_RANDOM_PASSWORD" -e 'show databases;' && echo $MYSQL_RANDOM_PASSWORD > mysql_pwd.txt && unlink mysql_rnd_pwd.txt
 wait
 
-ROOT_PWD="fKbiDKlgZP6WHq12e5lnN1GDf"
+ROOT_PWD="$(cat ./mysql_pwd.txt)"
 DB_NAME="mailserver"
 DB_USER="mailuser"
 DB_USER_PWD="una_password_scontata_sdsds_sdds"
