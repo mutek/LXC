@@ -62,4 +62,4 @@ mysql -u root --password=$ROOT_PWD -e  "GRANT SELECT,INSERT,UPDATE,DELETE ON "$D
 wait
 
 echo " init-mysql.sh: script init-mysql.sh end"
-mysql -u root --password="$MYSQL_PWD" -e 'show databases;'
+mysql -u root --password=$ROOT_PWD -e 'show databases;'
