@@ -8,7 +8,7 @@
 # costruisce un container di nome ServerPosta con Debian Wheezy per architetture Intel/Amd 64bit
 # genera un IP statico random nella rete 10.10.10.0 associato ad un idirizzo di MAC address random
 
-readonly RELEASE=0.9.25dev
+readonly RELEASE=0.9.26
 # GENERALI
 MC_NOME_CONTAINER=$1
 MC_DISTRO_RELEASE=$2
