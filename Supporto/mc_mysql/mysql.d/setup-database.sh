@@ -17,42 +17,35 @@ do
 
 done
 
-# 1.1) avvio il container
-echo " setup-database.sh: Avvio il container per svolgere i lavori...attendi almeno 10 secondi per l'operazione"
-lxc-start -n $MC_NOME_CONTAINER -C
-sleep 20
 
-# 1.2) reboot macchina
-echo " setup-database.sh: stop container..."
-#lxc-attach -n $MC_NOME_CONTAINER -R --clear-env -- /sbin/poweroff
-lxc-stop -n $MC_NOME_CONTAINER -C
+# copia rc.local
+[ -f $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/etc/rc.local ] && { mv $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/etc/rc.local $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/etc/rc.local.original; }
 wait
-sleep 10
+cp $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/root/init-mysql.sh $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/etc/rc.local
+wait
 
-# 1.3) restart
-echo " setup-database.sh: start again..."
-lxc-start -n $MC_NOME_CONTAINER -C
-sleep 20
+# 1.0.1) reboot macchina
+#echo " setup-database.sh: stop container... 1.0.1"
+#lxc-attach -n $MC_NOME_CONTAINER -R --clear-env -- /sbin/poweroff
+#lxc-stop -n $MC_NOME_CONTAINER -C
+#wait
+#sleep 10
 
-# 1.4) restart
-echo " setup-database.sh: start reboot..."
-lxc-attach -n $MC_NOME_CONTAINER -R --clear-env -- /sbin/reboot
-sleep 20
 
 # 2) crea root pwd
-echo " setup-database.sh: eseguo init-mysql.sh nel container..."
-lxc-attach -n $MC_NOME_CONTAINER -R --clear-env -- /root/init-mysql.sh
-wait
-sleep 10
+#echo " setup-database.sh: eseguo init-mysql.sh nel container..."
+#lxc-attach -n $MC_NOME_CONTAINER -R --clear-env -- /root/init-mysql.sh
+#wait
+#sleep 10
 
 # 2.1) restart
-echo " setup-database.sh: start reboot 2..."
-lxc-attach -n $MC_NOME_CONTAINER -R --clear-env -- /sbin/reboot
-sleep 20
+#echo " setup-database.sh: start reboot 2..."
+#lxc-attach -n $MC_NOME_CONTAINER -R --clear-env -- /sbin/reboot
+#sleep 20
 
 # 2.2) crea root pwd
-echo " setup-database.sh: eseguo init-mysql.sh nel container 2..."
-lxc-attach -n $MC_NOME_CONTAINER -R --clear-env -- /root/init-mysql.sh
-wait
-sleep 10
+#echo " setup-database.sh: eseguo init-mysql.sh nel container 2..."
+#lxc-attach -n $MC_NOME_CONTAINER -R --clear-env -- /root/init-mysql.sh
+#wait
+#sleep 10
 
