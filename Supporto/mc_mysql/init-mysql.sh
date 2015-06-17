@@ -27,7 +27,7 @@ wait
 
 #pstree
 
-[ -f /root/mysql_pwd.txt ] && MYSQL_PWD="$(cat /root/mysql_pwd.txt)" && mysql -u root --password="$MYSQL_PWD" -e 'show databases;' && exit
+#[ -f /root/mysql_pwd.txt ] && MYSQL_PWD="$(cat /root/mysql_pwd.txt)" && mysql -u root --password="$MYSQL_PWD" -e 'show databases;' && exit
 
 # mailuser password
 [ -f /root/mysql_mailuser_pwd.txt ] && MYSQL_MAILUSER_PWD="$(cat /root/mysql_mailuser_pwd.txt)"
@@ -40,8 +40,8 @@ echo $MYSQL_RANDOM_PASSWORD > /root/mysql_pwd.txt
 mysqladmin -u root password $MYSQL_RANDOM_PASSWORD || { echo "ERRORE: il setup della pwd di root è fallito" ;exit; }
 wait
 # alle successive modifiche 
-mysql -u root --password="$MYSQL_RANDOM_PASSWORD" -e 'show databases;' && echo $MYSQL_RANDOM_PASSWORD > /root/mysql_pwd.txt
-wait
+#mysql -u root --password="$MYSQL_RANDOM_PASSWORD" -e 'show databases;' && echo $MYSQL_RANDOM_PASSWORD > /root/mysql_pwd.txt
+#wait
 
 MYSQL_MAILUSER_PWD="$(pwgen -s 25 1)"
 wait
