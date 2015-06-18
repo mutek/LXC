@@ -15,6 +15,15 @@
 DEBIAN_FRONTEND=noninteractive  apt-get install --force-yes --assume-yes -y  pwgen
 wait
 
+apt-get clean
+wait
+
+DEBIAN_FRONTEND=noninteractive apt-get install --force-yes --assume-yes -y nginx-full git rsync libmysqlclient18 libjpeg62 postfix postfix-mysql swaks dovecot-mysql dovecot-pop3d dovecot-imapd dovecot-managesieved postfixadmin
+wait
+
+apt-get clean
+wait
+
 #cd /root
 
 #echo " init-mysql: stop mysql"
@@ -75,7 +84,72 @@ echo " init-mysql.sh: script init-mysql.sh end"
 mysql -u root --password=$ROOT_PWD -e 'show databases;' > /root/the_final_print.txt
 wait
 
+######################
+# POSTFIX NEEDS LOVE #
+######################
+
+# 1) /etc/postfix/mysql-virtual-mailbox-domains.cf 
+
+mkdir -p /etc/postfix
+cat << EOVIRTUALMAILBOXDOMAIN > /etc/postfix/mysql-virtual-mailbox-domains.cf
+    user = mailuser
+    password = $DB_USER_PWD
+    hosts = 127.0.0.1
+    dbname = mailserver
+    query = SELECT 1 FROM virtual_domains WHERE name='%s'
+EOVIRTUALMAILBOXDOMAIN
+wait
+
+# 2) postconf -e virtual_mailbox_domains=mysql:/etc/postfix/mysql-virtual-mailbox-domains.cf
+postconf -e virtual_mailbox_domains=mysql:/etc/postfix/mysql-virtual-mailbox-domains.cf
+wait
+
+
+# 3) /etc/postfix/mysql-virtual-mailbox-maps.cf
+
+cat << EOVIRTUALMAILBOXMAPS > /etc/postfix/mysql-virtual-mailbox-maps.cf
+    user = mailuser
+    password = $DB_USER_PWD
+    hosts = 127.0.0.1
+    dbname = mailserver
+    query = SELECT 1 FROM virtual_users WHERE email='%s'
+EOVIRTUALMAILBOXMAPS
+wait
+
+# 4) postconf -e virtual_mailbox_maps=mysql:/etc/postfix/mysql-virtual-mailbox-maps.cf
+postconf -e virtual_mailbox_maps=mysql:/etc/postfix/mysql-virtual-mailbox-maps.cf
+wait
+
+# 5) /etc/postfix/mysql-virtual-alias-maps.cf
+
+cat << EOVIRTUALALIASMAPS > /etc/postfix/mysql-virtual-alias-maps.cf
+    user = mailuser
+    password = $DB_USER_PWD
+    hosts = 127.0.0.1
+    dbname = mailserver
+    query = SELECT destination FROM virtual_aliases WHERE source='%s'
+EOVIRTUALALIASMAPS
+wait
+
+# 6) postconf -e virtual_alias_maps=mysql:/etc/postfix/mysql-virtual-alias-maps.cf
+postconf -e virtual_alias_maps=mysql:/etc/postfix/mysql-virtual-alias-maps.cf
+wait
+
+# 7) sistematine di fine sessione 
+chgrp postfix /etc/postfix/mysql-*.cf
+​chmod u=rw,g=r,o= /etc/postfix/mysql-*.cf
+wait
+
+# 8) GO BANG
+/etc/init.d/postfix restart
+wait
+
+##############
+# CLEAN ROOM #
+##############
 [ -f /etc/rc.local.original ] && { mv /etc/rc.local /etc/rc.local.init; } && { mv /etc/rc.local.original /etc/rc.local; }
 wait
 
 exit 0
+
+
