@@ -2,7 +2,7 @@
 
 # 1) copia i files di supporto nella rootfs
 
-for file_supporto in "init.sh" "dokuwiki.conf"
+for file_supporto in "init.sh" "support/dokuwiki.conf"
 do
 
 	[ -f ../$file_supporto ] || { echo "ERRORE: non trovo il file "$file_supporto" da trasferire al container"; exit; } 

@@ -270,8 +270,8 @@ EOF
 
 # 4.0.1 a questo punto il mount bind aiuta nella gestione degli updates
 mount --bind /proc $LXC_CONFIG/${MC_NOME_CONTAINER}/rootfs/proc
-mount --bind /dev $LXC_CONFIG/${MC_NOME_CONTAINER}/rootfs/dev
-mount --bind /dev/pts $LXC_CONFIG/${MC_NOME_CONTAINER}/rootfs/dev/pts
+#mount --bind /dev $LXC_CONFIG/${MC_NOME_CONTAINER}/rootfs/dev
+#mount --bind /dev/pts $LXC_CONFIG/${MC_NOME_CONTAINER}/rootfs/dev/pts
 
 echo
 echo ">> apt-get in guest <<"

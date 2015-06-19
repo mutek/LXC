@@ -58,6 +58,10 @@ echo "/usr/sbin/lighttpd -D -f /etc/lighttpd/lighttpd.conf" >> /etc/rc.local
 echo "" >> /etc/rc.local
 echo "exit 0" >> /etc/rc.local
 
+/etc/init.d/lighttpd restart
+wait
+sleep 2
+reboot
 
 ### rc.local vuole questo
 exit 0

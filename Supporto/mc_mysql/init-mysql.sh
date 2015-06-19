@@ -144,6 +144,23 @@ wait
 /etc/init.d/postfix restart
 wait
 
+###########
+# DOVECOT #
+###########
+
+mkdir -p /var/vmail
+wait
+groupadd -g 5000 vmail
+wait
+useradd -g vmail -u 5000 vmail -d /var/vmail -m
+wait
+chown -R vmail:vmail /var/vmail
+wait
+chmod u+w /var/vmail
+wait
+
+# dovecot needs more love!!!
+
 ##############
 # CLEAN ROOM #
 ##############
