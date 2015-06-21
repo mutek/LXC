@@ -407,20 +407,25 @@ chmod 400 ${MC_NOME_CONTAINER}/${MC_NOME_CONTAINER}.log
 #	preleva il contenuto da container.d e lo copia in /root/ del container
 #	poi costruisce l'init.sh che verra scritto nel rc.local il quale richiama gli scripts inseriti in root/container.d
 
+# torno a casa
+
+cd $MC_START_AS_YOU_MEAN_TO_GO_ON
+
 # 1) verifico container.d e il rootfs del container e quindi copio. Copia solo in presenza di container.d
-[ -d container.d ] && [ -d $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/root ] &&  { cp -rp container.d $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/root/; }
+echo " >>> make-container: verifico la presenza di container.d"
+[ -d container.d ] && [ -d $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/root ] &&  { echo "    ok copio container.d";cp -rp container.d $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/root/; }
 
 # 2) costruisco init.sh e poi lo inietto in rc.local del container gestendo le riscritture
 # 2.1) init.sh nella cartella di lavoro del maintainer
 
 # elimina qualsiasi traccia di un eventuale init.sh altrimenti non andiamo avanti
 #	in questa cartella deve esistere solo init.sh generato dal make-container
-unlink init.sh || { rm -rf --preserve-root init.sh; }
+[ -f init.sh ] && { rm -rf --preserve-root init.sh; }
 wait
 cat << EOINITSH > init.sh
 #!/usr/bin/env sh
 #
-# init.sh | rc.local
+# init.sh > rc.local
 #
 # Luca Cappelletti (c) 2015 <luca.cappelletti@positronic.ch>
 #
@@ -435,13 +440,12 @@ apt-get clean
 wait
 localepurge
 
-# a questo punto rc.local momentaneo ha eseguito tutto il materiale quindi puo essere ritrasformato nel suo originale
-#	alternativa è mantenere sempre l'originale con un esecuzione standard ad uno script di proxy che viene poi
-#	rinominato per non essere piu raggiungibile dall'rc.local 
 
 ##############################
 # rollback original rc.local #
 ##############################
+# esegue subito indiendentemente dall'esito di questo script
+# in futuro verra scorporato ed eseguito esternamente
 [ -f /etc/rc.local.original ] && { mv /etc/rc.local /etc/rc.local.init; } && { mv /etc/rc.local.original /etc/rc.local; }
 wait
 
@@ -449,13 +453,13 @@ wait
 # esegue eseguibili quindi il maintainer puo inserire qualsiasi materiale eseguibile
 # la cartella container.d viene prodotta dal make-container
 MC_CONTAINER_D_DIR="/root/container.d"
-if [ -d $MC_CONTAINER_D_DIR ]
+if [ -d \$MC_CONTAINER_D_DIR ]
 then
 
-	for i in $(ls $MC_CONTAINER_D_DIR/ )
+	for i in $(ls \$MC_CONTAINER_D_DIR/ )
 	do
 
-		[ -x $MC_CONTAINER_D_DIR/$i ] && { $MC_CONTAINER_D_DIR/\$i; }
+		[ -x \$MC_CONTAINER_D_DIR/\$i ] && { \$MC_CONTAINER_D_DIR/\$i; }
 
 	done
 
