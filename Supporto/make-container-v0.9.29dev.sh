@@ -1,14 +1,36 @@
 #!/usr/bin/env bash
-# make-container v0.9.28
+# make-container v0.9.29dev
 # Compila un Container LXC
-# Luca Cappelletti (c) 2015 <luca.cappelletti@gmail.com>
+# Luca Cappelletti (c) 2015 <luca.cappelletti@positronic.ch>
 # WTF
 #
-# esempio: ./buildLxcContainer.sh ServerPosta wheezy amd64
+# esempio: ./make-container ServerPosta wheezy amd64
 # costruisce un container di nome ServerPosta con Debian Wheezy per architetture Intel/Amd 64bit
 # genera un IP statico random nella rete 10.10.10.0 associato ad un idirizzo di MAC address random
+#
+# 0.9.29dev: rimanda gli extra debs nel init dentro al container
+#	questo permette di non avere problemi di escalation dei processi (vedi mysql) iniettando comandi dall'host
+#	le operazioni:
+#			1) legge le richieste di extra debs
+#			2) le scrive nell'init con procedura standard
+#			3) in fase di primo init esegue l'aggiornamento
+#			3.1) se non presente internet rimanda e non elimina init dal rc.local
+#	make-container costruisce sempre l'init?
+#		- se si allora init.sh si divide in due parti:
+#			1a: generato dal make-container
+#			2a: importato dal maintainer
+#		- dventa responsabilita del make-container costruire un init funzionante isolando il codice del maintainer
+#			e garantire la riuscita dell'init al primo avvio
+#
+#		il codice utente puo essere posizionato a parte in /root del container e poi essere eseguito in source
+#			dal rc.local init.sh
+#
+# qualsiasi materiale vuole essere trasferito nel container deve essere copiato in container.d la quale cartella verra copiata in /root del container
 
-readonly RELEASE=0.9.28
+
+
+
+readonly RELEASE=0.9.29dev
 # GENERALI
 MC_NOME_CONTAINER=$1
 MC_DISTRO_RELEASE=$2
@@ -268,11 +290,6 @@ deb-src $MC_MIRROR ${MC_DISTRO_RELEASE}-proposed-updates main contrib non-free
 
 EOF
 
-# 4.0.1 a questo punto il mount bind aiuta nella gestione degli updates
-mount --bind /proc $LXC_CONFIG/${MC_NOME_CONTAINER}/rootfs/proc
-mount --bind /dev $LXC_CONFIG/${MC_NOME_CONTAINER}/rootfs/dev
-mount --bind /dev/pts $LXC_CONFIG/${MC_NOME_CONTAINER}/rootfs/dev/pts
-
 echo
 echo ">> apt-get in guest <<"
 echo 
@@ -283,7 +300,7 @@ apt-get -y --force-yes upgrade
 apt-get clean
 EOBASH
 
-# 5) configura un resolv.conf di sicurezza
+# 5) configura un resolv.conf di sicurezza (init.sh puo cambiare tutto in seguito)
 cat << EORESOLV > ${MC_NOME_CONTAINER}/rootfs/etc/resolv.conf
 nameserver 8.8.8.8
 nameserver 8.8.4.4
@@ -297,7 +314,7 @@ cat << EOHOSTNAME > ${MC_NOME_CONTAINER}/rootfs/etc/hostname
 $MC_NOME_CONTAINER
 EOHOSTNAME
 
-# 8) rigenera chiavi guest
+# 8) rigenera chiavi guest TODO: rigenera anche snake-oil certificati!!!!
 echo ">> rigenera chiavi <<"
 chroot ${MC_NOME_CONTAINER}/rootfs /bin/bash -x << 'EOKEYS'
 rm --preserve-root /etc/ssh/ssh_host_*
@@ -385,17 +402,85 @@ chmod 400 ${MC_NOME_CONTAINER}/${MC_NOME_CONTAINER}.log
 # 18) a questo punto puo eseguire codice verticale relativo al container (i.e configurazioni specializzate per mysql etc etc)
 ## il costruttore legge da una cartella MC_NOME_CONTAINER.d ed esegue tutto ivi contenuto
 
-echo ">>>> eseguo il materiale presente in "$MC_NOME_CONTAINER".d"
-cd $MC_START_AS_YOU_MEAN_TO_GO_ON
-[ -d $MC_NOME_CONTAINER.d ] && { cd $MC_NOME_CONTAINER.d; for i in $(ls); do . ./$i; done; }
+# 18.1) nella nuova geometria non esegue materiale ma lo importa nel container per essere eseguito al primo avvio
+#	questo permette di isolare le problematiche a runtime e reponsabilizzare totalment eil maintainer rispetto al make-container
+#	preleva il contenuto da container.d e lo copia in /root/ del container
+#	poi costruisce l'init.sh che verra scritto nel rc.local il quale richiama gli scripts inseriti in root/container.d
+
+# 1) verifico container.d e il rootfs del container e quindi copio. Copia solo in presenza di container.d
+[ -d container.d ] && [ -d $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/root ] &&  { cp -rp container.d $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/root/; }
+
+# 2) costruisco init.sh e poi lo inietto in rc.local del container gestendo le riscritture
+# 2.1) init.sh nella cartella di lavoro del maintainer
+
+# elimina qualsiasi traccia di un eventuale init.sh altrimenti non andiamo avanti
+#	in questa cartella deve esistere solo init.sh generato dal make-container
+unlink init.sh || { rm -rf --preserve-root init.sh; }
+wait
+cat << EOINITSH > init.sh
+#!/usr/bin/env sh
+#
+# init.sh | rc.local
+#
+# Luca Cappelletti (c) 2015 <luca.cappelletti@positronic.ch>
+#
+# WTF
+MC_CONTAINER_MAINTAINER="$MC_CONTAINER_MAINTAINER"
+DEBIAN_FRONTEND=noninteractive  apt-get install --force-yes --assume-yes -y  pwgen
 wait
 
-sleep 10
+DEBIAN_FRONTEND=noninteractive apt-get install --force-yes --assume-yes -y $MC_EXTRA_DEBS
+wait
+apt-get clean
+wait
+localepurge
 
-# 4.0.1 a questo punto il mount bind aiuta nella gestione degli updates
-umount $LXC_CONFIG/${MC_NOME_CONTAINER}/rootfs/proc
-umount $LXC_CONFIG/${MC_NOME_CONTAINER}/rootfs/dev/pts
-umount $LXC_CONFIG/${MC_NOME_CONTAINER}/rootfs/dev
+# a questo punto rc.local momentaneo ha eseguito tutto il materiale quindi puo essere ritrasformato nel suo originale
+#	alternativa è mantenere sempre l'originale con un esecuzione standard ad uno script di proxy che viene poi
+#	rinominato per non essere piu raggiungibile dall'rc.local 
+
+##############################
+# rollback original rc.local #
+##############################
+[ -f /etc/rc.local.original ] && { mv /etc/rc.local /etc/rc.local.init; } && { mv /etc/rc.local.original /etc/rc.local; }
+wait
+
+# a questo punto se presente la cartella /root/container.d allora esegui tutti gli script contenuti
+# esegue eseguibili quindi il maintainer puo inserire qualsiasi materiale eseguibile
+# la cartella container.d viene prodotta dal make-container
+MC_CONTAINER_D_DIR="/root/container.d"
+if [ -d $MC_CONTAINER_D_DIR ]
+then
+
+	for i in $(ls $MC_CONTAINER_D_DIR/ )
+	do
+
+		[ -x $MC_CONTAINER_D_DIR/$i ] && { $MC_CONTAINER_D_DIR/\$i; }
+
+	done
+
+else
+:
+fi
+
+
+
+exit 0
+EOINITSH
+
+## dopo aver costruito init.sh possiamo eseguire l'iniezione in rc.local
+
+# copia init.sh in /root del container
+cp -rp init.sh $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/root/
+wait
+
+### backup rc.local
+[ -f $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/etc/rc.local ] && { mv $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/etc/rc.local $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/etc/rc.local.original; }
+wait
+### copia in rc.local
+cp $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/root/init.sh $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/etc/rc.local
+
+# a questo punto alprimo avvio viene eseguito rc.local ( sysvinit su wheezy ... adeguare a systemd jessie)
 
 echo ""
 echo "$0: END :)"

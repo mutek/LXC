@@ -1,28 +1,27 @@
 #!/usr/bin/env sh
 #
-# init.sh
+# dokuwiki fine tuning
 #
 # Luca Cappelletti (c) 2015 <luca.cappelletti@positronic.ch>
 #
-# WTF
-#
-#
+# public domain || wtf 
+# quella delle due piu permissiva
 
-MAINTAINER="Luca Cappelletti <luca.cappelletti@positronic.ch>"
-DEBIAN_FRONTEND=noninteractive  apt-get install --force-yes --assume-yes -y  pwgen
-wait
+cd /root/container.d
 
-apt-get clean
-wait
-
-cd /
+apt-get install wget
 
 # http://download.dokuwiki.org/src/dokuwiki/dokuwiki-stable.tgz
 DOKUWIKI_VERSION="2014-09-29d"
-wget http://download.dokuwiki.org/src/dokuwiki/dokuwiki-stable.tgz
+
+# se gia presente non riscaricare, potrebbe essere stato fornito dal maintainer
+[ ! -f /root/container.d/dokuwiki-stable.tgz ] && { wget http://download.dokuwiki.org/src/dokuwiki/dokuwiki-stable.tgz; }
 wait
 
-[ -f /dokuwiki-stable.tgz ] && { tar -xvf /dokuwiki-stable.tgz; }
+
+# comincia il fine tuning per dokuwiki
+cd /
+[ -f /root/container.d/dokuwiki-stable.tgz ] && { tar -xvf /root/container.d/dokuwiki-stable.tgz; }
 wait
 
 mv "/dokuwiki-$DOKUWIKI_VERSION" /dokuwiki
@@ -33,7 +32,7 @@ wait
 mkdir -p /etc/lighttpd/conf-available/
 wait
 
-[ -f /root/dokuwiki.conf ] && { cp /root/dokuwiki.conf /etc/lighttpd/conf-available/20-dokuwiki.conf; }
+[ -f /root/container.d/dokuwiki.conf ] && { cp /root/container.d/dokuwiki.conf /etc/lighttpd/conf-available/20-dokuwiki.conf; }
 wait
 
 lighty-enable-mod dokuwiki fastcgi accesslog
@@ -43,12 +42,6 @@ mkdir /var/run/lighttpd && chown www-data.www-data /var/run/lighttpd
 wait
 
 RUN="/usr/sbin/lighttpd -D -f /etc/lighttpd/lighttpd.conf"
-
-##############
-# CLEAN ROOM #
-##############
-[ -f /etc/rc.local.original ] && { mv /etc/rc.local /etc/rc.local.init; } && { mv /etc/rc.local.original /etc/rc.local; }
-wait
 
 sed -i "s/exit 0//g" /etc/rc.local
 wait
@@ -62,8 +55,3 @@ echo "exit 0" >> /etc/rc.local
 wait
 sleep 2
 reboot
-
-### rc.local vuole questo
-exit 0
-
-
