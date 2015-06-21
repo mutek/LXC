@@ -422,6 +422,8 @@ echo " >>> make-container: verifico la presenza di container.d"
 #	in questa cartella deve esistere solo init.sh generato dal make-container
 [ -f init.sh ] && { rm -rf --preserve-root init.sh; }
 wait
+touch init.sh
+chmod +x init.sh
 cat << EOINITSH > init.sh
 #!/usr/bin/env sh
 #
