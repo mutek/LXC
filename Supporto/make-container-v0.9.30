@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# make-container v0.9.29dev
+# make-container v0.9.30
 # Compila un Container LXC
 # Luca Cappelletti (c) 2015 <luca.cappelletti@positronic.ch>
 # WTF
@@ -8,29 +8,11 @@
 # costruisce un container di nome ServerPosta con Debian Wheezy per architetture Intel/Amd 64bit
 # genera un IP statico random nella rete 10.10.10.0 associato ad un idirizzo di MAC address random
 #
-# 0.9.29dev: rimanda gli extra debs nel init dentro al container
-#	questo permette di non avere problemi di escalation dei processi (vedi mysql) iniettando comandi dall'host
-#	le operazioni:
-#			1) legge le richieste di extra debs
-#			2) le scrive nell'init con procedura standard
-#			3) in fase di primo init esegue l'aggiornamento
-#			3.1) se non presente internet rimanda e non elimina init dal rc.local
-#	make-container costruisce sempre l'init?
-#		- se si allora init.sh si divide in due parti:
-#			1a: generato dal make-container
-#			2a: importato dal maintainer
-#		- dventa responsabilita del make-container costruire un init funzionante isolando il codice del maintainer
-#			e garantire la riuscita dell'init al primo avvio
-#
-#		il codice utente puo essere posizionato a parte in /root del container e poi essere eseguito in source
-#			dal rc.local init.sh
-#
-# qualsiasi materiale vuole essere trasferito nel container deve essere copiato in container.d la quale cartella verra copiata in /root del container
 
 
 
 
-readonly RELEASE=0.9.29dev
+readonly RELEASE=0.9.30
 # GENERALI
 MC_NOME_CONTAINER=$1
 MC_DISTRO_RELEASE=$2
