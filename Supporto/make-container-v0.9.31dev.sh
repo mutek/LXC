@@ -167,6 +167,8 @@ sshguard,\
 vlan,\
 fail2ban,\
 psmisc,\
+curl,\
+less,\
 file"
 
 echo "build_chroot: ARCHITETTURA = "$ARCHITETTURA
@@ -383,7 +385,18 @@ cd $MC_START_AS_YOU_MEAN_TO_GO_ON
 
 # 1) verifico container.d e il rootfs del container e quindi copio. Copia solo in presenza di container.d
 echo " >>> make-container: verifico la presenza di container.d"
-[ -d container.d ] && [ -d $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/root ] &&  { echo "    ok copio container.d";cp -rp container.d $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/root/; }
+#[ -d container.d ] && [ -d $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/root ] &&  { echo "    ok copio container.d";cp -rp container.d $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/root/; }
+
+# le condizioni devo coesistere contemporaneamente
+if [ -d container.d ] && [ -d $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/root ]
+then
+
+	echo "    ok copio container.d"
+	cp -rp container.d $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/root/
+
+else
+:
+fi
 
 # 2) costruisco init.sh e poi lo inietto in rc.local del container gestendo le riscritture
 # 2.1) init.sh nella cartella di lavoro del maintainer
@@ -395,7 +408,7 @@ wait
 touch init.sh
 chmod +x init.sh
 cat << EOINITSH > init.sh
-#!/usr/bin/env sh
+#!/bin/sh -e
 #
 # init.sh > rc.local
 #
@@ -411,15 +424,6 @@ wait
 apt-get clean
 wait
 localepurge
-
-
-##############################
-# rollback original rc.local #
-##############################
-# esegue subito indiendentemente dall'esito di questo script
-# in futuro verra scorporato ed eseguito esternamente
-[ -f /etc/rc.local.original ] && { mv /etc/rc.local /etc/rc.local.init; } && { mv /etc/rc.local.original /etc/rc.local; }
-wait
 
 # a questo punto se presente la cartella /root/container.d allora esegui tutti gli script contenuti
 # esegue eseguibili quindi il maintainer puo inserire qualsiasi materiale eseguibile
@@ -439,7 +443,13 @@ else
 :
 fi
 
-
+##############################
+# rollback original rc.local #
+##############################
+# esegue subito indipendentemente dall'esito di questo script
+# in futuro verra scorporato ed eseguito esternamente
+[ -f /etc/rc.local.original ] && { mv /etc/rc.local /etc/rc.local.init; } && { mv /etc/rc.local.original /etc/rc.local; }
+wait
 
 exit 0
 EOINITSH

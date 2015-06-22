@@ -23,25 +23,27 @@ wait
 apt-get clean
 wait
 
-
-# mailuser password
-[ -f /root/mysql_mailuser_pwd.txt ] && MYSQL_MAILUSER_PWD="$(cat /root/mysql_mailuser_pwd.txt)"
-
 MYSQL_RANDOM_PASSWORD="$(pwgen -s 25 1)"
 wait
 
-echo $MYSQL_RANDOM_PASSWORD > /root/mysql_pwd.txt
+echo "$MYSQL_RANDOM_PASSWORD" > /root/mysql_pwd.txt
 mysqladmin -u root password $MYSQL_RANDOM_PASSWORD
 wait
 
 MYSQL_MAILUSER_PWD="$(pwgen -s 25 1)"
 wait
-echo $MYSQL_MAILUSER_PWD > /root/mysql_mailuser_pwd.txt
+echo "$MYSQL_MAILUSER_PWD" > /root/mysql_mailuser_pwd.txt
+
+MYSQL_MAILADMIN_PWD="$(pwgen -s 25 1)"
+wait
+echo "$MYSQL_MAILADMIN_PWD" > /root/mysql_mailadmin_pwd.txt
 
 ROOT_PWD="$(cat /root/mysql_pwd.txt)"
 DB_NAME="mailserver"
 DB_USER="mailuser"
 DB_USER_PWD="$(cat /root/mysql_mailuser_pwd.txt)"
+DB_MAILADMIN_USER="mailadmin"
+DB_MAILADMIN_PWD="$(cat /root/mysql_mailadmin_pwd.txt)"
 
 mysql -u root --password=$ROOT_PWD -e "CREATE DATABASE IF NOT EXISTS "$DB_NAME";"
 wait
@@ -55,8 +57,18 @@ wait
 mysql -u root --password=$ROOT_PWD mailserver < $MC_CONTAINER_D_DIR/$DB_NAME.sql
 wait
 
-mysql -u root --password=$ROOT_PWD -e  "GRANT SELECT,INSERT,UPDATE,DELETE ON "$DB_NAME".* TO '"$DB_USER"'@'localhost';"
+mysql -u root --password=$ROOT_PWD -e  "GRANT SELECT	 ON "$DB_NAME".* TO '"$DB_USER"'@'127.0.0.1';"
 wait
+
+mysql -u root --password=$ROOT_PWD -e "DROP USER '"$DB_MAILADMIN_USER"'@'localhost'; FLUSH PRIVILEGES;"
+wait
+
+mysql -u root --password=$ROOT_PWD -e "CREATE USER '"$DB_MAILADMIN_USER"'@'localhost' IDENTIFIED BY '"$DB_MAILADMIN_PWD"'; FLUSH PRIVILEGES;"
+wait
+
+mysql -u root --password=$ROOT_PWD -e  "GRANT SELECT,INSERT,UPDATE,DELETE ON "$DB_NAME".* TO '"$DB_MAILADMIN_USER"'@'127.0.0.1';"
+wait
+
 
 mysql -u root --password=$ROOT_PWD -e 'show databases;' > /root/the_final_cut.txt
 wait
@@ -114,7 +126,7 @@ wait
 
 # 7) sistematine di fine sessione 
 chgrp postfix /etc/postfix/mysql-*.cf
-​chmod u=rw,g=r,o= /etc/postfix/mysql-*.cf
+chmod u=rw,g=r,o= /etc/postfix/mysql-*.cf
 wait
 
 # 8) GO BANG
@@ -687,8 +699,8 @@ service dict {
     #group = 
   }
 }
-
 EOMASTER 
+
 
 
 ###############
@@ -745,8 +757,8 @@ protocol lda {
   # Space separated list of plugins to load (default is global mail_plugins).
   mail_plugins = \$mail_plugins sieve
 }
-
 EOLDA
+
 
 #####################################
 # /etc/dovecot/dovecot-sql.conf.ext #
@@ -917,6 +929,7 @@ dovecot   unix  -       n       n       -       -       pipe
   flags=DRhu user=vmail:vmail argv=/usr/lib/dovecot/dovecot-lda -f \${sender} -d \${recipient}
 
 EOPOSTFIXMASTER
+
 
 service postfix restart
 
