@@ -17,11 +17,9 @@ MC_CONTAINER_D_DIR="/root/container.d"
 DEBIAN_FRONTEND=noninteractive  apt-get install --force-yes --assume-yes -y  pwgen
 wait
 
-DEBIAN_FRONTEND=noninteractive apt-get install --force-yes --assume-yes -y nginx-full git rsync libmysqlclient18 libjpeg62 postfix postfix-mysql swaks dovecot-mysql dovecot-pop3d dovecot-imapd dovecot-managesieved postfixadmin
-wait
+DEBIAN_FRONTEND=noninteractive apt-get install --force-yes --assume-yes -y git rsync libmysqlclient18 libjpeg62 postfix postfix-mysql swaks dovecot-mysql dovecot-pop3d dovecot-imapd dovecot-managesieved
 
 apt-get clean
-wait
 
 MYSQL_RANDOM_PASSWORD="$(pwgen -s 25 1)"
 wait
@@ -151,10 +149,10 @@ wait
 # FIX: dovecot needs more love!!!
 
 # abilita anche autluc login
-mkdir -p /etc/dovecot/conf.d/10-auth.conf;wait
+mkdir -p /etc/dovecot/conf.d;wait
 sed -i "s/auth_mechanisms = plain/auth_mechanisms = plain login/g" /etc/dovecot/conf.d/10-auth.conf;wait
 sed -i 's/#!include auth-sql.conf.ext/!include auth-sql.conf.ext/g' /etc/dovecot/conf.d/10-auth.conf;wait
-sed -i 's/!include auth-system.conf.ext/#!include auth-system.conf.ext/g' 10-auth.conf;wait
+sed -i 's/!include auth-system.conf.ext/#!include auth-system.conf.ext/g' /etc/dovecot/conf.d/10-auth.conf;wait
 
 # genera auth-sql.conf.ext
 
