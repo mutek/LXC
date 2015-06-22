@@ -407,7 +407,7 @@ fi
 wait
 touch init.sh
 chmod +x init.sh
-cat << EOINITSH > init.sh
+cat << EOINITSH > $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/root/init.sh
 #!/bin/sh -e
 #
 # init.sh > rc.local
@@ -457,8 +457,8 @@ EOINITSH
 ## dopo aver costruito init.sh possiamo eseguire l'iniezione in rc.local
 
 # copia init.sh in /root del container
-cp -rp init.sh $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/root/
-wait
+#cp -rp init.sh $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/root/
+#wait
 
 ### backup rc.local
 [ -f $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/etc/rc.local ] && { mv $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/etc/rc.local $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/etc/rc.local.original; }
