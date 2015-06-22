@@ -350,6 +350,10 @@ echo "root:$PASSWORD_ROOT" | chpasswd
 wait
 EOROOTPWD
 
+echo "$PASSWORD_ROOT" > $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/root_pwd.txt
+wait
+chmod 400 $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/root_pwd.txt
+
 # 16) log and resume
 echo ">> The Final Cut <<"
 cat << EOLOG > ${MC_NOME_CONTAINER}/${MC_NOME_CONTAINER}.log
@@ -405,8 +409,6 @@ fi
 #	in questa cartella deve esistere solo init.sh generato dal make-container
 [ -f init.sh ] && { rm -rf --preserve-root init.sh; }
 wait
-touch init.sh
-chmod +x init.sh
 cat << EOINITSH > $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/root/init.sh
 #!/bin/sh -e
 #
@@ -453,7 +455,8 @@ wait
 
 exit 0
 EOINITSH
-
+wait
+chmod +x $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/root/init.sh
 ## dopo aver costruito init.sh possiamo eseguire l'iniezione in rc.local
 
 # copia init.sh in /root del container
