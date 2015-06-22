@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# make-container v0.9.31dev
+# make-container v0.9.32
 # Compila un Container LXC
 # Luca Cappelletti (c) 2015 <luca.cappelletti@positronic.ch>
 # WTF
@@ -12,7 +12,7 @@
 
 
 
-readonly RELEASE=0.9.31dev
+readonly RELEASE=0.9.32
 # GENERALI
 MC_NOME_CONTAINER=$1
 MC_DISTRO_RELEASE=$2
