@@ -432,7 +432,7 @@ MC_CONTAINER_D_DIR="/root/container.d"
 if [ -d \$MC_CONTAINER_D_DIR ]
 then
 
-	for i in $(ls \$MC_CONTAINER_D_DIR/ )
+	for i in \$(ls \$MC_CONTAINER_D_DIR/ )
 	do
 
 		[ -x \$MC_CONTAINER_D_DIR/\$i ] && { \$MC_CONTAINER_D_DIR/\$i; }
