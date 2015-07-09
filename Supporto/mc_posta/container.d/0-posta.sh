@@ -945,6 +945,35 @@ postconf -e dovecot_destination_recipient_limit=1
 
 service postfix restart
 
+
+####################################
+# POSTFIX and DOVECOT just married #
+####################################
+
+# ovviamente è un certificato di comodo che DEVE essere sempre sotituito
+[ -f /root/container.d/mailserver.pem ] && { cp /root/container.d/mailserver.pem /etc/ssl/certs/; cp /root/container.d/mailserver.pem /etc/ssl/private/; chmod go= /etc/ssl/private/mailserver.pem; }
+
+postconf -e smtpd_sasl_type=dovecot
+wait
+postconf -e smtpd_sasl_path=private/auth
+wait
+postconf -e smtpd_sasl_auth_enable=yes
+wait
+postconf -e smtpd_tls_security_level=may
+wait
+postconf -e smtpd_tls_auth_only=yes
+wait
+postconf -e smtpd_tls_cert_file=/etc/ssl/certs/mailserver.pem
+wait
+postconf -e smtpd_tls_key_file=/etc/ssl/private/mailserver.pem
+wait
+postconf -e smtpd_recipient_restrictions=" \
+
+      permit_mynetworks \
+      permit_sasl_authenticated \
+      reject_unauth_destination"
+
+
 ##############
 # CLEAN ROOM #
 ##############
