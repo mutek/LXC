@@ -18,6 +18,7 @@ DEBIAN_FRONTEND=noninteractive  apt-get install --force-yes --assume-yes -y  pwg
 wait
 
 DEBIAN_FRONTEND=noninteractive apt-get install --force-yes --assume-yes -y git rsync libmysqlclient18 libjpeg62 postfix postfix-mysql swaks dovecot-mysql dovecot-pop3d dovecot-imapd dovecot-managesieved
+wait
 
 apt-get clean
 
@@ -78,6 +79,8 @@ wait
 # 1) /etc/postfix/mysql-virtual-mailbox-domains.cf 
 
 mkdir -p /etc/postfix
+wait
+
 cat << EOVIRTUALMAILBOXDOMAIN > /etc/postfix/mysql-virtual-mailbox-domains.cf
 user = mailuser
 password = $DB_USER_PWD
@@ -697,7 +700,9 @@ service dict {
     #group = 
   }
 }
-EOMASTER 
+EOMASTER
+
+
 
 
 
@@ -756,6 +761,7 @@ protocol lda {
   mail_plugins = \$mail_plugins sieve
 }
 EOLDA
+
 
 
 #####################################
@@ -909,6 +915,8 @@ password_query = SELECT email as user, password FROM virtual_users WHERE email='
 
 EOSQLCONF
 
+
+
 ##########################
 # DOVECOT THE FINAL LOVE #
 ##########################
@@ -927,6 +935,8 @@ dovecot   unix  -       n       n       -       -       pipe
   flags=DRhu user=vmail:vmail argv=/usr/lib/dovecot/dovecot-lda -f \${sender} -d \${recipient}
 
 EOPOSTFIXMASTER
+
+
 
 service postfix restart
 
