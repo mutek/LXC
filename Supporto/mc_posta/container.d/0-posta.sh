@@ -909,7 +909,7 @@ cat << EOSQLCONF > /etc/dovecot/dovecot-sql.conf.ext
 
 ### THE MAGIC HAPPENS
 driver = mysql
-connect = host=127.0.0.1 dbname=mailserver user=mailuser password=$DB_USER_PWD
+connect = host=127.0.0.1 dbname=mailserver user=root password=$ROOT_PWD
 default_pass_scheme = PLAIN-MD5
 password_query = SELECT email as user, password FROM virtual_users WHERE email='%u';
 
