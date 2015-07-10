@@ -53,7 +53,7 @@ wait
 mysql -u root --password=$ROOT_PWD -e "CREATE USER '"$DB_USER"'@'localhost' IDENTIFIED BY '"$DB_USER_PWD"'; FLUSH PRIVILEGES;"
 wait
 
-mysql -u root --password=$ROOT_PWD mailserver < $MC_CONTAINER_D_DIR/$DB_NAME.sql
+mysql -u root --password=$ROOT_PWD $DB_NAME < $MC_CONTAINER_D_DIR/$DB_NAME.sql
 wait
 
 mysql -u root --password=$ROOT_PWD -e  "GRANT SELECT	 ON "$DB_NAME".* TO '"$DB_USER"'@'127.0.0.1';"
