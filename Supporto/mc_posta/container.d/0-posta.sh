@@ -82,8 +82,8 @@ mkdir -p /etc/postfix
 wait
 
 cat << EOVIRTUALMAILBOXDOMAIN > /etc/postfix/mysql-virtual-mailbox-domains.cf
-user = mailuser
-password = $DB_USER_PWD
+user = root
+password = $ROOT_PWD
 hosts = 127.0.0.1
 dbname = mailserver
 query = SELECT 1 FROM virtual_domains WHERE name='%s'
@@ -98,8 +98,8 @@ wait
 # 3) /etc/postfix/mysql-virtual-mailbox-maps.cf
 
 cat << EOVIRTUALMAILBOXMAPS > /etc/postfix/mysql-virtual-mailbox-maps.cf
-user = mailuser
-password = $DB_USER_PWD
+user = root
+password = $ROOT_PWD
 hosts = 127.0.0.1
 dbname = mailserver
 query = SELECT 1 FROM virtual_users WHERE email='%s'
@@ -113,8 +113,8 @@ wait
 # 5) /etc/postfix/mysql-virtual-alias-maps.cf
 
 cat << EOVIRTUALALIASMAPS > /etc/postfix/mysql-virtual-alias-maps.cf
-user = mailuser
-password = $DB_USER_PWD
+user = root
+password = $ROOT_PWD
 hosts = 127.0.0.1
 dbname = mailserver
 query = SELECT destination FROM virtual_aliases WHERE source='%s'
