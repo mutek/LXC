@@ -18,8 +18,8 @@ apt-get clean
 
 
 sed -i "s/Port 22/Port 2222/g" /etc/ssh/sshd_config
-sed -i "PermitRootLogin yes/PermitRootLogin no" /etc/ssh/sshd_config
-sed -i "X11Forwarding yes/X11Forwarding no" /etc/ssh/sshd_config
+sed -i "s/PermitRootLogin yes/PermitRootLogin no/g" /etc/ssh/sshd_config
+sed -i "s/X11Forwarding yes/X11Forwarding no/g" /etc/ssh/sshd_config
 
 
 ##############
