@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+export PATH=/opt/Lxc/1.1.2/Debian7/Linux/amd64/libexec/lxc:$PATH
+export PATH=/opt/Lxc/1.1.2/Debian7/Linux/amd64/sbin:$PATH
+export PATH=/opt/Lxc/1.1.2/Debian7/Linux/amd64/bin:$PATH
+export LD_LIBRARY_PATH=/opt/Lxc/1.1.2/Debian7/Linux/amd64/lib:$LD_LIBRARY_PATH
+
+
+lxc-start -n doc &
+
+sleep 5
+
+lxc-start -n posta

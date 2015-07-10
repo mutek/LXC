@@ -21,6 +21,7 @@ sed -i "s/Port 22/Port 2222/g" /etc/ssh/sshd_config
 sed -i "s/PermitRootLogin yes/PermitRootLogin no/g" /etc/ssh/sshd_config
 sed -i "s/X11Forwarding yes/X11Forwarding no/g" /etc/ssh/sshd_config
 
+/etc/init.d/ssh restart
 
 ##############
 # CLEAN ROOM #

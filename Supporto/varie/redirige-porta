@@ -1,0 +1,39 @@
+#!/usr/bin/env sh
+
+
+INTERFACCIA=eth0
+
+
+INDIRIZZO=10.10.10.100
+PORTA=2222
+
+iptables -t nat -A PREROUTING -i ${INTERFACCIA} -p tcp --dport ${PORTA} -j DNAT --to ${INDIRIZZO}:${PORTA}
+wait
+
+
+# SMTPD incoming verso mc_posta porte 25 e 587 ed 80,443  per web
+INDIRIZZO=10.10.10.200
+PORTA=587
+iptables -t nat -A PREROUTING -i ${INTERFACCIA} -p tcp --dport ${PORTA} -j DNAT --to ${INDIRIZZO}:${PORTA}
+wait
+
+INDIRIZZO=10.10.10.200
+PORTA=25 
+iptables -t nat -A PREROUTING -i ${INTERFACCIA} -p tcp --dport ${PORTA} -j DNAT --to ${INDIRIZZO}:${PORTA}
+wait
+
+INDIRIZZO=10.10.10.200
+PORTA=80
+iptables -t nat -A PREROUTING -i ${INTERFACCIA} -p tcp --dport ${PORTA} -j DNAT --to ${INDIRIZZO}:${PORTA}
+wait
+
+INDIRIZZO=10.10.10.200
+PORTA=443
+iptables -t nat -A PREROUTING -i ${INTERFACCIA} -p tcp --dport ${PORTA} -j DNAT --to ${INDIRIZZO}:${PORTA}
+wait
+
+
+
+iptables -vnL
+iptables -t nat -vnL
+
