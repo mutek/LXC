@@ -1,0 +1,86 @@
+<VirtualHost *:80>
+	ServerAdmin webmaster@localhost
+
+	DocumentRoot /var/www
+	<Directory />
+		Options FollowSymLinks
+		AllowOverride None
+	</Directory>
+	<Directory /var/www/>
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride None
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
+	<Directory "/usr/lib/cgi-bin">
+		AllowOverride None
+		Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+		Order allow,deny
+		Allow from all
+	</Directory>
+
+Alias /postfixadmin /usr/share/postfixadmin
+
+Alias /ispmailadmin /opt/ispmailadmin/htdocs
+
+Alias /roundcube /var/lib/roundcube
+
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+
+
+Alias /phpmyadmin /usr/share/phpmyadmin
+
+<Directory /usr/share/phpmyadmin>
+	Options FollowSymLinks
+	DirectoryIndex index.php
+
+	<IfModule mod_php5.c>
+		AddType application/x-httpd-php .php
+
+		php_flag magic_quotes_gpc Off
+		php_flag track_vars On
+		php_flag register_globals Off
+		php_admin_flag allow_url_fopen Off
+		php_value include_path .
+		php_admin_value upload_tmp_dir /var/lib/phpmyadmin/tmp
+		php_admin_value open_basedir /usr/share/phpmyadmin/:/etc/phpmyadmin/:/var/lib/phpmyadmin/
+	</IfModule>
+
+</Directory>
+
+# Authorize for setup
+<Directory /usr/share/phpmyadmin/setup>
+    <IfModule mod_authn_file.c>
+    AuthType Basic
+    AuthName "phpMyAdmin Setup"
+    AuthUserFile /etc/phpmyadmin/htpasswd.setup
+    </IfModule>
+    Require valid-user
+</Directory>
+
+# Disallow web access to directories that don't need it
+<Directory /usr/share/phpmyadmin/libraries>
+    Order Deny,Allow
+    Deny from All
+</Directory>
+<Directory /usr/share/phpmyadmin/setup/lib>
+    Order Deny,Allow
+    Deny from All
+</Directory>
+
+
+
+
+
+
+
+</VirtualHost>
