@@ -21,11 +21,15 @@
 		Allow from all
 	</Directory>
 
-Alias /postfixadmin /usr/share/postfixadmin
+	#Alias /postfixadmin /usr/share/postfixadmin
 
-Alias /ispmailadmin /opt/ispmailadmin/htdocs
+	Redirect permanent /webadmin https://terzo.dominio.tld/webadmin
 
-Alias /roundcube /var/lib/roundcube
+#	Alias /webadmin /opt/ispmailadmin/htdocs
+
+        Redirect permanent /webmail https://terzo.dominio.tld/webmail
+
+#	Alias /webmail /opt/roundcube
 
 	ErrorLog ${APACHE_LOG_DIR}/error.log
 
@@ -37,7 +41,7 @@ Alias /roundcube /var/lib/roundcube
 
 
 
-Alias /phpmyadmin /usr/share/phpmyadmin
+#Alias /phpmyadmin /usr/share/phpmyadmin
 
 <Directory /usr/share/phpmyadmin>
 	Options FollowSymLinks
@@ -76,11 +80,5 @@ Alias /phpmyadmin /usr/share/phpmyadmin
     Order Deny,Allow
     Deny from All
 </Directory>
-
-
-
-
-
-
 
 </VirtualHost>

@@ -1,12 +1,7 @@
-# See /usr/share/postfix/main.cf.dist for a commented, more complete version
-
-
-# Debian specific:  Specifying a file name will cause the first
-# line of that file to be used as the name.  The Debian default
-# is /etc/mailname.
+# The Debian default is /etc/mailname.
 #myorigin = /etc/mailname
 
-smtpd_banner = $myhostname ESMTP $mail_name (Debian/GNU)
+smtpd_banner = Server di Posta
 biff = no
 
 # appending .domain is the MUA's job.
@@ -18,16 +13,16 @@ append_dot_mydomain = no
 readme_directory = no
 
 # TLS parameters
-smtpd_tls_cert_file = /etc/ssl/certs/mailserver.pem
-smtpd_tls_key_file = /etc/ssl/private/mailserver.pem
+#smtpd_tls_cert_file = /etc/ssl/certs/mailserver.pem
+#smtpd_tls_key_file = /etc/ssl/private/mailserver.pem
+# certficati specifici validi
+smtpd_tls_cert_file = /etc/ssl/certs/dominio.tld.chain.pem
+smtpd_tls_key_file = /etc/ssl/private/dominio.tld.key
 smtpd_use_tls=yes
 smtpd_tls_session_cache_database = btree:${data_directory}/smtpd_scache
 smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
 
-# See /usr/share/doc/postfix/TLS_README.gz in the postfix-doc package for
-# information on enabling SSL in the smtp client.
-
-myhostname = t29.robotica.it
+myhostname = host-provider.dominio-provider.tld
 alias_maps = hash:/etc/aliases
 alias_database = hash:/etc/aliases
 mydestination = localdomain, localhost, localhost.localdomain, localhost
@@ -53,12 +48,12 @@ smtpd_sasl_security_options = noanonymous forward_secrecy
 smtpd_sasl_tls_security_options = noanonymous
 broken_sasl_auth_clients = yes
 
-#smtpd_relay_restrictions =
-#        permit_mynetworks
-#        permit_sasl_authenticated
-#        reject_unauth_destination
-
 smtpd_recipient_restrictions = 
         permit_mynetworks
         permit_sasl_authenticated
         reject_unauth_destination
+
+milter_default_action = accept
+milter_protocol = 2
+smtpd_milters = inet:localhost:12345
+non_smtpd_milters = inet:localhost:12345

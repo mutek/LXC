@@ -11,6 +11,9 @@
 # MYSQL
 #
 
+DOMINIO="dominio.tld"
+
+
 MC_CONTAINER_D_DIR="/root/container.d"
 
 

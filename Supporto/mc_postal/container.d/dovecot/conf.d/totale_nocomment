@@ -1,0 +1,443 @@
+>>>>>>>>>>>>>>> 10-auth.conf <<<<<<<<<<<<<<
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+auth_mechanisms = plain login
+
+
+
+
+!include auth-sql.conf.ext
+>>>>>>>>>>>>>>> 10-director.conf <<<<<<<<<<<<<<
+
+
+
+
+
+
+service director {
+  unix_listener login/director {
+  }
+  fifo_listener login/proxy-notify {
+  }
+  unix_listener director-userdb {
+  }
+  inet_listener {
+  }
+}
+
+service imap-login {
+}
+service pop3-login {
+}
+
+protocol lmtp {
+}
+>>>>>>>>>>>>>>> 10-logging.conf <<<<<<<<<<<<<<
+
+
+
+
+
+
+
+
+
+
+
+plugin {
+}
+
+
+
+
+ 
+
+>>>>>>>>>>>>>>> 10-mail.conf <<<<<<<<<<<<<<
+
+
+namespace inbox {
+
+
+
+
+  inbox = yes
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mail_location = maildir:/var/vmail/%d/%n/Maildir
+
+>>>>>>>>>>>>>>> 10-master.conf <<<<<<<<<<<<<<
+
+
+
+
+service imap-login {
+  inet_listener imap {
+  }
+  inet_listener imaps {
+  }
+
+
+
+}
+
+service pop3-login {
+  inet_listener pop3 {
+  }
+  inet_listener pop3s {
+  }
+}
+
+service lmtp {
+  unix_listener lmtp {
+  }
+
+}
+
+service imap {
+
+}
+
+service pop3 {
+}
+
+service auth {
+  unix_listener auth-userdb {
+  }
+
+  unix_listener /var/spool/postfix/private/auth {
+    mode = 0666
+    user = postfix
+    group = postfix
+  }
+
+}
+
+service auth-worker {
+}
+
+service dict {
+  unix_listener dict {
+  }
+}
+>>>>>>>>>>>>>>> 10-ssl.conf <<<<<<<<<<<<<<
+
+
+
+ssl_cert = </etc/ssl/certs/robotica.it.chain.pem
+ssl_key =</etc/ssl/private/robotica.it.key
+
+
+
+
+
+
+
+
+
+>>>>>>>>>>>>>>> 10-tcpwrapper.conf <<<<<<<<<<<<<<
+>>>>>>>>>>>>>>> 15-lda.conf <<<<<<<<<<<<<<
+
+
+
+
+
+
+
+
+
+
+
+
+
+protocol lda {
+  mail_plugins = $mail_plugins sieve
+}
+>>>>>>>>>>>>>>> 15-mailboxes.conf <<<<<<<<<<<<<<
+
+namespace inbox {
+
+
+
+  mailbox Drafts {
+    special_use = \Drafts
+  }
+  mailbox Junk {
+    special_use = \Junk
+  }
+  mailbox Trash {
+    special_use = \Trash
+  }
+
+  mailbox Sent {
+    special_use = \Sent
+  }
+  mailbox "Sent Messages" {
+    special_use = \Sent
+  }
+
+
+}
+>>>>>>>>>>>>>>> 20-imap.conf <<<<<<<<<<<<<<
+
+protocol imap {
+
+
+
+
+
+
+
+
+}
+>>>>>>>>>>>>>>> 20-managesieve.conf <<<<<<<<<<<<<<
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>>>>>>>>>> 20-pop3.conf <<<<<<<<<<<<<<
+
+protocol pop3 {
+
+
+
+
+
+
+
+
+
+
+
+}
+>>>>>>>>>>>>>>> 90-acl.conf <<<<<<<<<<<<<<
+
+plugin {
+}
+
+plugin {
+}
+>>>>>>>>>>>>>>> 90-plugin.conf <<<<<<<<<<<<<<
+
+
+plugin {
+}
+>>>>>>>>>>>>>>> 90-quota.conf <<<<<<<<<<<<<<
+
+
+
+
+plugin {
+}
+
+
+
+plugin {
+}
+
+
+
+
+plugin {
+}
+
+plugin {
+}
+>>>>>>>>>>>>>>> 90-sieve.conf <<<<<<<<<<<<<<
+
+
+plugin {
+  sieve = ~/.dovecot.sieve
+
+
+  sieve_dir = ~/sieve
+
+
+
+
+
+
+
+
+
+
+
+
+}
+>>>>>>>>>>>>>>> auth-checkpassword.conf.ext <<<<<<<<<<<<<<
+
+passdb {
+  driver = checkpassword
+  args = /usr/bin/checkpassword
+}
+
+userdb {
+  driver = prefetch
+}
+
+>>>>>>>>>>>>>>> auth-deny.conf.ext <<<<<<<<<<<<<<
+
+
+passdb {
+  driver = passwd-file
+  deny = yes
+
+  args = /etc/dovecot/deny-users
+}
+>>>>>>>>>>>>>>> auth-master.conf.ext <<<<<<<<<<<<<<
+
+
+passdb {
+  driver = passwd-file
+  master = yes
+  args = /etc/dovecot/master-users
+
+  pass = yes
+}
+>>>>>>>>>>>>>>> auth-passwdfile.conf.ext <<<<<<<<<<<<<<
+
+passdb {
+  driver = passwd-file
+  args = scheme=CRYPT username_format=%u /etc/dovecot/users
+}
+
+userdb {
+  driver = passwd-file
+  args = username_format=%u /etc/dovecot/users
+
+
+}
+>>>>>>>>>>>>>>> auth-sql.conf.ext <<<<<<<<<<<<<<
+
+passdb {
+  driver = sql
+
+  args = /etc/dovecot/dovecot-sql.conf.ext
+}
+
+
+
+
+userdb {
+  driver = static
+  args = uid=vmail gid=vmail home=/var/vmail/%d/%n
+}
+
+>>>>>>>>>>>>>>> auth-static.conf.ext <<<<<<<<<<<<<<
+
+
+
+
+>>>>>>>>>>>>>>> auth-system.conf.ext <<<<<<<<<<<<<<
+
+passdb {
+  driver = pam
+}
+
+
+
+
+
+userdb {
+  driver = passwd
+
+}
+
+>>>>>>>>>>>>>>> auth-vpopmail.conf.ext <<<<<<<<<<<<<<
+
+passdb {
+  driver = vpopmail
+
+  args =
+}
+
+userdb {
+  driver = vpopmail
+
+  args = quota_template=quota_rule=*:backend=%q
+}

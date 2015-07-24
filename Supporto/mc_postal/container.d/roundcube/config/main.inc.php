@@ -210,7 +210,7 @@ $rcmail_config['auto_create_user'] = true;
 
 // replace Roundcube logo with this image
 // specify an URL relative to the document root of this Roundcube installation
-$rcmail_config['skin_logo'] = null;
+$rcmail_config['skin_logo'] = '';
 
 // Includes should be interpreted as PHP files
 $rcmail_config['skin_include_php'] = false;
@@ -358,7 +358,7 @@ $rcmail_config['email_dns_check'] = false;
 // ----------------------------------
 
 // List of active plugins (in plugins/ directory)
-$rcmail_config['plugins'] = array();
+$rcmail_config['plugins'] = array(password);
 
 // ----------------------------------
 // USER INTERFACE
@@ -377,7 +377,7 @@ $rcmail_config['list_cols'] = array('subject', 'status', 'from', 'date', 'size',
 
 // the default locale setting (leave empty for auto-detection)
 // RFC1766 formatted language name like en_US, de_DE, de_CH, fr_FR, pt_BR
-$rcmail_config['language'] = 'en_US';
+$rcmail_config['language'] = 'it_IT';
 
 // use this format for date display (date or strftime format)
 $rcmail_config['date_format'] = 'Y-m-d';
