@@ -25,6 +25,13 @@ wait
 
 apt-get clean
 
+a2enmod ssl
+service apache2 restart
+
+echo "ServerName "$DOMINIO >> /etc/apache2/apache2.conf
+
+service apache2 restart
+
 MYSQL_RANDOM_PASSWORD="$(pwgen -s 25 1)"
 wait
 
