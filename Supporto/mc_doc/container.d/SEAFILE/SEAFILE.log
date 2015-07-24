@@ -1,0 +1,34 @@
+admin pwd: admin.2015
+
+server name:        doc
+server ip/domain:   doc.qnomos.it
+server port:        10001
+seafile data dir:   /opt/SeafileServer/seafile-data
+seafile port:       12001
+fileserver port:    8082
+
+
+port of ccnet server:         10001
+port of seafile server:       12001
+port of seafile fileserver:   8082
+port of seahub:               8000
+
+
+run seafile server:     ./seafile.sh { start | stop | restart }
+run seahub  server:     ./seahub.sh  { start <port> | stop | restart <port> }
+
+-----------------------------------------------------------------
+If the server is behind a firewall, remember to open these tcp ports:
+-----------------------------------------------------------------
+
+port of ccnet server:         10001
+port of seafile server:       12001
+port of seafile fileserver:   8082
+port of seahub:               8000
+
+When problems occur, refer to
+
+      https://github.com/haiwen/seafile/wiki
+
+for more information.
+
