@@ -1,0 +1,50 @@
+#!/usr/bin/env sh
+#
+# Costruisce le premesse di rete per permettere alla configurazione di LXC di poter agganciare il bridge L2 dell'host
+#
+# sara cura del file /etc/network/interface del container tirare su la rete con un IP statico (se dhcp allora è necessario il server sull'host)
+#
+# IP del bridge che partecipa al forwarding è 10.10.10.1 e rappresenta il gateway del container
+
+USE_LXC_BRIDGE="true"
+LXC_BRIDGE="lxcbr0"
+LXC_ADDR="10.10.10.1"
+LXC_NETMASK="255.255.255.0"
+LXC_NETWORK="10.10.10.0/24"
+LXC_DHCP_RANGE="10.10.10.100,10.10.10.254"
+LXC_DHCP_MAX="253"
+LXC_DHCP_CONFILE=""
+LXC_DOMAIN=""
+
+	# qualche fondamentale
+	[ $(which brctl) ] || { echo "non trovo il tool brctl tipicamente nel pacchetto bridge-utils"; exit 0;}
+
+	# se il bridge è gia costruito allora esci e notifica
+	[ -d /sys/class/net/${LXC_BRIDGE} ] && { echo "lxcbr0 è gia attivo! "; brctl show; exit 0; }
+
+
+	# costruisce il bridge L2
+	brctl addbr ${LXC_BRIDGE} || { echo "Non sono riuscito ad aggiungere "${LXC_BRIDGE}; exit 0; }
+	wait
+	brctl show
+
+	# abilita il forward nell'host
+	echo 1 > /proc/sys/net/ipv4/ip_forward
+
+	# attiva il bridge nell'host
+	ifconfig ${LXC_BRIDGE} ${LXC_ADDR} netmask ${LXC_NETMASK} up
+	wait
+	ifconfig
+
+	# routing NAT
+	iptables $use_iptables_lock -I INPUT -i ${LXC_BRIDGE} -p udp --dport 67 -j ACCEPT
+	iptables $use_iptables_lock -I INPUT -i ${LXC_BRIDGE} -p tcp --dport 67 -j ACCEPT
+	iptables $use_iptables_lock -I INPUT -i ${LXC_BRIDGE} -p udp --dport 53 -j ACCEPT
+	iptables $use_iptables_lock -I INPUT -i ${LXC_BRIDGE} -p tcp --dport 53 -j ACCEPT
+	iptables $use_iptables_lock -I FORWARD -i ${LXC_BRIDGE} -j ACCEPT
+	iptables $use_iptables_lock -I FORWARD -o ${LXC_BRIDGE} -j ACCEPT
+	iptables $use_iptables_lock -t nat -A POSTROUTING -s ${LXC_NETWORK} ! -d ${LXC_NETWORK} -j MASQUERADE
+	iptables $use_iptables_lock -t mangle -A POSTROUTING -o ${LXC_BRIDGE} -p udp -m udp --dport 68 -j CHECKSUM --checksum-fill
+	wait
+
+	iptables -nL
