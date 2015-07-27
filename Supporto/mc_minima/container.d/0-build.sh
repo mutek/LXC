@@ -7,6 +7,10 @@
 # WTF
 #
 
+echo ""
+echo ">>>>>>>>>>>>>>>>>>>  "$0" <<<<<<<<<<<<<<<<<<<<< "
+echo ""
+
 
 MC_CONTAINER_D_DIR="/root/container.d"
 
@@ -81,10 +85,6 @@ cp certificato.pem /etc/ssl/certs/
 cp certificato.key /etc/ssl/private/
 
 
-echo ""
-echo ">>>>>>>>>>>>>>>>>>>  "$0" <<<<<<<<<<<<<<<<<<<<< "
-echo ""
-
 MYSQL_RANDOM_PASSWORD="$(pwgen -s 25 1)"
 wait
 
@@ -99,6 +99,10 @@ echo "$MC_RC_USERPASSWORD" > /root/mysql_roundcube_pwd.txt
 MC_RC_DBNAME="roundcubemail"
 MC_RC_USERNAME="roundcube"
 ROOT_PWD="$(cat /root/mysql_pwd.txt)"
+
+### POSTFIXADMIN / DOVECOT
+mysql -u root --password=$ROOT_PWD -e "CREATE DATABASE mail;"
+wait
 
 ### ROUNDCUBE
 mysql -u root --password=$ROOT_PWD -e "CREATE DATABASE roundcubemail /*!40101 CHARACTER SET utf8 COLLATE utf8_general_ci */;"
@@ -116,13 +120,9 @@ wait
 mysql -u root --password=$ROOT_PWD roundcubemail < /root/container.d/roundcube/mysql.initial.sql
 wait
 
-
-
-
 # THE FINAL CUT
 mysql -u root --password=$ROOT_PWD -e 'show databases;' > /root/the_final_cut.txt
 wait
-
 
 DEBIAN_FRONTEND=noninteractive apt-get install --force-yes --assume-yes -y \
   php-apc \
@@ -140,8 +140,6 @@ echo "expose_php = Off" >> /etc/php5/apache2/php.ini
 wait
 
 php5enmod imap
-
-
 
 if [ "$MC_CERTIFICATO_CHAIN" = "" ] || [ "$MC_CERTIFICATO_KEY" = "" ]
 then
@@ -195,6 +193,10 @@ done
 sed -i "s/MC_CERTIFICATO_CHAIN/$MC_CERTIFICATO_CHAIN/g" /etc/apache2/sites-available/default-ssl
 wait
 sed -i "s/MC_CERTIFICATO_KEY/$MC_CERTIFICATO_KEY/g" /etc/apache2/sites-available/default-ssl
+wait
+
+# il valore puo essere instanziato in second stage 
+sed -i "s/MC_DOMINIO/$MC_DOMINIO_HOST/g" /etc/apache2/sites-available/default
 wait
 
 service apache2 restart
