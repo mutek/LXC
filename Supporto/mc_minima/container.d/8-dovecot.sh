@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
 MC_DBNAME="mail"
-MC_DBUSER="mail"
-MC_DBPASSWORD="$(cat /root/mysql_mailuser_pwd.txt)"
+MC_DBUSER="root"
+MC_DBPASSWORD="$(cat /root/mysql_root_pwd.txt)"
 
 # nome file certificato chain e nome file chiave privata
 # posizionati in /etc/ssl/certs e /etc/ssl/private
@@ -26,6 +26,9 @@ fi
 cp /root/container.d/dovecot/dovecot-sql.conf.ext  /etc/dovecot/dovecot-sql.conf.ext
 
 sed -i "s/MC_DBPASSWORD/$MC_DBPASSWORD/g" /etc/dovecot/dovecot-sql.conf.ext
+sed -i "s/MC_DBUSER/$MC_DBUSER/g" /etc/dovecot/dovecot-sql.conf.ext
+sed -i "s/MC_DBNAME/$MC_DBNAME/g" /etc/dovecot/dovecot-sql.conf.ext
+
 
 cp /root/container.d/dovecot/conf.d/10-auth.conf /etc/dovecot/conf.d/10-auth.conf
 

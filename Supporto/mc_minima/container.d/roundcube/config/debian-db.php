@@ -10,10 +10,10 @@
 ## you'll probably also want to edit the configuration file mentioned
 ## above too.
 ##
-$dbuser='mail';
+$dbuser='MC_DBUSER';
 $dbpass='MC_DBPASSWORD';
 $basepath='';
-$dbname='mail';
+$dbname='MC_DBNAME';
 $dbserver='127.0.0.1';
 $dbport='3306';
 $dbtype='mysql';

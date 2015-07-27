@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
 MC_DBNAME="mail"
-MC_DBUSER="mail"
-MC_DBPASSWORD="$(cat /root/mysql_mailuser_pwd.txt)"
+MC_DBUSER="root"
+MC_DBPASSWORD="$(cat /root/mysql_root_pwd.txt)"
 
 MC_HOSTNAME=""
 
