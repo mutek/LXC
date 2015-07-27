@@ -14,5 +14,18 @@ DEBIAN_FRONTEND=noninteractive apt-get install --force-yes --assume-yes -y \
   unzip \
   unrar-free \
   zip \
-  zoo
+  zoo \
+  postgrey \
+  amavis \
+  clamav \
+  clamav-daemon \
+  spamassassin
 
+
+# anti LogJam ...speriamo!
+openssl dhparam -out /etc/ssl/private/dhparams.pem 2048
+chmod 600 /etc/ssl/private/dhparams.pem
+
+wait
+
+cat /etc/ssl/private/dhparams.pem >> /etc/ssl/certs/certificato.pem

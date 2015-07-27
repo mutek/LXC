@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+
+MC_DBNAME="mail"
+MC_DBUSER="mail"
+MC_DBPASSWORD="$(cat /root/mysql_mailuser_pwd.txt)"
+
+for item in $(ls /root/container.d/postfix)
+do
+
+	cp /root/container.d/postfix/$item /etc/postfix/
+
+done
+
+wait
+
+# data driven availability opportunistic push
+# gli errori vengono gestiti in modo naturale e trasparente dalla POSIX shell e da sed
+for elemento in $(ls /etc/postfix)
+do
+
+	sed -i "s/MC_DBPASSWORD/$MC_DBPASSWORD/g" /etc/postfix/$elemento
+
+done
+
+
+

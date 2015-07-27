@@ -24,6 +24,7 @@ SSLHonorCipherOrder on
 # escludi il buco nero
 SSLProtocol all -SSLv2 -SSLv3
 #
+SSLOpenSSLConfCmd DHParameters "/etc/ssl/private/dhparams.pem"
 EOSSL
 
 
