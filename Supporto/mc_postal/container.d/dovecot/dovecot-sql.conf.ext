@@ -130,7 +130,7 @@
 
 ### THE MAGIC HAPPENS
 driver = mysql
-connect = host=127.0.0.1 dbname=mailserver user=root password=m71tr7PRYdcLvPtIWB9dtjxAq
+connect = host=127.0.0.1 dbname=mailserver user=root password=MC_PASSWORD
 default_pass_scheme = PLAIN-MD5
 password_query = SELECT email as user, password FROM virtual_users WHERE email='%u';
 
