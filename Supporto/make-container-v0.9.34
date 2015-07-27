@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# make-container v0.9.33dev
+# make-container v0.9.34
 # Compila un Container LXC
 # Luca Cappelletti (c) 2015 <luca.cappelletti@positronic.ch>
 # WTF
@@ -9,7 +9,7 @@
 # genera un IP statico random nella rete 10.10.10.0 associato ad un idirizzo di MAC address random
 #
 
-# 0.9.33dev
+# 0.9.34
 # rimosso momentaneamente automatismo in rc.local
 # il build avviene in 2 stage
 # 1) make-container
@@ -17,7 +17,7 @@
 
 
 
-readonly RELEASE=0.9.33dev
+readonly RELEASE=0.9.34
 # GENERALI
 MC_NOME_CONTAINER=$1
 MC_DISTRO_RELEASE=$2
