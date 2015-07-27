@@ -298,7 +298,7 @@ service dovecot restart
 
 MC_DBNAME="mail"
 MC_DBUSER="root"
-MC_DBPASSWORD="$(cat /root/mysql_root_pwd.txt)"
+MC_DBPASSWORD="$(cat /root/mysql_pwd.txt)"
 
 MC_HOSTNAME=""
 
@@ -343,7 +343,7 @@ service dovecot restart
 
 MC_RC_DBNAME="roundcubemail"
 MC_RC_DBUSER="root"
-MC_RC_DBPASSWORD="$(cat /root/mysql_root_pwd.txt)"
+MC_RC_DBPASSWORD="$(cat /root/mysql_pwd.txt)"
 
 cd /opt
 
