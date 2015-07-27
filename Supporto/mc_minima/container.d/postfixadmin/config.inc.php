@@ -289,6 +289,11 @@ $CONF['domain_quota'] = 'YES';
 // You can either use '1024000' or '1048576'
 $CONF['quota_multiplier'] = '1024000';
 
+// STRAQUOTA: se funziona mostra il quota in roundcube
+$CONF['used_quotas'] = 'YES';
+// vale per dovecot > 1.2
+$CONF['new_quota_table'] = 'YES';
+
 // Transport
 // If you want to define additional transport options for a domain set this to 'YES'.
 // Read the transport file of the Postfix documentation.
