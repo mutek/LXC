@@ -13,7 +13,7 @@ else
 :
 fi
 
-
+mkdir -p /etc/apache2/conf-enabled
 cat << EOAPACHE > /etc/apache2/conf-enabled/sicurezza.conf
 # esponi al minimo
 ServerTokens Prod
