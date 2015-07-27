@@ -19,7 +19,7 @@ echo "$MYSQL_MAILADMIN_PWD" > /root/mysql_mailadmin_pwd.txt
 
 ROOT_PWD="$(cat /root/mysql_root_pwd.txt)"
 DB_NAME="mail"
-DB_USER="mailuser"
+DB_USER="mail"
 DB_USER_PWD="$(cat /root/mysql_mailuser_pwd.txt)"
 DB_MAILADMIN_USER="mailadmin"
 DB_MAILADMIN_PWD="$(cat /root/mysql_mailadmin_pwd.txt)"

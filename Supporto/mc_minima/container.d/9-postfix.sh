@@ -4,6 +4,17 @@ MC_DBNAME="mail"
 MC_DBUSER="mail"
 MC_DBPASSWORD="$(cat /root/mysql_mailuser_pwd.txt)"
 
+MC_HOSTNAME=""
+
+if [ "$MC_HOSTNAME" = "" ]
+then
+
+	MC_HOSTNAME=$(hostname)
+
+else
+:
+fi
+
 for item in $(ls /root/container.d/postfix)
 do
 
@@ -19,6 +30,9 @@ for elemento in $(ls /etc/postfix)
 do
 
 	sed -i "s/MC_DBPASSWORD/$MC_DBPASSWORD/g" /etc/postfix/$elemento
+	wait
+        sed -i "s/MC_HOSTNAME/$MC_HOSTNAME/g" /etc/postfix/$elemento
+	wait
 
 done
 

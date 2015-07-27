@@ -3,6 +3,17 @@
 MC_CERTIFICATO_CHAIN=""
 MC_CERTIFICATO_KEY=""
 
+if [ "$MC_CERTIFICATO_CHAIN" = "" ] || [ "$MC_CERTIFICATO_KEY" = "" ]
+then
+
+	MC_CERTIFICATO_CHAIN="certificato.pem"
+	MC_CERTIFICATO_KEY="certificato.key"
+
+else
+:
+fi
+
+
 cat << EOAPACHE > /etc/apache2/conf-enabled/sicurezza.conf
 # esponi al minimo
 ServerTokens Prod
