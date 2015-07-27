@@ -1,4 +1,4 @@
-user = mail
+user = root
 password = MC_DBPASSWORD
 hosts = 127.0.0.1
 dbname = mail

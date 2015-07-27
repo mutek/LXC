@@ -345,14 +345,12 @@ wait
 for elemento in $(ls /etc/postfix)
 do
 
-	sed -i "s/MC_DBPASSWORD/$MC_DBPASSWORD/g" /etc/postfix/$elemento
+	sed -i "s/MC_DBPASSWORD/$ROOT_PWD/g" /etc/postfix/$elemento
 	wait
-        sed -i "s/MC_HOSTNAME/$MC_HOSTNAME/g" /etc/postfix/$elemento
+        sed -i "s/MC_HOSTNAME/$ROOT_PWD/g" /etc/postfix/$elemento
 	wait
 
 done
-
-
 
 
 service postfix restart
