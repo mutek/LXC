@@ -62,6 +62,24 @@ fi
 apt-get install --assume-yes ssl-cert
 make-ssl-cert generate-default-snakeoil --force-overwrite
 
+##
+# genera in automatico un certificato self signed comprensivo quindi di csr con chiave da 8192 bit
+# utilizzabile eventualmente per richiesta di certificati trusted dai root
+#
+cd /root
+rm certificato.*
+openssl genrsa -des3 -passout pass:x -out server.pass.key 8192
+openssl rsa -passin pass:x -in server.pass.key -out certificato.key
+rm server.pass.key
+openssl req -new -key certificato.key -out certificato.csr \
+  -subj "/C=IT/ST=Italy/L=Rome/O=Corporation/OU=Dipartimento IT/CN=dominio.org"
+
+openssl x509 -req -days 365 -in certificato.csr -signkey certificato.key -out certificato.pem
+
+# posizionalo
+cp certificato.pem /etc/ssl/certs/
+cp certificato.key /etc/ssl/private/
+
 
 echo ""
 echo ">>>>>>>>>>>>>>>>>>>  "$0" <<<<<<<<<<<<<<<<<<<<< "
