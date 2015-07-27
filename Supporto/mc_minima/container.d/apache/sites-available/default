@@ -23,13 +23,13 @@
 
 	#Alias /postfixadmin /usr/share/postfixadmin
 
-	Redirect permanent /webadmin https://datactionary.org/webadmin
+	Redirect permanent /webadmin https://nomos.robotica.it/webadmin
 
 #	Alias /webadmin /opt/ispmailadmin/htdocs
 
 	#Alias /webmail /var/lib/roundcube
 
-        Redirect permanent /webmail https://datactionary.org/webmail
+        Redirect permanent /webmail https://nomos.robotica.it/webmail
 
 #	Alias /webmail /opt/roundcube
 

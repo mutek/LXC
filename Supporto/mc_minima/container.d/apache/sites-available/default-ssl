@@ -26,6 +26,8 @@
 
 	Alias /webadmin /opt/ispmailadmin/htdocs
 
+	Alias /autodiscover/autodiscover.xml /var/www/autodiscover/autodiscover.xml
+
 	ErrorLog ${APACHE_LOG_DIR}/error.log
 
 	# Possible values include: debug, info, notice, warn, error, crit,
@@ -43,8 +45,12 @@
 	#   /usr/share/doc/apache2.2-common/README.Debian.gz for more info.
 	#   If both key and certificate are stored in the same file, only the
 	#   SSLCertificateFile directive is needed.
-	SSLCertificateFile    /etc/ssl/certs/ssl-cert-snakeoil.pem
-	SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+#	SSLCertificateFile    /etc/ssl/certs/ssl-cert-snakeoil.pem
+#	SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+
+        SSLCertificateFile    /etc/ssl/certs/robotica.it.chain.pem
+        SSLCertificateKeyFile /etc/ssl/private/robotica.it.key
+
 
 	#   Server Certificate Chain:
 	#   Point SSLCertificateChainFile at a file containing the
