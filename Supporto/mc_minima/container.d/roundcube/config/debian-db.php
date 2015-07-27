@@ -10,8 +10,8 @@
 ## you'll probably also want to edit the configuration file mentioned
 ## above too.
 ##
-$dbuser='roundcube';
-$dbpass='MC_DB_RCPASSWORD';
+$dbuser='root';
+$dbpass='MC_RC_PASSWORD';
 $basepath='';
 $dbname='roundcube';
 $dbserver='127.0.0.1';
