@@ -50,7 +50,7 @@ wait
 mysql -u root --password=$ROOT_PWD -e "GRANT ALL PRIVILEGES ON roundcubemail.* TO 'roundcube'@'localhost'IDENTIFIED BY '"$MC_RC_USERPASSWORD"';"
 wait
 
-mysql roundcubemail < /opt/roundcube/SQL/mysql.initial.sql
+mysql roundcubemail < /root/container.d/roundcube/mysql.initial.sql
 wait
 
 ### THE FINAL CUT
