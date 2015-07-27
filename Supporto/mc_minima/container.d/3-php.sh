@@ -13,3 +13,7 @@ php5enmod mcrypt
 
 echo "expose_php = Off" >> /etc/php5/apache2/php.ini
 
+
+php5enmod imap
+
+
