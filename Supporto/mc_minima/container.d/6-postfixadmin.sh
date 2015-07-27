@@ -12,7 +12,7 @@ cp /root/container.d/postfixadmin/config.inc.php /opt/postfixadmin/
 
 chown -R www-data:www-data postfixadmin/templates_c
 
-cd /var/www/html
+cd /var/www
 
 ln -s /opt/postfixadmin postfixadmin
 
