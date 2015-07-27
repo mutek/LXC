@@ -24,7 +24,9 @@
 
 	Alias /webmail /opt/roundcube
 
-	Alias /webadmin /opt/ispmailadmin/htdocs
+	Alias /webadmin /opt/postfixadmin
+
+	Alias /postfixadmin /opt/postfixadmin
 
 	Alias /autodiscover/autodiscover.xml /var/www/autodiscover/autodiscover.xml
 
@@ -48,8 +50,8 @@
 #	SSLCertificateFile    /etc/ssl/certs/ssl-cert-snakeoil.pem
 #	SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
 
-        SSLCertificateFile    /etc/ssl/certs/robotica.it.chain.pem
-        SSLCertificateKeyFile /etc/ssl/private/robotica.it.key
+        SSLCertificateFile    /etc/ssl/certs/MC_CERTIFICATO_CHAIN
+        SSLCertificateKeyFile /etc/ssl/private/MC_CERTIFICATO_KEY
 
 
 	#   Server Certificate Chain:
