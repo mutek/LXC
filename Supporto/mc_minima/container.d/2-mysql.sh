@@ -17,6 +17,12 @@ MYSQL_MAILADMIN_PWD="$(pwgen -s 25 1)"
 wait
 echo "$MYSQL_MAILADMIN_PWD" > /root/mysql_mailadmin_pwd.txt
 
+MC_RC_USERPASSWORD="$(pwgen -s 25 1)"
+wait
+echo "$MC_RC_USERPASSWORD" > /root/mysql_roundcube_pwd.txt
+MC_RC_DBNAME="roundcubemail"
+MC_RC_USERNAME="roundcube"
+
 ROOT_PWD="$(cat /root/mysql_root_pwd.txt)"
 DB_NAME="mail"
 DB_USER="mail"
@@ -36,5 +42,18 @@ wait
 mysql -u root --password=$ROOT_PWD -e  "GRANT ALL ON "$DB_NAME".* TO '"$DB_USER"'@'localhost'IDENTIFIED BY '"$DB_MAILADMIN_PWD"';"
 wait
 
+
+### ROUNDCUBE
+mysql -u root --password=$ROOT_PWD -e "CREATE DATABASE roundcubemail /*!40101 CHARACTER SET utf8 COLLATE utf8_general_ci */;"
+wait
+
+mysql -u root --password=$ROOT_PWD -e "GRANT ALL PRIVILEGES ON roundcubemail.* TO 'roundcube'@'localhost'IDENTIFIED BY '"$MC_RC_USERPASSWORD"';"
+wait
+
+mysql roundcubemail < /opt/roundcube/SQL/mysql.initial.sql
+wait
+
+### THE FINAL CUT
 mysql -u root --password=$ROOT_PWD -e 'show databases;' > /root/the_final_cut.txt
 wait
+

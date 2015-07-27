@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
-MC_DBNAME="mail"
-MC_DBUSER="root"
-MC_DBPASSWORD="$(cat /root/mysql_root_pwd.txt)"
+MC_RC_DBNAME="roundcubemail"
+MC_RC_DBUSER="roundcube"
+MC_RC_DBPASSWORD="$(cat /root/mysql_roundcube_pwd.txt)"
 
 cd /opt
 
@@ -30,11 +30,13 @@ cp -rp /root/container.d/roundcube/plugins roundcube/
 chown -R www-data:www-data roundcube/logs
 chown -R www-data:www-data roundcube/temp
 
-sed -i "s/MC_DBPASSWORD/$MC_DBPASSWORD/g" /opt/roundcube/config/debian-db.php
+sed -i "s/MC_RC_DBPASSWORD/$MC_RC_DBPASSWORD/g" /opt/roundcube/config/debian-db.php
 wait
 
-sed -i "s/MC_DBUSER/$MC_DBUSER/g" /opt/roundcube/config/debian-db.php
+sed -i "s/MC_RC_DBUSER/$MC_RC_DBUSER/g" /opt/roundcube/config/debian-db.php
 wait
 
-sed -i "s/MC_DBNAME/$MC_DBNAME/g" /opt/roundcube/config/debian-db.php
+sed -i "s/MC_RC_DBNAME/$MC_RC_DBNAME/g" /opt/roundcube/config/debian-db.php
 wait
+
+

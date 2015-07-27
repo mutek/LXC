@@ -10,10 +10,10 @@
 ## you'll probably also want to edit the configuration file mentioned
 ## above too.
 ##
-$dbuser='MC_DBUSER';
-$dbpass='MC_DBPASSWORD';
+$dbuser='roundcube';
+$dbpass='MC_DB_RCPASSWORD';
 $basepath='';
-$dbname='MC_DBNAME';
+$dbname='roundcube';
 $dbserver='127.0.0.1';
 $dbport='3306';
 $dbtype='mysql';
