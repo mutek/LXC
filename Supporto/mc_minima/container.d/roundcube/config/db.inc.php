@@ -16,7 +16,7 @@ $rcmail_config = array();
 
 /* Do not set db_dsnw here, use dpkg-reconfigure roundcube-core to configure database ! */
 
-include_once("/etc/roundcube/debian-db.php");
+include_once("/opt/roundcube/config/debian-db.php");
 
 switch ($dbtype) {
  case "sqlite":

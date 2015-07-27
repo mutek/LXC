@@ -27,8 +27,8 @@ wait
 
 cp -rp /root/container.d/roundcube/plugins roundcube/
 
-chown -R root:www-data roundcube/logs
-chown -R root:www-data roundcube/temp
+chown -R www-data:www-data roundcube/logs
+chown -R www-data:www-data roundcube/temp
 
 sed -i "s/MC_DBPASSWORD/$MC_DBPASSWORD/g" /opt/roundcube/config/debian-db.php
 wait
