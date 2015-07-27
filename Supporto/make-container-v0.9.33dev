@@ -9,6 +9,11 @@
 # genera un IP statico random nella rete 10.10.10.0 associato ad un idirizzo di MAC address random
 #
 
+# 0.9.33dev
+# rimosso momentaneamente automatismo in rc.local
+# il build avviene in 2 stage
+# 1) make-container
+# 2) dopo avvio container entrare ed eseguire init.sh
 
 
 

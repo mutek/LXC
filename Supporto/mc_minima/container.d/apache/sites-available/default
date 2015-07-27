@@ -41,7 +41,7 @@
 
 	CustomLog ${APACHE_LOG_DIR}/access.log combined
 
-	#Alias /phpmyadmin /usr/share/phpmyadmin
+	#Alias /phpmyadmin /opt/phpmyadmin
 	#Redirect permanent /phpmyadmin https://MC_DOMINIO/phpmyadmin
 
 </VirtualHost>

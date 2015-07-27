@@ -247,7 +247,7 @@ ln -s /opt/postfixadmin postfixadmin
 
 MC_DBNAME="mail"
 MC_DBUSER="root"
-MC_DBPASSWORD="$(cat /root/mysql_root_pwd.txt)"
+MC_DBPASSWORD="$(cat /root/mysql_pwd.txt)"
 
 sed -i "s/MC_DBUSER/$MC_DBUSER/g" /opt/postfixadmin/config.inc.php
 sed -i "s/MC_DBPASSWORD/$MC_DBPASSWORD/g" /opt/postfixadmin/config.inc.php
@@ -269,7 +269,7 @@ chown vmail:mail /var/vmail
 
 MC_DBNAME="mail"
 MC_DBUSER="root"
-MC_DBPASSWORD="$(cat /root/mysql_root_pwd.txt)"
+MC_DBPASSWORD="$(cat /root/mysql_pwd.txt)"
 
 # nome file certificato chain e nome file chiave privata
 # posizionati in /etc/ssl/certs e /etc/ssl/private
@@ -415,3 +415,19 @@ chown opendkim:opendkim dkim.private
 mv dkim.private dkim.key
 
 cp dkim.key /etc/ssl/private/
+
+## FINALIZZIAMO ANTIVIRUS CLAMAV
+#
+# scarichiamo il db
+
+freshclam
+wait
+
+# RIAVVIAMO IL SERVER
+/etc/init.d/clamav-daemon restart
+
+/etc/init.d/clamav-freshclam restart
+
+
+
+
