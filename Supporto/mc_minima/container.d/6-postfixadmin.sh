@@ -15,7 +15,7 @@ cd /var/www/html
 ln -s /opt/postfixadmin postfixadmin
 
 MC_DBNAME="mail"
-MC_DBUSER="mailuser"
+MC_DBUSER="mail"
 MC_DBPASSWORD="$(cat /root/mysql_mailuser_pwd.txt)"
 
 sed -i "s/MC_DBUSER/$MC_DBUSER/g" /opt/postfixadmin/config.inc.php
