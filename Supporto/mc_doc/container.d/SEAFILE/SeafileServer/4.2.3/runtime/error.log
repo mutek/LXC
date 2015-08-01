@@ -1,0 +1,931 @@
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file csrf.py, line 177
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file csrf.py, line 177
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file csrf.py, line 177
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file csrf.py, line 177
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file csrf.py, line 177
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file csrf.py, line 177
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file csrf.py, line 177
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file csrf.py, line 177
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file csrf.py, line 177
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file base.py, line 144
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/logging/handlers.py", line 76, in emit
+    if self.shouldRollover(record):
+  File "/usr/lib/python2.7/logging/handlers.py", line 156, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+IOError: [Errno 29] Illegal seek
+Logged from file csrf.py, line 177
