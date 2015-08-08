@@ -476,3 +476,6 @@ chmod +x $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/root/init.sh
 echo ""
 echo "$0: END :)"
 
+#
+# 
+# none	/sys/fs/cgroup	cgroup	defaults 	0	0

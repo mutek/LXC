@@ -1,0 +1,8 @@
+user = root
+password = MC_DBPASSWORD
+hosts = 127.0.0.1
+dbname = mail
+table = alias
+select_field = goto
+where_field = address
+additional_conditions = and active = '1'
