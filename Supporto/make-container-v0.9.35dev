@@ -170,6 +170,7 @@ fail2ban,\
 psmisc,\
 curl,\
 less,\
+dnsutils,\
 file"
 
 echo "build_chroot: ARCHITETTURA = "$ARCHITETTURA
