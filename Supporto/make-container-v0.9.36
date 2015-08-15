@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# make-container v0.9.35dev
+# make-container v0.9.6
 # Compila un Container LXC
 # Luca Cappelletti (c) 2015 <luca.cappelletti@positronic.ch>
 # WTF
@@ -9,11 +9,11 @@
 # genera un IP statico random nella rete 10.10.10.0 associato ad un idirizzo di MAC address random
 #
 
-# 0.9.35dev
+# 0.9.36
 # aggiunto dnsutils by default, permette di avere dig
+# Lxc build di riferimento Debian8
 
-
-readonly RELEASE=0.9.35dev
+readonly RELEASE=0.9.36
 # GENERALI
 MC_NOME_CONTAINER=$1
 MC_DISTRO_RELEASE=$2
@@ -246,7 +246,7 @@ lxc.network.link = lxcbr0
 lxc.network.flags = up
 lxc.network.hwaddr = ${MC_MAC_ADDRESS}
 lxc.rootfs = $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs
-lxc.include = /opt/Lxc/1.1.2/Debian7/Linux/$INSTALL_ARCH/share/lxc/config/debian.common.conf
+lxc.include = /opt/Lxc/1.1.2/Debian8/Linux/$INSTALL_ARCH/share/lxc/config/debian.common.conf
 lxc.utsname = $MC_NOME_CONTAINER
 lxc.arch = $MC_ARCHITETTURA
 CONFIG_LXC
