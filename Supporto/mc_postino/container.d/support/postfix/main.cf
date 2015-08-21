@@ -1,0 +1,59 @@
+# The Debian default is /etc/mailname.
+#myorigin = /etc/mailname
+
+smtpd_banner = Server di Posta
+biff = no
+
+# appending .domain is the MUA's job.
+append_dot_mydomain = no
+
+# Uncomment the next line to generate "delayed mail" warnings
+#delay_warning_time = 4h
+
+readme_directory = no
+
+# TLS parameters
+#smtpd_tls_cert_file = /etc/ssl/certs/mailserver.pem
+#smtpd_tls_key_file = /etc/ssl/private/mailserver.pem
+# certficati specifici validi
+smtpd_tls_cert_file = /etc/ssl/certs/dominio.tld.chain.pem
+smtpd_tls_key_file = /etc/ssl/private/dominio.tld.key
+smtpd_use_tls=yes
+smtpd_tls_session_cache_database = btree:${data_directory}/smtpd_scache
+smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
+
+myhostname = host-provider.dominio-provider.tld
+alias_maps = hash:/etc/aliases
+alias_database = hash:/etc/aliases
+mydestination = localdomain, localhost, localhost.localdomain, localhost
+relayhost =
+mynetworks = 10.10.10.200/32,185.56.170.29/32, 127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128
+mailbox_size_limit = 0
+recipient_delimiter = +
+inet_interfaces = all
+virtual_mailbox_domains = mysql:/etc/postfix/mysql-virtual-mailbox-domains.cf
+virtual_mailbox_maps = mysql:/etc/postfix/mysql-virtual-mailbox-maps.cf
+virtual_alias_maps = mysql:/etc/postfix/mysql-virtual-alias-maps.cf
+virtual_transport = dovecot
+dovecot_destination_recipient_limit = 1
+smtpd_sasl_type = dovecot
+smtpd_sasl_path = private/auth
+smtpd_sasl_auth_enable = yes
+smtpd_tls_security_level = may
+#smtpd_tls_security_level = encrypt
+smtpd_tls_auth_only = yes
+
+smtpd_tls_mandatory_ciphers = high
+smtpd_sasl_security_options = noanonymous forward_secrecy
+smtpd_sasl_tls_security_options = noanonymous
+broken_sasl_auth_clients = yes
+
+smtpd_recipient_restrictions = 
+        permit_mynetworks
+        permit_sasl_authenticated
+        reject_unauth_destination
+
+milter_default_action = accept
+milter_protocol = 2
+smtpd_milters = inet:localhost:12345
+non_smtpd_milters = inet:localhost:12345

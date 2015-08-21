@@ -44,6 +44,19 @@ MC_NOMEHOST=""
 # mail.dominio.tld
 MC_NOMECOMPLETO=$MC_NOMEHOST"."$MC_DOMINIO
 
+
+if [ $MC_DOMINIO = "" ]
+then
+
+	echo "Attenzione per generare una chiave dkim valida è necessario un nome di dominio valido"
+	echo "    della macchina che spedisce fisicamente le email (var MC_DOMINIO)"
+	echo "esco!"
+	exit 0
+
+else
+:
+fi
+
 # se le variabili non sono state scritte dal bulder allora la volonta è di operare secondo il default del builder che
 # gia provvede a scrivere l'hostname
 if [ "$MC_NOMECOMPLETO" = "" ]
@@ -405,7 +418,9 @@ cp /root/container.d/dkim/opendkim.conf /etc/
 cd /root
 
 # 1024 altrimenti i campi di text input web dei pannelli DNS che accettano tipicamente 255 caratteri sbroccano con chiavi da 4096
-opendkim-genkey -t -b 1024 -s dkim -d $MC_DOMINIO
+# addendum: Pannelli del calibro di Gandi permettono di modificare direttamente il file di zona ergo...chiave da 4096 va bene in generale
+# 2048 è il compromesso con la verbosita
+opendkim-genkey -t -b 2048 -s dkim -d $MC_DOMINIO
 
 chown opendkim:opendkim dkim.private
 
@@ -424,7 +439,4 @@ wait
 /etc/init.d/clamav-daemon restart
 
 /etc/init.d/clamav-freshclam restart
-
-
-
 
