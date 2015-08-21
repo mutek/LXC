@@ -35,9 +35,6 @@ wait
 
 apt-get clean
 
-#!/usr/bin/env sh
-
-
 # dominio.tld
 MC_DOMINIOHOST=""
 
