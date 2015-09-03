@@ -11,13 +11,13 @@ echo ""
 echo ">>>>>>>>>>>>>>>>>>>  "$0" <<<<<<<<<<<<<<<<<<<<< "
 echo ""
 
+MC_CONTAINER_D_DIR="/root/container.d"
+
 #########################
 # HOSTNAME STUFF TO FIX #
 #########################
-MC_CONTAINER_D_DIR="/root/container.d"
 # nome dominio utilizzatore (ad esempio: positronic.ch)
 MC_DOMINIO=""
-MC_DOMINIO_CLIENTE=$MC_DOMINIO
 # nome dominio host macchina (ad esempio: positronic.ch)
 MC_DOMINIO_HOST=""
 # nome host del dominio host (ad esempio: ip100 CNAME)
@@ -32,6 +32,7 @@ MC_DOMINIOHOST=""
 MC_NOMEHOST=""
 # mail.dominio.tld
 MC_NOMECOMPLETO=$MC_NOMEHOST"."$MC_DOMINIO
+MC_DOMINIO_CLIENTE=$MC_NOMECOMPLETO
 
 #########################
 # PARAMETRI CERTIFICATO #
@@ -59,10 +60,10 @@ apt-get clean
 if [ $MC_DOMINIO = "" ]
 then
 
-	echo "Attenzione per generare una chiave dkim valida è necessario un nome di dominio valido"
-	echo "    della macchina che spedisce fisicamente le email (var MC_DOMINIO)"
-	echo "esco!"
-	exit 0
+  echo "Attenzione per generare una chiave dkim valida è necessario un nome di dominio valido"
+  echo "    della macchina che spedisce fisicamente le email (var MC_DOMINIO)"
+  echo "esco!"
+  exit 0
 
 else
 :
@@ -76,9 +77,7 @@ then
 else
 
   hostname $MC_NOMECOMPLETO
-
   echo $MC_NOMECOMPLETO > /etc/hostname
-
   sed -i "1s/^/127.0.0.1 $MC_NOMECOMPLETO localhost/" /etc/hosts
 
 fi
@@ -132,16 +131,12 @@ wait
 # ROUNDCUBE
 mysql -u root --password=$ROOT_PWD -e "CREATE DATABASE roundcubemail /*!40101 CHARACTER SET utf8 COLLATE utf8_general_ci */;"
 wait
-
 mysql -u root --password=$ROOT_PWD -e "DROP USER 'roundcube'@'localhost'; FLUSH PRIVILEGES;"
 wait
-
 mysql -u root --password=$ROOT_PWD -e "CREATE USER 'roundcube'@'localhost' IDENTIFIED BY '"$MC_RC_USERPASSWORD"'; FLUSH PRIVILEGES;"
 wait
-
 mysql -u root --password=$ROOT_PWD -e "GRANT ALL PRIVILEGES ON roundcubemail.* TO 'roundcube'@'localhost'IDENTIFIED BY '"$MC_RC_USERPASSWORD"';"
 wait
-
 mysql -u root --password=$ROOT_PWD roundcubemail < /root/container.d/roundcube/mysql.initial.sql
 wait
 
@@ -192,7 +187,6 @@ EOAPACHE
 
 a2enmod rewrite ssl
 a2ensite default-ssl
-
 service apache2 restart
 
 [ -f /etc/apache2/mods-available/ssl.conf ] && { mv /etc/apache2/mods-available/ssl.conf /etc/apache2/mods-available/ssl.conf.$(date +%N%s); }
@@ -446,14 +440,12 @@ sed -i "s/MC_DBNAME/$MC_DBNAME/g" /opt/roundcube/plugins/password/config.inc.php
 # OPENDKIM #
 ############
 
-MC_DOMINIO_CLIENTE=""
 mv /etc/opendkim.conf /etc/opendkim.conf.ORIGINAL
 wait
 cp /root/container.d/opendkim/etc/opendkim.conf /etc/
-
+cp /root/container.d/etc/default/opendkim /etc/default/opendkin
 # genera la chiave e scrivi gli output in root
 cd /root
-
 # 1024 altrimenti i campi di text input web dei pannelli DNS che accettano tipicamente 255 caratteri sbroccano con chiavi da 4096
 # addendum: Pannelli del calibro di Gandi permettono di modificare direttamente il file di zona ergo...chiave da 4096 va bene in generale
 # 2048 è il compromesso con la verbosita
@@ -466,19 +458,31 @@ wait
 cp dkim.key /etc/ssl/private/
 wait
 
-## FINALIZZIAMO ANTIVIRUS CLAMAV
-#
-# scarichiamo il db
+#############
+# MEMCACHED #
+#############
+cp /root/container.d/etc/default/memcached /etc/default/memcached
 
+################
+# SPAMASSASSIN #
+################
+cp /root/container.d/etc/default/spamassassin /etc/default/spamassassin
+
+##########
+# CLAMAV #
+##########
+
+# scarichiamo il db
 echo "CLAMAV: scarico il db dei virus aggiornati...ci vuole un po!!"
 freshclam
 wait
-
 # RIAVVIAMO IL SERVER
 /etc/init.d/clamav-daemon restart
-
 /etc/init.d/clamav-freshclam restart
 
+#################
+# T H E   E N D #
+#################
 echo "FINE!"
 echo ""
 echo "p.s. ricorda che devi attivare a manina postfixadmin...ed anche roundcube non è che si sente poi cosi tanto bene..."
