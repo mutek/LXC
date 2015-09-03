@@ -43,7 +43,7 @@ $config['password_force_new_user'] = false;
 // ------------------
 // PEAR database DSN for performing the query. By default
 // Roundcube DB settings are used.
-//$config['password_db_dsn'] = 'mysql://roundcube:IAAHTsarq7adizQzw09Iiz3Ii@localhost/roundcube';
+$config['password_db_dsn'] = 'mysql://MC_DBUSER:MC_DBPASSWORD@localhost/MC_DBNAME';
 
 // The SQL query used to change the password.
 // The query can contain the following macros that will be expanded as follows:

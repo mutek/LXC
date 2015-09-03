@@ -268,7 +268,7 @@ sed -i "s/MC_DBNAME/$MC_DBNAME/g" /opt/postfixadmin/config.inc.php
 
 
 #------------------
-# FINALIZZAZIONE RICHIEDE DI ANDARE IN https://dominio.tld/postfiadmin/setup.php ed inserire la pwd per prelevare l'hash ed inserirlo nel config.inc.php
+# FINALIZZAZIONE RICHIEDE DI ANDARE IN https://dominio.tld/postfixadmin/setup.php ed inserire la pwd per prelevare l'hash ed inserirlo nel config.inc.php
 #
 # all'atto pratico sarebbe una stringa md5(random)":"sha1(md5(random)":"password)
 #-------------------
@@ -369,46 +369,57 @@ service clamav-daemon restart
 service amavis restart
 service dovecot restart
 
+
+#############
+# ROUNDCUBE
+#############
 MC_RC_DBNAME="roundcubemail"
 MC_RC_DBUSER="root"
 MC_RC_DBPASSWORD="$(cat /root/mysql_pwd.txt)"
 
+# RC: qualsiasi ex istanza deve essere archiviata
 cd /opt
-
 rm -rf --preserve-root roundcube
 rm -rf --preserve-root roundcube.HOLD
-
 mv roundcube roundcube.HOLD
 wait
 
+# RC: estraggo il sorgente e rinomino ad-hoc
 tar -xf /root/container.d/roundcubemail-1.1.2-complete.tar.gz
 wait
-
 mv roundcubemail-1.1.2 roundcube
 wait
 
+# RC: modifico i files di configurazione
 mv roundcube/config /roundcube/config.ORIGINAL
-
 cp -rp /root/container.d/roundcube/config roundcube/
-
 mv roundcube/plugins /roundcube/plugins.ORIGINAL
 wait
 
 cp -rp /root/container.d/roundcube/plugins roundcube/
 
+# RC: richiede la capacita di controllo di www-data
 chown -R www-data:www-data roundcube/logs
 chown -R www-data:www-data roundcube/temp
 
+# RC: config
 sed -i "s/MC_RC_DBPASSWORD/$MC_RC_DBPASSWORD/g" /opt/roundcube/config/debian-db.php
 wait
-
 sed -i "s/MC_RC_DBUSER/$MC_RC_DBUSER/g" /opt/roundcube/config/debian-db.php
 wait
-
 sed -i "s/MC_RC_DBNAME/$MC_RC_DBNAME/g" /opt/roundcube/config/debian-db.php
 wait
 
+# RC: plugin password sostituisce i parametri del database
+sed -i "s/MC_DBUSER/$MC_DBUSER/g" /opt/roundcube/plugins/password/config.inc.php
+wait
+sed -i "s/MC_DBPASSWORD/$MC_DBPASSWORD/g" /opt/roundcube/plugins/password/config.inc.php
+wait
+sed -i "s/MC_DBNAME/$MC_DBNAME/g" /opt/roundcube/plugins/password/config.inc.php
 
+############
+# OPENDKIM #
+############
 mv /etc/opendkim.conf /etc/opendkim.conf.ORIGINAL
 
 cp /root/container.d/dkim/opendkim.conf /etc/
