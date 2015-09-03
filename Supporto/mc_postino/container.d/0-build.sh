@@ -16,9 +16,10 @@ MC_CONTAINER_D_DIR="/root/container.d"
 
 # nome dominio utilizzatore
 MC_DOMINIO=""
+MC_DOMINIO_CLIENTE=$MC_DOMINIO
 
 # nome dominio host macchina
-MC_DOMINIOHOST=""
+MC_DOMINIO_HOST=""
 
 MC_NOMEHOST=""
 MC_NOMECOMPLETO=""
@@ -64,21 +65,21 @@ then
 :
 else
 
-	hostname $MC_NOMECOMPLETO
+  hostname $MC_NOMECOMPLETO
 
-	echo $MC_NOMECOMPLETO > /etc/hostname
+  cho $MC_NOMECOMPLETO > /etc/hostname
 
-	sed -i "1s/^/127.0.0.1 $MC_NOMECOMPLETO localhost/" /etc/hosts
+  sed -i "1s/^/127.0.0.1 $MC_NOMECOMPLETO localhost/" /etc/hosts
 
 fi
 
-
+# assicuriamoci di generare un nuovo snakeoil di emergenza
 apt-get install --assume-yes ssl-cert
 make-ssl-cert generate-default-snakeoil --force-overwrite
 
 ##
 # genera in automatico un certificato self signed comprensivo quindi di csr con chiave da 8192 bit
-# utilizzabile eventualmente per richiesta di certificati trusted dai root
+# utilizzabile eventualmente per richiesta di certificati trusted dai root (ad esempio startssl)
 #
 cd /root
 rm certificato.*
@@ -421,23 +422,25 @@ sed -i "s/MC_DBNAME/$MC_DBNAME/g" /opt/roundcube/plugins/password/config.inc.php
 # OPENDKIM #
 ############
 
+MC_DOMINIO_CLIENTE=""
 mv /etc/opendkim.conf /etc/opendkim.conf.ORIGINAL
-cp /root/container.d/dkim/opendkim.conf /etc/
+wait
+cp /root/container.d/opendkim/etc/opendkim.conf /etc/
 
 # genera la chiave e scrivi gli output in root
-
 cd /root
 
 # 1024 altrimenti i campi di text input web dei pannelli DNS che accettano tipicamente 255 caratteri sbroccano con chiavi da 4096
 # addendum: Pannelli del calibro di Gandi permettono di modificare direttamente il file di zona ergo...chiave da 4096 va bene in generale
 # 2048 è il compromesso con la verbosita
-opendkim-genkey -t -b 2048 -s dkim -d $MC_DOMINIO
-
+opendkim-genkey -t -b 2048 -s dkim -d $MC_DOMINIO_CLIENTE
+wait
 chown opendkim:opendkim dkim.private
-
+wait
 mv dkim.private dkim.key
-
+wait
 cp dkim.key /etc/ssl/private/
+wait
 
 ## FINALIZZIAMO ANTIVIRUS CLAMAV
 #
