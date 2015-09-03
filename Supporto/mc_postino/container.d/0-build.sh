@@ -33,6 +33,17 @@ MC_NOMEHOST=""
 # mail.dominio.tld
 MC_NOMECOMPLETO=$MC_NOMEHOST"."$MC_DOMINIO
 
+#########################
+# PARAMETRI CERTIFICATO #
+#########################
+C="IT"
+ST="Italy"
+L="Rome"
+O="Positronic"
+OU="Dipartimento IT"
+CN="$MC_DOMINIO"
+
+
 ####################
 # NOME CERTIFICATO #
 ####################
@@ -66,30 +77,30 @@ else
 
   hostname $MC_NOMECOMPLETO
 
-  cho $MC_NOMECOMPLETO > /etc/hostname
+  echo $MC_NOMECOMPLETO > /etc/hostname
 
   sed -i "1s/^/127.0.0.1 $MC_NOMECOMPLETO localhost/" /etc/hosts
 
 fi
 
+#######################################
+# CERTIFICATI E CRITTOGRAFIA GENERICA #
+#######################################
+
 # assicuriamoci di generare un nuovo snakeoil di emergenza
 apt-get install --assume-yes ssl-cert
 make-ssl-cert generate-default-snakeoil --force-overwrite
 
-##
+
 # genera in automatico un certificato self signed comprensivo quindi di csr con chiave da 8192 bit
 # utilizzabile eventualmente per richiesta di certificati trusted dai root (ad esempio startssl)
-#
 cd /root
 rm certificato.*
 openssl genrsa -des3 -passout pass:x -out server.pass.key 8192
 openssl rsa -passin pass:x -in server.pass.key -out certificato.key
 rm server.pass.key
-openssl req -new -key certificato.key -out certificato.csr \
-  -subj "/C=IT/ST=Italy/L=Rome/O=Corporation/OU=Dipartimento IT/CN=dominio.org"
-
+openssl req -new -key certificato.key -out certificato.csr -subj "/C=$C/ST=$ST/L=$L/O=$O/OU=$OU/CN=$CN"
 openssl x509 -req -days 365 -in certificato.csr -signkey certificato.key -out certificato.pem
-
 # posizionalo
 cp certificato.pem /etc/ssl/certs/
 cp certificato.key /etc/ssl/private/
@@ -102,6 +113,7 @@ MYSQL_RANDOM_PASSWORD="$(pwgen -s 25 1)"
 wait
 
 echo "$MYSQL_RANDOM_PASSWORD" > /root/mysql_pwd.txt
+wait
 mysqladmin -u root password $MYSQL_RANDOM_PASSWORD
 wait
 
