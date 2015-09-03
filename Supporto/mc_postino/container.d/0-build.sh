@@ -11,39 +11,38 @@ echo ""
 echo ">>>>>>>>>>>>>>>>>>>  "$0" <<<<<<<<<<<<<<<<<<<<< "
 echo ""
 
-
+#########################
+# HOSTNAME STUFF TO FIX #
+#########################
 MC_CONTAINER_D_DIR="/root/container.d"
-
-# nome dominio utilizzatore
+# nome dominio utilizzatore (ad esempio: positronic.ch)
 MC_DOMINIO=""
 MC_DOMINIO_CLIENTE=$MC_DOMINIO
-
-# nome dominio host macchina
+# nome dominio host macchina (ad esempio: positronic.ch)
 MC_DOMINIO_HOST=""
-
+# nome host del dominio host (ad esempio: ip100 CNAME)
 MC_NOMEHOST=""
+# composizione totale (ip100.positronic.ch)
 MC_NOMECOMPLETO=""
-
 # CNAME del dominio ospitante (esempio t29 di t29.hoster.tld)
 MC_HOSTNAME=""
+# dominio.tld
+MC_DOMINIOHOST=""
+# mail
+MC_NOMEHOST=""
+# mail.dominio.tld
+MC_NOMECOMPLETO=$MC_NOMEHOST"."$MC_DOMINIO
 
+####################
+# NOME CERTIFICATO #
+####################
 # eventuale nome file certificato e chiave se diversa da "certificato.[pem,key]"
 MC_CERTIFICATO_CHAIN=""
 MC_CERTIFICATO_KEY=""
 
 DEBIAN_FRONTEND=noninteractive  apt-get install --force-yes --assume-yes -y  pwgen
 wait
-
 apt-get clean
-
-# dominio.tld
-MC_DOMINIOHOST=""
-
-# mail
-MC_NOMEHOST=""
-
-# mail.dominio.tld
-MC_NOMECOMPLETO=$MC_NOMEHOST"."$MC_DOMINIO
 
 
 if [ $MC_DOMINIO = "" ]
@@ -95,6 +94,9 @@ openssl x509 -req -days 365 -in certificato.csr -signkey certificato.key -out ce
 cp certificato.pem /etc/ssl/certs/
 cp certificato.key /etc/ssl/private/
 
+###############
+# MYSQL STUFF #
+###############
 
 MYSQL_RANDOM_PASSWORD="$(pwgen -s 25 1)"
 wait
@@ -111,11 +113,11 @@ MC_RC_DBNAME="roundcubemail"
 MC_RC_USERNAME="roundcube"
 ROOT_PWD="$(cat /root/mysql_pwd.txt)"
 
-### POSTFIXADMIN / DOVECOT
+# POSTFIXADMIN / DOVECOT
 mysql -u root --password=$ROOT_PWD -e "CREATE DATABASE mail;"
 wait
 
-### ROUNDCUBE
+# ROUNDCUBE
 mysql -u root --password=$ROOT_PWD -e "CREATE DATABASE roundcubemail /*!40101 CHARACTER SET utf8 COLLATE utf8_general_ci */;"
 wait
 
@@ -135,6 +137,9 @@ wait
 mysql -u root --password=$ROOT_PWD -e 'show databases;' > /root/the_final_cut.txt
 wait
 
+##########
+# SYSTEM #
+##########
 DEBIAN_FRONTEND=noninteractive apt-get install --force-yes --assume-yes -y \
   php-apc \
   php5-mcrypt \
@@ -146,22 +151,24 @@ DEBIAN_FRONTEND=noninteractive apt-get install --force-yes --assume-yes -y \
 wait
 php5enmod mcrypt
 wait
-
 echo "expose_php = Off" >> /etc/php5/apache2/php.ini
 wait
-
 php5enmod imap
+wait
 
 if [ "$MC_CERTIFICATO_CHAIN" = "" ] || [ "$MC_CERTIFICATO_KEY" = "" ]
 then
 
-	MC_CERTIFICATO_CHAIN="certificato.pem"
-	MC_CERTIFICATO_KEY="certificato.key"
+  MC_CERTIFICATO_CHAIN="certificato.pem"
+  MC_CERTIFICATO_KEY="certificato.key"
 
 else
 :
 fi
 
+##########
+# APACHE #
+##########
 mkdir -p /etc/apache2/conf-enabled
 cat << EOAPACHE > /etc/apache2/conf-enabled/sicurezza.conf
 # esponi al minimo
@@ -177,9 +184,9 @@ a2ensite default-ssl
 service apache2 restart
 
 [ -f /etc/apache2/mods-available/ssl.conf ] && { mv /etc/apache2/mods-available/ssl.conf /etc/apache2/mods-available/ssl.conf.$(date +%N%s); }
-
+wait
 cp /root/container.d/apache/mods-available/ssl.conf /etc/apache2/mods-available/ssl.conf
-
+wait
 
 # in fondo mv è true solo se esiste il file altrimenti NIL
 mv /etc/apache2/sites-available/000-default.conf  /etc/apache2/sites-available/000-default.conf.$(date +%N%s)
@@ -187,17 +194,18 @@ mv /etc/apache2/sites-available/000-default.conf  /etc/apache2/sites-available/0
 for elemento in $( ls /root/container.d/apache/sites-available/ )
 do
 
-	cp /root/container.d/apache/sites-available/$elemento /etc/apache2/sites-available/
+  cp /root/container.d/apache/sites-available/$elemento /etc/apache2/sites-available/
 
 done
 
-mkdir -p /etc/apache2/sites-enabled.original
+mkdir -p /etc/apache2/sites-enabled.original;wait
 mv /etc/apache2/sites-enabled/* /etc/apache2/sites-enabled.original/
+wait
 
 for abilitato in $(ls /etc/apache2/sites-available/ )
 do
 
-	ln -s /etc/apache2/sites-available/$abilitato /etc/apache2/sites-enabled/$abilitato
+  ln -s /etc/apache2/sites-available/$abilitato /etc/apache2/sites-enabled/$abilitato
 
 done
 
@@ -237,25 +245,26 @@ DEBIAN_FRONTEND=noninteractive apt-get install --force-yes --assume-yes -y \
 # anti LogJam ...speriamo!
 openssl dhparam -out /etc/ssl/private/dhparams.pem 2048
 chmod 600 /etc/ssl/private/dhparams.pem
-
 wait
-
 cat /etc/ssl/private/dhparams.pem >> /etc/ssl/certs/certificato.pem
 
+###############
+# POSTFIXADIN #
+###############
 cd /opt
-
 rm -rf --preserve-root postfixadmin
-
+wait
 tar -xf /root/container.d/postfixadmin-2.92.tar.gz
+wait
 
 mv postfixadmin-2.92 postfixadmin
+wait
 
 cp /root/container.d/postfixadmin/config.inc.php /opt/postfixadmin/
+wait
 
 chown -R www-data:www-data postfixadmin/templates_c
-
 cd /var/www
-
 ln -s /opt/postfixadmin postfixadmin
 
 MC_DBNAME="mail"
@@ -267,18 +276,20 @@ sed -i "s/MC_DBPASSWORD/$MC_DBPASSWORD/g" /opt/postfixadmin/config.inc.php
 sed -i "s/MC_DBNAME/$MC_DBNAME/g" /opt/postfixadmin/config.inc.php
 
 
-
-#------------------
 # FINALIZZAZIONE RICHIEDE DI ANDARE IN https://dominio.tld/postfixadmin/setup.php ed inserire la pwd per prelevare l'hash ed inserirlo nel config.inc.php
-#
 # all'atto pratico sarebbe una stringa md5(random)":"sha1(md5(random)":"password)
-#-------------------
 
+###########
+# DOVECOT #
+###########
 useradd -r -u 150 -g mail -d /var/vmail -s /sbin/nologin -c "Gestore vmail maildir virtuali" vmail
+wait
 mkdir /var/vmail
+wait
 chmod 770 /var/vmail
+wait
 chown vmail:mail /var/vmail
-
+wait
 
 MC_DBNAME="mail"
 MC_DBUSER="root"
@@ -302,6 +313,7 @@ fi
 
 
 cp /root/container.d/dovecot/dovecot-sql.conf.ext  /etc/dovecot/dovecot-sql.conf.ext
+wait
 
 sed -i "s/MC_DBPASSWORD/$MC_DBPASSWORD/g" /etc/dovecot/dovecot-sql.conf.ext
 sed -i "s/MC_DBUSER/$MC_DBUSER/g" /etc/dovecot/dovecot-sql.conf.ext
@@ -309,7 +321,6 @@ sed -i "s/MC_DBNAME/$MC_DBNAME/g" /etc/dovecot/dovecot-sql.conf.ext
 
 
 cp /root/container.d/dovecot/conf.d/10-auth.conf /etc/dovecot/conf.d/10-auth.conf
-
 cp /root/container.d/dovecot/conf.d/10-mail.conf /etc/dovecot/conf.d/10-mail.conf
 
 # /etc/dovecot/conf.d/10-ssl.conf
@@ -331,21 +342,23 @@ MC_DBNAME="mail"
 MC_DBUSER="root"
 MC_DBPASSWORD="$(cat /root/mysql_pwd.txt)"
 
-MC_HOSTNAME=""
-
 if [ "$MC_HOSTNAME" = "" ]
 then
 
-	MC_HOSTNAME=$(hostname)
+  MC_HOSTNAME=$(hostname)
 
 else
 :
 fi
 
+###########
+# POSTFIX #
+###########
+
 for item in $(ls /root/container.d/postfix)
 do
 
-	cp /root/container.d/postfix/$item /etc/postfix/
+  cp /root/container.d/postfix/$item /etc/postfix/
 
 done
 
@@ -356,13 +369,12 @@ wait
 for elemento in $(ls /etc/postfix)
 do
 
-	sed -i "s/MC_DBPASSWORD/$ROOT_PWD/g" /etc/postfix/$elemento
-	wait
-        sed -i "s/MC_HOSTNAME/$MC_HOSTNAME/g" /etc/postfix/$elemento
-	wait
+  sed -i "s/MC_DBPASSWORD/$MC_DBPASSWORD/g" /etc/postfix/$elemento
+  wait
+    sed -i "s/MC_HOSTNAME/$MC_HOSTNAME/g" /etc/postfix/$elemento
+  wait
 
 done
-
 
 service postfix restart
 service spamassassin restart
@@ -446,6 +458,7 @@ wait
 #
 # scarichiamo il db
 
+echo "CLAMAV: scarico il db dei virus aggiornati...ci vuole un po!!"
 freshclam
 wait
 
@@ -454,3 +467,6 @@ wait
 
 /etc/init.d/clamav-freshclam restart
 
+echo "FINE!"
+echo ""
+echo "p.s. ricorda che devi attivare a manina postfixadmin...ed anche roundcube non è che si sente poi cosi tanto bene..."

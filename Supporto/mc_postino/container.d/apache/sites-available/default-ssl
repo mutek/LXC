@@ -24,11 +24,11 @@
 
 	Alias /webmail /opt/roundcube
 
-	Alias /webadmin /opt/postfixadmin
+	Alias /mailadmin /opt/postfixadmin
 
-	Alias /postfixadmin /opt/postfixadmin
+#	Alias /postfixadmin /opt/postfixadmin
 
-	Alias /autodiscover/autodiscover.xml /var/www/autodiscover/autodiscover.xml
+#	Alias /autodiscover/autodiscover.xml /var/www/autodiscover/autodiscover.xml
 
 	ErrorLog ${APACHE_LOG_DIR}/error.log
 
