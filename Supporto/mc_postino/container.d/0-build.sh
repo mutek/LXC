@@ -420,8 +420,8 @@ sed -i "s/MC_DBNAME/$MC_DBNAME/g" /opt/roundcube/plugins/password/config.inc.php
 ############
 # OPENDKIM #
 ############
-mv /etc/opendkim.conf /etc/opendkim.conf.ORIGINAL
 
+mv /etc/opendkim.conf /etc/opendkim.conf.ORIGINAL
 cp /root/container.d/dkim/opendkim.conf /etc/
 
 # genera la chiave e scrivi gli output in root
