@@ -124,11 +124,11 @@ MC_RC_DBNAME="roundcubemail"
 MC_RC_USERNAME="roundcube"
 ROOT_PWD="$(cat /root/mysql_pwd.txt)"
 
-# POSTFIXADMIN / DOVECOT
+# MYSQL: POSTFIXADMIN / DOVECOT
 mysql -u root --password=$ROOT_PWD -e "CREATE DATABASE mail;"
 wait
 
-# ROUNDCUBE
+# MYSQL: ROUNDCUBE
 mysql -u root --password=$ROOT_PWD -e "CREATE DATABASE roundcubemail /*!40101 CHARACTER SET utf8 COLLATE utf8_general_ci */;"
 wait
 mysql -u root --password=$ROOT_PWD -e "DROP USER 'roundcube'@'localhost'; FLUSH PRIVILEGES;"
@@ -140,7 +140,7 @@ wait
 mysql -u root --password=$ROOT_PWD roundcubemail < /root/container.d/roundcube/mysql.initial.sql
 wait
 
-# THE FINAL CUT
+# MYSQL: THE FINAL CUT
 mysql -u root --password=$ROOT_PWD -e 'show databases;' > /root/the_final_cut.txt
 wait
 
