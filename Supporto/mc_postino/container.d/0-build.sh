@@ -245,7 +245,12 @@ DEBIAN_FRONTEND=noninteractive apt-get install --force-yes --assume-yes -y \
   amavis \
   clamav \
   clamav-daemon \
-  spamassassin
+  spamassassin \
+  spamc \
+  spamass-milter \
+  clamav-milter \
+  clamav-unofficial-sigs \
+  milter-greylist
 
 
 # anti LogJam ...speriamo!
