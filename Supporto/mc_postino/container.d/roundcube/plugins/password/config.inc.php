@@ -66,7 +66,7 @@ $config['password_db_dsn'] = 'mysql://MC_DBUSER:MC_DBPASSWORD@localhost/MC_DBNAM
 //$config['password_query'] = 'SELECT update_passwd(%c, %u)';
 //$config['password_query'] = 'UPDATE users SET crypt=ENCRYPT(%p,CONCAT(_utf8\'$5$\',RIGHT(MD5(RAND()),8),_utf8\'$\')) WHERE id=%u LIMIT 1';
 
-# mc_postino
+# MTK mc_postino: cambia la password svolgendo la quesry sul db di postfixadmin/dovecot/postfix
 $config['password_query'] = 'UPDATE mailbox SET password=%c WHERE username=%u LIMIT 1';
 
 // By default the crypt() function which is used to create the '%c' 

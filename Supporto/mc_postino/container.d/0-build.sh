@@ -426,12 +426,20 @@ cp -rp /root/container.d/roundcube/plugins roundcube/
 chown -R www-data:www-data roundcube/logs
 chown -R www-data:www-data roundcube/temp
 
-# RC: config
+# RC: debian-db.php
 sed -i "s/MC_RC_DBPASSWORD/$MC_RC_DBPASSWORD/g" /opt/roundcube/config/debian-db.php
 wait
 sed -i "s/MC_RC_DBUSER/$MC_RC_DBUSER/g" /opt/roundcube/config/debian-db.php
 wait
 sed -i "s/MC_RC_DBNAME/$MC_RC_DBNAME/g" /opt/roundcube/config/debian-db.php
+wait
+
+# RC: config.inc.php
+sed -i "s/MC_RC_DBPASSWORD/$MC_RC_DBPASSWORD/g" /opt/roundcube/config/config.inc.php
+wait
+sed -i "s/MC_RC_DBUSER/$MC_RC_DBUSER/g" /opt/roundcube/config/config.inc.php
+wait
+sed -i "s/MC_RC_DBNAME/$MC_RC_DBNAME/g" /opt/roundcube/config/config.inc.php
 wait
 
 # RC: plugin password sostituisce i parametri del database
@@ -440,6 +448,11 @@ wait
 sed -i "s/MC_DBPASSWORD/$MC_DBPASSWORD/g" /opt/roundcube/plugins/password/config.inc.php
 wait
 sed -i "s/MC_DBNAME/$MC_DBNAME/g" /opt/roundcube/plugins/password/config.inc.php
+
+# RC: config.inc.php: 24 chars random des_key
+MC_RC_DESKEY="$(pwgen -s -1 -y 24)"
+sed -i "s/MC_RC_DESKEY/$MC_RC_DESKEY/g" /opt/roundcube/config/config.inc.php
+wait
 
 ############
 # OPENDKIM #
@@ -452,7 +465,7 @@ cp /root/container.d/etc/default/opendkim /etc/default/opendkin
 # genera la chiave e scrivi gli output in root
 cd /root
 # 1024 altrimenti i campi di text input web dei pannelli DNS che accettano tipicamente 255 caratteri sbroccano con chiavi da 4096
-# addendum: Pannelli del calibro di Gandi permettono di modificare direttamente il file di zona ergo...chiave da 4096 va bene in generale
+# addendum: Pannelli tipo Gandi permettono di modificare direttamente il file di zona ergo...chiave da 4096 va bene in generale
 # 2048 è il compromesso con la verbosita
 opendkim-genkey -t -b 2048 -s dkim -d $MC_DOMINIO_CLIENTE
 wait

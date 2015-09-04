@@ -43,10 +43,10 @@ $config['enable_installer'] = false;
 // in the session record (and the client cookie if remember password is enabled).
 // please provide a string of exactly 24 chars.
 // YOUR KEY MUST BE DIFFERENT THAN THE SAMPLE VALUE FOR SECURITY REASONS
-$config['des_key'] = 'rcmail-!24ByteDESkey*Str';
+$config['des_key'] = 'MC_RC_DESKEY';
 
 // List of active plugins (in plugins/ directory)
-$config['plugins'] = array('archive', 'zipdownload');
+$config['plugins'] = array('archive', 'zipdownload', 'password');
 
 // skin name: folder from skins/
 $config['skin'] = 'larry';
@@ -56,7 +56,7 @@ $config['skin'] = 'larry';
 // Currently supported db_providers: mysql, pgsql, sqlite, mssql or sqlsrv
 // For examples see http://pear.php.net/manual/en/package.database.mdb2.intro-dsn.php
 // NOTE: for SQLite use absolute path: 'sqlite:////full/path/to/sqlite.db?mode=0646'
-$config['db_dsnw'] = 'mysql://roundcube:pass@localhost/roundcube';
+$config['db_dsnw'] = 'mysql://MC_RC_DBNAME:MC_RC_DBPASSWORD@localhost/MC_RC_DBNAME';
 
 // provide an URL where a user can get support for this Roundcube installation
 // PLEASE DO NOT LINK TO THE ROUNDCUBE.NET WEBSITE HERE!
