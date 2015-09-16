@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#
+# avvia il container di comodo
+#
+
+export PATH=/opt/Lxc/1.1.2/Debian8/Linux/amd64/libexec/lxc:$PATH
+export PATH=/opt/Lxc/1.1.2/Debian8/Linux/amd64/sbin:$PATH
+export PATH=/opt/Lxc/1.1.2/Debian8/Linux/amd64/bin:$PATH
+export LD_LIBRARY_PATH=/opt/Lxc/1.1.2/Debian8/Linux/amd64/lib:$LD_LIBRARY_PATH
+
+
+lxc-start -n postino
+
