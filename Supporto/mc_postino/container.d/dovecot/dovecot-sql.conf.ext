@@ -130,7 +130,7 @@
 
 ### THE MAGIC HAPPENS
 driver = mysql
-connect = host=127.0.0.1 dbname=mail user=mail password=MC_DBPASSWORD
+connect = host=127.0.0.1 dbname=mail user=MC_DBUSER password=MC_DBPASSWORD
 default_pass_scheme = MD5-CRYPT
 
 # notoriamente mail è 8
