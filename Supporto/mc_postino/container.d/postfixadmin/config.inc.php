@@ -176,7 +176,7 @@ $CONF['show_password'] = 'NO';
 // Page Size
 // Set the number of entries that you would like to see
 // in one page.*/
-$CONF['page_size'] = '20';
+$CONF['page_size'] = '100';
 
 // Default Aliases
 // The default aliases that need to be created for all domains.
