@@ -34,6 +34,23 @@ MC_NOMEHOST=""
 MC_NOMECOMPLETO=$MC_NOMEHOST"."$MC_DOMINIO
 MC_DOMINIO_CLIENTE=$MC_NOMECOMPLETO
 
+# gli insiemi di intervento possono essere almeno due: ospitante ed ospite che possono anche coincidere
+
+# HOSTER
+# nome host ospitante ( cname )
+MC_NOMEHOST_HOSTER=""
+# nome dominio ospitante (i.e. ospitante.tld)
+MC_NOMDOMINIO_HOSTER=""
+
+# GUEST
+# nome host ospite ( i.e cname )
+MC_NOMHOST_GUEST=""
+# nome dominio ospite ( ospite.tld)
+MC_NOMEDOMINIO_GUEST=""
+
+
+
+
 #########################
 # PARAMETRI CERTIFICATO #
 #########################
