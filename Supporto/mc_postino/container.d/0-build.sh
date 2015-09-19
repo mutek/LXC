@@ -40,11 +40,11 @@ MC_DOMINIO_CLIENTE=$MC_NOMECOMPLETO
 # nome host ospitante ( cname )
 MC_NOMEHOST_HOSTER=""
 # nome dominio ospitante (i.e. ospitante.tld)
-MC_NOMDOMINIO_HOSTER=""
+MC_NOMEDOMINIO_HOSTER=""
 
 # GUEST
 # nome host ospite ( i.e cname )
-MC_NOMHOST_GUEST=""
+MC_NOMEHOST_GUEST=""
 # nome dominio ospite ( ospite.tld)
 MC_NOMEDOMINIO_GUEST=""
 
@@ -344,9 +344,10 @@ cp /root/container.d/dovecot/dovecot-sql.conf.ext  /etc/dovecot/dovecot-sql.conf
 wait
 
 sed -i "s/MC_DBPASSWORD/$MC_DBPASSWORD/g" /etc/dovecot/dovecot-sql.conf.ext
+wait
 sed -i "s/MC_DBUSER/$MC_DBUSER/g" /etc/dovecot/dovecot-sql.conf.ext
+wait
 sed -i "s/MC_DBNAME/$MC_DBNAME/g" /etc/dovecot/dovecot-sql.conf.ext
-
 
 cp /root/container.d/dovecot/conf.d/10-auth.conf /etc/dovecot/conf.d/10-auth.conf
 cp /root/container.d/dovecot/conf.d/10-mail.conf /etc/dovecot/conf.d/10-mail.conf
@@ -399,7 +400,7 @@ do
 
   sed -i "s/MC_DBPASSWORD/$MC_DBPASSWORD/g" /etc/postfix/$elemento
   wait
-    sed -i "s/MC_HOSTNAME/$MC_HOSTNAME/g" /etc/postfix/$elemento
+  sed -i "s/MC_HOSTNAME/$MC_HOSTNAME/g" /etc/postfix/$elemento
   wait
 
 done
@@ -422,6 +423,7 @@ MC_RC_DBPASSWORD="$(cat /root/mysql_pwd.txt)"
 cd /opt
 rm -rf --preserve-root roundcube
 rm -rf --preserve-root roundcube.HOLD
+wait
 mv roundcube roundcube.HOLD
 wait
 
@@ -467,7 +469,7 @@ wait
 sed -i "s/MC_DBNAME/$MC_DBNAME/g" /opt/roundcube/plugins/password/config.inc.php
 
 # RC: config.inc.php: 24 chars random des_key
-MC_RC_DESKEY="$(pwgen -s -1 -y 24)"
+MC_RC_DESKEY="$(pwgen -s -1 24)"
 sed -i "s/MC_RC_DESKEY/$MC_RC_DESKEY/g" /opt/roundcube/config/config.inc.php
 wait
 
@@ -482,14 +484,14 @@ cp /root/container.d/etc/default/opendkim /etc/default/opendkim
 wait
 
 # sostituisci MC_DOMINIO_CLIENTE
-sed -i "s/MC_DOMINIO_CLIENTE/$MC_DOMINIO_CLIENTE/g" /etc/opendkim.conf
+sed -i "s/MC_DOMINIO_CLIENTE/$MC_NOMEDOMINIO_GUEST/g" /etc/opendkim.conf
 
 # genera la chiave e scrivi gli output in root
 cd /root
 # 1024 altrimenti i campi di text input web dei pannelli DNS che accettano tipicamente 255 caratteri sbroccano con chiavi da 4096
 # addendum: Pannelli tipo Gandi permettono di modificare direttamente il file di zona ergo...chiave da 4096 va bene in generale
 # 2048 è il compromesso con la verbosita
-opendkim-genkey -t -b 2048 -s dkim -d $MC_DOMINIO_CLIENTE
+opendkim-genkey -t -b 2048 -s dkim -d $MC_NOMEDOMINIO_GUEST
 wait
 chown opendkim:opendkim dkim.private
 wait
