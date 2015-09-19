@@ -462,6 +462,11 @@ mv /etc/opendkim.conf /etc/opendkim.conf.ORIGINAL
 wait
 cp /root/container.d/opendkim/etc/opendkim.conf /etc/
 cp /root/container.d/etc/default/opendkim /etc/default/opendkim
+wait
+
+# sostituisci MC_DOMINIO_CLIENTE
+sed -i "s/MC_DOMINIO_CLIENTE/$MC_DOMINIO_CLIENTE/g" /etc/opendkim.conf
+
 # genera la chiave e scrivi gli output in root
 cd /root
 # 1024 altrimenti i campi di text input web dei pannelli DNS che accettano tipicamente 255 caratteri sbroccano con chiavi da 4096
