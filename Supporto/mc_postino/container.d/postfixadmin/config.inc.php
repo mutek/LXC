@@ -278,8 +278,8 @@ $CONF['alias_domain_struct_hook']   = '';
 // Specify your default values below. Quota in MB.
 $CONF['aliases'] = '100';
 $CONF['mailboxes'] = '1000';
-$CONF['maxquota'] = '10000';
-$CONF['domain_quota_default'] = '50000';
+$CONF['maxquota'] = '20000';
+$CONF['domain_quota_default'] = '50000000';
 
 // Quota
 // When you want to enforce quota for your mailbox users set this to 'YES'.
