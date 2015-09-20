@@ -398,8 +398,8 @@ echo " >>> make-container: verifico la presenza di container.d"
 if [ -d container.d ] && [ -d $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/root ]
 then
 
-	echo "    ok copio container.d"
-	cp -rp container.d $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/root/
+  echo "    ok copio container.d"
+  cp -rp container.d $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/root/
 
 else
 :
@@ -415,10 +415,10 @@ wait
 cat << EOINITSH > $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/root/init.sh
 #!/usr/bin/env sh
 #
-#
 # Luca Cappelletti (c) 2015 <luca.cappelletti@positronic.ch>
 #
 # WTF
+#
 
 MC_CONTAINER_MAINTAINER="$MC_CONTAINER_MAINTAINER"
 DEBIAN_FRONTEND=noninteractive  apt-get install --force-yes --assume-yes -y  pwgen
@@ -437,12 +437,12 @@ MC_CONTAINER_D_DIR="/root/container.d"
 if [ -d \$MC_CONTAINER_D_DIR ]
 then
 
-	for i in \$(ls \$MC_CONTAINER_D_DIR/ )
-	do
+  for i in \$(ls \$MC_CONTAINER_D_DIR/ )
+  do
 
-		[ -x \$MC_CONTAINER_D_DIR/\$i ] && { \$MC_CONTAINER_D_DIR/\$i; }
+    [ -x \$MC_CONTAINER_D_DIR/\$i ] && { \$MC_CONTAINER_D_DIR/\$i; }
 
-	done
+  done
 
 else
 :
@@ -473,7 +473,8 @@ chmod +x $LXC_CONFIG/$MC_NOME_CONTAINER/rootfs/root/init.sh
 
 echo ""
 echo "$0: END :)"
-
+echo ""
+echo "p.s. ricorda libpcap-dev nell'host dove girera Lxc (premette che al compile time devi averlo installato)"
 #
 # 
 # none	/sys/fs/cgroup	cgroup	defaults 	0	0
