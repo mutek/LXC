@@ -23,7 +23,14 @@
 
 	#Alias /postfixadmin /usr/share/postfixadmin
 
-#	Redirect permanent /postfixadmin https://MC_DOMINIO/postfixadmin
+	Redirect permanent /postfixadmin https://MC_DOMINIO/postfixadmin
+	Redirect permanent /mailadmin https://MC_DOMINIO/mailadmin
+    Redirect permanent /webmail https://MC_DOMINIO/webmail
+
+# DEBUG
+#	Alias /webmail /opt/roundcube
+#	Alias /webadmin /opt/ispmailadmin/htdocs
+#	Alias /webmail /var/lib/roundcube
 
 	ErrorLog ${APACHE_LOG_DIR}/error.log
 

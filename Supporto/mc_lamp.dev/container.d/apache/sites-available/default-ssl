@@ -22,9 +22,9 @@
 		Allow from all
 	</Directory>
 
-#	Alias /webmail /opt/roundcube
+	Alias /webmail /opt/roundcube
 
-#	Alias /mailadmin /opt/postfixadmin
+	Alias /mailadmin /opt/postfixadmin
 
 #	Alias /postfixadmin /opt/postfixadmin
 
@@ -50,8 +50,8 @@
 #	SSLCertificateFile    /etc/ssl/certs/ssl-cert-snakeoil.pem
 #	SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
 
-#        SSLCertificateFile    /etc/ssl/certs/MC_CERTIFICATO_CHAIN
-#        SSLCertificateKeyFile /etc/ssl/private/MC_CERTIFICATO_KEY
+        SSLCertificateFile    /etc/ssl/certs/MC_CERTIFICATO_CHAIN
+        SSLCertificateKeyFile /etc/ssl/private/MC_CERTIFICATO_KEY
 
 
 	#   Server Certificate Chain:
