@@ -1,5 +1,0 @@
-I potenziali limit di invio files possono essere risolti in questi punti:
-
-/etc/php5/apache2/php.ini
-/opt/roundcube/.htaccess
-/etc/postfix/main.cf
