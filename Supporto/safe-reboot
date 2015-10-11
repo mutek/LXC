@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+# riavvia la vps tenendo conto dei containers...
+
+
+for container in $(lxc-ls)
+do
+	printf "fermo "$container"..."
+	lxc-stop -n $container
+	printf " OK\n"
+done
+
+echo "riavvio la VPS"
+reboot
+
