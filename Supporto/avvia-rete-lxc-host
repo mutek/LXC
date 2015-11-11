@@ -17,7 +17,7 @@ LXC_DHCP_CONFILE=""
 LXC_DOMAIN=""
 
 	# qualche fondamentale
-	[ $(which brctl) ] || { echo "non trovo il tool brctl tipicamente nel pacchetto bridge-utils"; exit 0;}
+	[ $(which brctl) ] || { echo "non trovo il tool brctl tipicamente nel pacchetto bridge-utils, visto che ci sei installa anche ebtables ;) "; exit 0;}
 
 	# se il bridge è gia costruito allora esci e notifica
 	[ -d /sys/class/net/${LXC_BRIDGE} ] && { echo "lxcbr0 è gia attivo! "; brctl show; exit 0; }
