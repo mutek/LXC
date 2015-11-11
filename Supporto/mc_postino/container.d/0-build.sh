@@ -282,10 +282,10 @@ cat /etc/ssl/private/dhparams.pem >> /etc/ssl/certs/certificato.pem
 cd /opt
 rm -rf --preserve-root postfixadmin
 wait
-tar -xf /root/container.d/postfixadmin-2.92.tar.gz
+tar -xf /root/container.d/postfixadmin-2.93.tar.gz
 wait
 
-mv postfixadmin-2.92 postfixadmin
+mv postfixadmin-2.93 postfixadmin
 wait
 
 cp /root/container.d/postfixadmin/config.inc.php /opt/postfixadmin/
