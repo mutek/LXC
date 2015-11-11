@@ -9,5 +9,17 @@ export PATH=/opt/Lxc/1.1.2/Debian8/Linux/amd64/bin:$PATH
 export LD_LIBRARY_PATH=/opt/Lxc/1.1.2/Debian8/Linux/amd64/lib:$LD_LIBRARY_PATH
 
 
+lxc-start -n dns
+
+sleep 10
+
 lxc-start -n postino
+
+sleep 10
+
+lxc-start -n lamp
+
+sleep 10
+
+lxc-start -n nginx
 

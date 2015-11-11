@@ -45,6 +45,17 @@ PORTA=993
 iptables -t nat -A PREROUTING -i ${INTERFACCIA} -p tcp --dport ${PORTA} -j DNAT --to ${INDIRIZZO}:${PORTA}
 wait
 
+# reverse proxy
+#INDIRIZZO=10.10.10.222
+#PORTA=80
+#iptables -t nat -A PREROUTING -i ${INTERFACCIA} -p tcp --dport ${PORTA} -j DNAT --to ${INDIRIZZO}:${PORTA}
+#wait
+
+# reverse proxy
+#INDIRIZZO=10.10.10.222
+#PORTA=443
+#iptables -t nat -A PREROUTING -i ${INTERFACCIA} -p tcp --dport ${PORTA} -j DNAT --to ${INDIRIZZO}:${PORTA}
+#wait
 
 
 
