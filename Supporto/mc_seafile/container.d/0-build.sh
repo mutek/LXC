@@ -185,6 +185,18 @@ cat /etc/ssl/private/dhparams.pem >> /etc/ssl/certs/certificato.pem
 #############
 cp /root/container.d/etc/default/memcached /etc/default/memcached
 
+
+################
+# boot seafile #
+################
+
+echo "...abilito avvia-seafile.sh al boot..."
+cp /root/container.d/etc/init.d/avvia-seafile.sh /etc/init.d/
+wait
+
+update-rc.d avvia-seafile.sh defaults 99
+echo "...ok!"
+
 #################
 # T H E   E N D #
 #################
