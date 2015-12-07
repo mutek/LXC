@@ -1,0 +1,44 @@
+# utente di lavoro chroot sftp
+
+
+# aggiungere a /etc/ssh/sshd_config
+
+### SFTP CHROOT
+
+Subsystem sftp internal-sftp
+
+Match Group sftpchroot
+   ChrootDirectory /home/%u
+   ForceCommand internal-sftp
+   AllowTcpForwarding no
+   PermitTunnel no
+   X11Forwarding no
+
+
+# E' necessario creare un utente che sottende il gruppo sftpchroot
+
+adduser webmaster
+wait
+addgroup sftpchroot
+wait
+adduser webmaster sftpchroot
+
+
+# crea la cartella di lavoro web ad esempio nel gruppo sftpchroot e utente webmaster che puo scrivere quindi:
+
+mkdir -p /var/www/html
+chown -R webmaster:sftpchroot /var/www/html
+
+# cambia owner della cartella principale chroot di sftp per l'utente chroot che deve essere root
+
+chown root:root /home/webmaster
+
+# crea ancoraggio per il mount bind verso la cartella utente chroot
+
+mkdir -p /home/webmaster/html
+
+# e cambia owner e gruppo in
+chown -R webmaster:sftpchroot /home/webmaster/html
+
+# a questo punto puoi aggiungere in rc.local questa riga che monta il bind automaticamente ad ogni reboot
+mount --bind /var/www/html /home/webmaster/html
