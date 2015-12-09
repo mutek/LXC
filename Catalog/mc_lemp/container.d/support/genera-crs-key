@@ -1,0 +1,10 @@
+# genera key e CRS
+#openssl req -nodes -newkey rsa:8192 -keyout certificato.key -out certificato.csr -subj "/C=IT/ST=Rome/L=Rome/O=Global Security/OU=Dipartimento IT/CN=dominio.tld"
+
+openssl genrsa -des3 -passout pass:x -out server.pass.key 8192
+openssl rsa -passin pass:x -in server.pass.key -out certificato.key
+rm server.pass.key
+openssl req -new -key certificato.key -out certificato.csr \
+  -subj "/C=IT/ST=Italy/L=Rome/O=Corporation/OU=Dipartimento IT/CN=dominio.tld"
+
+openssl x509 -req -days 365 -in certificato.csr -signkey certificato.key -out certificato.pem
